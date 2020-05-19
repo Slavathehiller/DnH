@@ -1,0 +1,13 @@
+Up = 1
+Down = 2
+Left = 3
+Right = 4
+NORMAL = 0
+WIN = 1
+LOSE = 2
+Easy = 1
+Normal = 2
+Hard = 3
+
+Dead = 0
+Live = 1
