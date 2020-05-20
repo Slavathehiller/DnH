@@ -1,5 +1,6 @@
 from Consts import*
 from PILgraphicObject import*
+from random import*
 
 class Entity(PILgraphicObject):
     Str = 5
@@ -11,13 +12,21 @@ class Entity(PILgraphicObject):
     orientation = Right
     Type = ''
     currentHealth = 10
-    Status = Live
+    _status = Live
     DeadImage = None
 
     def __init__(self, x, y, model):
         PILgraphicObject.__init__(self, x, y)
         self.ResetActions()
         self.currentHealth = self.Health
+
+    def set_Status(self, value):
+        self._status = value
+
+    def get_Status(self):
+        return self._status
+
+    Status = property(fget=get_Status, fset=set_Status)
 
     def GetCurrentImage(self):
         if self.Status == Live:
@@ -59,14 +68,13 @@ class Entity(PILgraphicObject):
     def GetCoords(self, x, y, direction, distance=1):
         newx, newy = x, y
         if direction == Up:
-            newy = self.y - distance
+            newy = y - distance
         if direction == Left:
-            newx = self.x - distance
+            newx = x - distance
         if direction == Down:
-            newy = self.y + distance
+            newy = y + distance
         if direction == Right:
-            newx = self.x + distance
-            self.orientation = direction
+            newx = x + distance
         return newx, newy
 
     def Move(self, params):
@@ -80,3 +88,22 @@ class Entity(PILgraphicObject):
     def GetEnemyFrom(self, direction, distance=1):
         x, y = self.GetCoords(self.x, self.y, direction, distance)
         return self.model.GetActiveObjectAt(x, y)
+
+    def Attack(self, params):
+        enemy = self.GetEnemyFrom(params[0])
+        if enemy == None or enemy.Status == Dead:
+            print("Нет цели")
+            return
+        print(self.Type + ' бьет ' + enemy.Type)
+        if randint(0, 100) <= enemy.EvadeChance:
+            print(enemy.Type + ' увернулся')
+        else:
+            damage = randint(self.Damage[0], self.Damage[1])
+            if randint(0, 100) < self.CriticalChance:
+                damage = damage * 2
+                print("Критический удар!")
+            enemy.currentHealth -= damage
+            print(self.Type + ' наносит ' + enemy.Type + ' ' + str(damage) + ' урона')
+            if enemy.currentHealth < 1:
+                enemy.Status = Dead
+                print(enemy.Type + ' погибает')

@@ -1,6 +1,9 @@
 from Hero import*
 
 class Barbarian(Hero):
+    Str = 8
+    Dex = 6
+    End = 8
 
     def __init__(self, x, y, model):
         Hero.__init__(self, x, y, model)
@@ -13,7 +16,8 @@ class Barbarian(Hero):
 
 
     def Slash(self, params):
-        pass
+        self.Attack(params)
 
     def JumpStrike(self, params):
-        pass
+        self.Move(params)
+        self.Attack(params)

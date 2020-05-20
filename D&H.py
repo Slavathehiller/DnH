@@ -44,9 +44,9 @@ menuHelp.add_command(label="Инструкция", command=menuInstruction)
 mainmenu.add_cascade(label="Помощь", menu=menuHelp)
 
 options = SimpleOptions()
-hero1 = Knight(0, 0, None)
-hero2 = Barbarian(1, 0, None)
-goathorn = Goathorn(10, 0, None)
+hero1 = Knight(1, 0, None)
+hero2 = Barbarian(0, 0, None)
+goathorn = Goathorn(5, 0, None)
 model = DHModeller([hero1, hero2], [goathorn], options)
 hero1.model = model
 hero2.model = model

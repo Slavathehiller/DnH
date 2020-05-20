@@ -9,4 +9,3 @@ class Monster(Entity):
             if hero.x == x and hero.y == y:
                 return hero
         return None
-

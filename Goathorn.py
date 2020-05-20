@@ -11,6 +11,8 @@ class Goathorn(Monster):
         self.DeadImage = Image.open('Goathorn_Dead.png').convert('RGBA')
 
     def NormalAction(self):
+        if self.Status == Dead:
+            return
         for direction in [Up, Right]:
             hero = self.GetHeroFrom(direction)
             if not (hero is None):

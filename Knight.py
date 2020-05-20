@@ -2,6 +2,9 @@ from Hero import*
 from random import*
 
 class Knight(Hero):
+    Str = 6
+    Dex=8
+    End = 6
 
     def __init__(self, x, y, model):
         Hero.__init__(self, x, y, model)
@@ -14,23 +17,7 @@ class Knight(Hero):
 
 
     def Slash(self, params):
-        enemy = self.GetEnemyFrom(params[0])
-        if enemy == None or enemy.Status == Dead:
-            print("Нет цели")
-            return
-        print(self.Type + ' бьет ' + enemy.Type)
-        if randint(0, 100) <= enemy.EvadeChance:
-            print(enemy.Type + ' увернулся')
-        else:
-            damage = randint(self.Damage[0], self.Damage[1])
-            if randint(0, 100) < self.CriticalChance:
-                damage = damage * 2
-                print("Критический удар!")
-            enemy.currentHealth -= damage
-            print(self.Type + ' наносит ' + enemy.Type + ' ' + str(damage) + ' урона')
-            if enemy.currentHealth < 1:
-                enemy.Status = Dead
-                print(enemy.Type + ' погибает')
+        self.Attack(params)
 
     def Stab(self, params):
         pass
