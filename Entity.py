@@ -56,13 +56,12 @@ class Entity(PILgraphicObject):
     def iCanMove(self, x, y):
         return not self.model.isOut(x, y) and not self.model.isHero(x, y) and not self.model.isMonster(x, y)
 
-    def GetCoords(self, x, y, direction, distance = 1):
+    def GetCoords(self, x, y, direction, distance=1):
         newx, newy = x, y
         if direction == Up:
             newy = self.y - distance
         if direction == Left:
             newx = self.x - distance
-            self.orientation = direction
         if direction == Down:
             newy = self.y + distance
         if direction == Right:
@@ -73,6 +72,8 @@ class Entity(PILgraphicObject):
     def Move(self, params):
         direction = params[0]
         x, y = self.GetCoords(self.x, self.y, direction)
+        if direction in [Left, Right]:
+            self.orientation = direction
         if self.iCanMove(x, y):
             self.Place(x, y)
 

@@ -1,0 +1,734 @@
+Index: venv/Lib/site-packages/setuptools-46.3.1.dist-info/dependency_links.txt
+===================================================================
+--- venv/Lib/site-packages/setuptools-46.3.1.dist-info/dependency_links.txt	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/setuptools-46.3.1.dist-info/dependency_links.txt	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
+@@ -1,2 +0,0 @@
+-https://files.pythonhosted.org/packages/source/c/certifi/certifi-2016.9.26.tar.gz#md5=baa81e951a29958563689d868ef1064d
+-https://files.pythonhosted.org/packages/source/w/wincertstore/wincertstore-0.2.zip#md5=ae728f2f007185648d0c7a8679b361e2
+Index: venv/Lib/site-packages/pip-20.1.dist-info/entry_points.txt
+===================================================================
+--- venv/Lib/site-packages/pip-20.1.dist-info/entry_points.txt	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/pip-20.1.dist-info/entry_points.txt	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
+@@ -1,5 +0,0 @@
+-[console_scripts]
+-pip = pip._internal.cli.main:main
+-pip3 = pip._internal.cli.main:main
+-pip3.8 = pip._internal.cli.main:main
+-
+Index: venv/Lib/site-packages/setuptools-46.3.1.dist-info/entry_points.txt
+===================================================================
+--- venv/Lib/site-packages/setuptools-46.3.1.dist-info/entry_points.txt	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/setuptools-46.3.1.dist-info/entry_points.txt	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
+@@ -1,68 +0,0 @@
+-[console_scripts]
+-easy_install = setuptools.command.easy_install:main
+-easy_install-3.8 = setuptools.command.easy_install:main
+-
+-[distutils.commands]
+-alias = setuptools.command.alias:alias
+-bdist_egg = setuptools.command.bdist_egg:bdist_egg
+-bdist_rpm = setuptools.command.bdist_rpm:bdist_rpm
+-bdist_wininst = setuptools.command.bdist_wininst:bdist_wininst
+-build_clib = setuptools.command.build_clib:build_clib
+-build_ext = setuptools.command.build_ext:build_ext
+-build_py = setuptools.command.build_py:build_py
+-develop = setuptools.command.develop:develop
+-dist_info = setuptools.command.dist_info:dist_info
+-easy_install = setuptools.command.easy_install:easy_install
+-egg_info = setuptools.command.egg_info:egg_info
+-install = setuptools.command.install:install
+-install_egg_info = setuptools.command.install_egg_info:install_egg_info
+-install_lib = setuptools.command.install_lib:install_lib
+-install_scripts = setuptools.command.install_scripts:install_scripts
+-rotate = setuptools.command.rotate:rotate
+-saveopts = setuptools.command.saveopts:saveopts
+-sdist = setuptools.command.sdist:sdist
+-setopt = setuptools.command.setopt:setopt
+-test = setuptools.command.test:test
+-upload_docs = setuptools.command.upload_docs:upload_docs
+-
+-[distutils.setup_keywords]
+-convert_2to3_doctests = setuptools.dist:assert_string_list
+-dependency_links = setuptools.dist:assert_string_list
+-eager_resources = setuptools.dist:assert_string_list
+-entry_points = setuptools.dist:check_entry_points
+-exclude_package_data = setuptools.dist:check_package_data
+-extras_require = setuptools.dist:check_extras
+-include_package_data = setuptools.dist:assert_bool
+-install_requires = setuptools.dist:check_requirements
+-namespace_packages = setuptools.dist:check_nsp
+-package_data = setuptools.dist:check_package_data
+-packages = setuptools.dist:check_packages
+-python_requires = setuptools.dist:check_specifier
+-setup_requires = setuptools.dist:check_requirements
+-test_loader = setuptools.dist:check_importable
+-test_runner = setuptools.dist:check_importable
+-test_suite = setuptools.dist:check_test_suite
+-tests_require = setuptools.dist:check_requirements
+-use_2to3 = setuptools.dist:assert_bool
+-use_2to3_exclude_fixers = setuptools.dist:assert_string_list
+-use_2to3_fixers = setuptools.dist:assert_string_list
+-zip_safe = setuptools.dist:assert_bool
+-
+-[egg_info.writers]
+-PKG-INFO = setuptools.command.egg_info:write_pkg_info
+-dependency_links.txt = setuptools.command.egg_info:overwrite_arg
+-depends.txt = setuptools.command.egg_info:warn_depends_obsolete
+-eager_resources.txt = setuptools.command.egg_info:overwrite_arg
+-entry_points.txt = setuptools.command.egg_info:write_entries
+-namespace_packages.txt = setuptools.command.egg_info:overwrite_arg
+-requires.txt = setuptools.command.egg_info:write_requirements
+-top_level.txt = setuptools.command.egg_info:write_toplevel_names
+-
+-[setuptools.finalize_distribution_options]
+-2to3_doctests = setuptools.dist:Distribution._finalize_2to3_doctests
+-keywords = setuptools.dist:Distribution._finalize_setup_keywords
+-parent_finalize = setuptools.dist:_Distribution.finalize_options
+-
+-[setuptools.installation]
+-eggsecutable = setuptools.command.easy_install:bootstrap
+-
+Index: venv/Lib/site-packages/pip-20.1.dist-info/LICENSE.txt
+===================================================================
+--- venv/Lib/site-packages/pip-20.1.dist-info/LICENSE.txt	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/pip-20.1.dist-info/LICENSE.txt	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
+@@ -1,20 +0,0 @@
+-Copyright (c) 2008-2019 The pip developers (see AUTHORS.txt file)
+-
+-Permission is hereby granted, free of charge, to any person obtaining
+-a copy of this software and associated documentation files (the
+-"Software"), to deal in the Software without restriction, including
+-without limitation the rights to use, copy, modify, merge, publish,
+-distribute, sublicense, and/or sell copies of the Software, and to
+-permit persons to whom the Software is furnished to do so, subject to
+-the following conditions:
+-
+-The above copyright notice and this permission notice shall be
+-included in all copies or substantial portions of the Software.
+-
+-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Index: venv/Lib/site-packages/pip-20.1.dist-info/top_level.txt
+===================================================================
+--- venv/Lib/site-packages/pip-20.1.dist-info/top_level.txt	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/pip-20.1.dist-info/top_level.txt	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
+@@ -1,1 +0,0 @@
+-pip
+Index: venv/Lib/site-packages/setuptools-46.3.1.dist-info/top_level.txt
+===================================================================
+--- venv/Lib/site-packages/setuptools-46.3.1.dist-info/top_level.txt	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/setuptools-46.3.1.dist-info/top_level.txt	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
+@@ -1,3 +0,0 @@
+-easy_install
+-pkg_resources
+-setuptools
+Index: venv/Scripts/Activate.ps1
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>function global:deactivate ([switch]$NonDestructive) {\r\n    # Revert to original values\r\n    if (Test-Path function:_OLD_VIRTUAL_PROMPT) {\r\n        copy-item function:_OLD_VIRTUAL_PROMPT function:prompt\r\n        remove-item function:_OLD_VIRTUAL_PROMPT\r\n    }\r\n\r\n    if (Test-Path env:_OLD_VIRTUAL_PYTHONHOME) {\r\n        copy-item env:_OLD_VIRTUAL_PYTHONHOME env:PYTHONHOME\r\n        remove-item env:_OLD_VIRTUAL_PYTHONHOME\r\n    }\r\n\r\n    if (Test-Path env:_OLD_VIRTUAL_PATH) {\r\n        copy-item env:_OLD_VIRTUAL_PATH env:PATH\r\n        remove-item env:_OLD_VIRTUAL_PATH\r\n    }\r\n\r\n    if (Test-Path env:VIRTUAL_ENV) {\r\n        remove-item env:VIRTUAL_ENV\r\n    }\r\n\r\n    if (!$NonDestructive) {\r\n        # Self destruct!\r\n        remove-item function:deactivate\r\n    }\r\n}\r\n\r\ndeactivate -nondestructive\r\n\r\n$env:VIRTUAL_ENV=\"E:\\Python Projects\\D&H\\venv\"\r\n\r\nif (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {\r\n    # Set the prompt to include the env name\r\n    # Make sure _OLD_VIRTUAL_PROMPT is global\r\n    function global:_OLD_VIRTUAL_PROMPT {\"\"}\r\n    copy-item function:prompt function:_OLD_VIRTUAL_PROMPT\r\n    function global:prompt {\r\n        Write-Host -NoNewline -ForegroundColor Green '(venv) '\r\n        _OLD_VIRTUAL_PROMPT\r\n    }\r\n}\r\n\r\n# Clear PYTHONHOME\r\nif (Test-Path env:PYTHONHOME) {\r\n    copy-item env:PYTHONHOME env:_OLD_VIRTUAL_PYTHONHOME\r\n    remove-item env:PYTHONHOME\r\n}\r\n\r\n# Add the venv to the PATH\r\ncopy-item env:PATH env:_OLD_VIRTUAL_PATH\r\n$env:PATH = \"$env:VIRTUAL_ENV\\Scripts;$env:PATH\"\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- venv/Scripts/Activate.ps1	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Scripts/Activate.ps1	(date 1589990146418)
+@@ -27,7 +27,7 @@
+ 
+ deactivate -nondestructive
+ 
+-$env:VIRTUAL_ENV="E:\Python Projects\D&H\venv"
++$env:VIRTUAL_ENV="D:\Python Projects\DnH\venv"
+ 
+ if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
+     # Set the prompt to include the env name
+Index: venv/Scripts/activate.bat
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@echo off\r\n\r\nrem This file is UTF-8 encoded, so we need to update the current code page while executing it\r\nfor /f \"tokens=2 delims=:.\" %%a in ('\"%SystemRoot%\\System32\\chcp.com\"') do (\r\n    set \"_OLD_CODEPAGE=%%a\"\r\n)\r\nif defined _OLD_CODEPAGE (\r\n    \"%SystemRoot%\\System32\\chcp.com\" 65001 > nul\r\n)\r\n\r\nset \"VIRTUAL_ENV=E:\\Python Projects\\D&H\\venv\"\r\n\r\nif not defined PROMPT (\r\n    set \"PROMPT=$P$G\"\r\n)\r\n\r\nif defined _OLD_VIRTUAL_PROMPT (\r\n    set \"PROMPT=%_OLD_VIRTUAL_PROMPT%\"\r\n)\r\n\r\nif defined _OLD_VIRTUAL_PYTHONHOME (\r\n    set \"PYTHONHOME=%_OLD_VIRTUAL_PYTHONHOME%\"\r\n)\r\n\r\nset \"_OLD_VIRTUAL_PROMPT=%PROMPT%\"\r\nset \"PROMPT=(venv) %PROMPT%\"\r\n\r\nif defined PYTHONHOME (\r\n    set \"_OLD_VIRTUAL_PYTHONHOME=%PYTHONHOME%\"\r\n    set PYTHONHOME=\r\n)\r\n\r\nif defined _OLD_VIRTUAL_PATH (\r\n    set \"PATH=%_OLD_VIRTUAL_PATH%\"\r\n) else (\r\n    set \"_OLD_VIRTUAL_PATH=%PATH%\"\r\n)\r\n\r\nset \"PATH=%VIRTUAL_ENV%\\Scripts;%PATH%\"\r\n\r\n:END\r\nif defined _OLD_CODEPAGE (\r\n    \"%SystemRoot%\\System32\\chcp.com\" %_OLD_CODEPAGE% > nul\r\n    set \"_OLD_CODEPAGE=\"\r\n)\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- venv/Scripts/activate.bat	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Scripts/activate.bat	(date 1589990146399)
+@@ -8,7 +8,7 @@
+     "%SystemRoot%\System32\chcp.com" 65001 > nul
+ )
+ 
+-set "VIRTUAL_ENV=E:\Python Projects\D&H\venv"
++set "VIRTUAL_ENV=D:\Python Projects\DnH\venv"
+ 
+ if not defined PROMPT (
+     set "PROMPT=$P$G"
+Index: venv/Lib/site-packages/pip/_internal/operations/install/wheel.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"\"\"Support for installing and building the \"wheel\" binary package format.\n\"\"\"\n\n# The following comment should be removed at some point in the future.\n# mypy: strict-optional=False\n\nfrom __future__ import absolute_import\n\nimport collections\nimport compileall\nimport contextlib\nimport csv\nimport logging\nimport os.path\nimport re\nimport shutil\nimport stat\nimport sys\nimport warnings\nfrom base64 import urlsafe_b64encode\nfrom itertools import starmap\nfrom zipfile import ZipFile\n\nfrom pip._vendor import pkg_resources\nfrom pip._vendor.distlib.scripts import ScriptMaker\nfrom pip._vendor.distlib.util import get_export_entry\nfrom pip._vendor.six import StringIO\n\nfrom pip._internal.exceptions import InstallationError\nfrom pip._internal.locations import get_major_minor_version\nfrom pip._internal.models.direct_url import DIRECT_URL_METADATA_NAME, DirectUrl\nfrom pip._internal.utils.filesystem import adjacent_tmp_file, replace\nfrom pip._internal.utils.misc import captured_stdout, ensure_dir, hash_file\nfrom pip._internal.utils.temp_dir import TempDirectory\nfrom pip._internal.utils.typing import MYPY_CHECK_RUNNING\nfrom pip._internal.utils.unpacking import current_umask, unpack_file\nfrom pip._internal.utils.wheel import parse_wheel\n\nif MYPY_CHECK_RUNNING:\n    from email.message import Message\n    from typing import (\n        Dict, List, Optional, Sequence, Tuple, Any,\n        Iterable, Iterator, Callable, Set,\n    )\n\n    from pip._internal.models.scheme import Scheme\n    from pip._internal.utils.filesystem import NamedTemporaryFileResult\n\n    InstalledCSVRow = Tuple[str, ...]\n\n\nlogger = logging.getLogger(__name__)\n\n\ndef normpath(src, p):\n    # type: (str, str) -> str\n    return os.path.relpath(src, p).replace(os.path.sep, '/')\n\n\ndef rehash(path, blocksize=1 << 20):\n    # type: (str, int) -> Tuple[str, str]\n    \"\"\"Return (encoded_digest, length) for path using hashlib.sha256()\"\"\"\n    h, length = hash_file(path, blocksize)\n    digest = 'sha256=' + urlsafe_b64encode(\n        h.digest()\n    ).decode('latin1').rstrip('=')\n    # unicode/str python2 issues\n    return (digest, str(length))  # type: ignore\n\n\ndef csv_io_kwargs(mode):\n    # type: (str) -> Dict[str, Any]\n    \"\"\"Return keyword arguments to properly open a CSV file\n    in the given mode.\n    \"\"\"\n    if sys.version_info.major < 3:\n        return {'mode': '{}b'.format(mode)}\n    else:\n        return {'mode': mode, 'newline': ''}\n\n\ndef fix_script(path):\n    # type: (str) -> Optional[bool]\n    \"\"\"Replace #!python with #!/path/to/python\n    Return True if file was changed.\n    \"\"\"\n    # XXX RECORD hashes will need to be updated\n    if os.path.isfile(path):\n        with open(path, 'rb') as script:\n            firstline = script.readline()\n            if not firstline.startswith(b'#!python'):\n                return False\n            exename = sys.executable.encode(sys.getfilesystemencoding())\n            firstline = b'#!' + exename + os.linesep.encode(\"ascii\")\n            rest = script.read()\n        with open(path, 'wb') as script:\n            script.write(firstline)\n            script.write(rest)\n        return True\n    return None\n\n\ndef wheel_root_is_purelib(metadata):\n    # type: (Message) -> bool\n    return metadata.get(\"Root-Is-Purelib\", \"\").lower() == \"true\"\n\n\ndef get_entrypoints(filename):\n    # type: (str) -> Tuple[Dict[str, str], Dict[str, str]]\n    if not os.path.exists(filename):\n        return {}, {}\n\n    # This is done because you can pass a string to entry_points wrappers which\n    # means that they may or may not be valid INI files. The attempt here is to\n    # strip leading and trailing whitespace in order to make them valid INI\n    # files.\n    with open(filename) as fp:\n        data = StringIO()\n        for line in fp:\n            data.write(line.strip())\n            data.write(\"\\n\")\n        data.seek(0)\n\n    # get the entry points and then the script names\n    entry_points = pkg_resources.EntryPoint.parse_map(data)\n    console = entry_points.get('console_scripts', {})\n    gui = entry_points.get('gui_scripts', {})\n\n    def _split_ep(s):\n        # type: (pkg_resources.EntryPoint) -> Tuple[str, str]\n        \"\"\"get the string representation of EntryPoint,\n        remove space and split on '='\n        \"\"\"\n        split_parts = str(s).replace(\" \", \"\").split(\"=\")\n        return split_parts[0], split_parts[1]\n\n    # convert the EntryPoint objects into strings with module:function\n    console = dict(_split_ep(v) for v in console.values())\n    gui = dict(_split_ep(v) for v in gui.values())\n    return console, gui\n\n\ndef message_about_scripts_not_on_PATH(scripts):\n    # type: (Sequence[str]) -> Optional[str]\n    \"\"\"Determine if any scripts are not on PATH and format a warning.\n    Returns a warning message if one or more scripts are not on PATH,\n    otherwise None.\n    \"\"\"\n    if not scripts:\n        return None\n\n    # Group scripts by the path they were installed in\n    grouped_by_dir = collections.defaultdict(set)  # type: Dict[str, Set[str]]\n    for destfile in scripts:\n        parent_dir = os.path.dirname(destfile)\n        script_name = os.path.basename(destfile)\n        grouped_by_dir[parent_dir].add(script_name)\n\n    # We don't want to warn for directories that are on PATH.\n    not_warn_dirs = [\n        os.path.normcase(i).rstrip(os.sep) for i in\n        os.environ.get(\"PATH\", \"\").split(os.pathsep)\n    ]\n    # If an executable sits with sys.executable, we don't warn for it.\n    #     This covers the case of venv invocations without activating the venv.\n    not_warn_dirs.append(os.path.normcase(os.path.dirname(sys.executable)))\n    warn_for = {\n        parent_dir: scripts for parent_dir, scripts in grouped_by_dir.items()\n        if os.path.normcase(parent_dir) not in not_warn_dirs\n    }  # type: Dict[str, Set[str]]\n    if not warn_for:\n        return None\n\n    # Format a message\n    msg_lines = []\n    for parent_dir, dir_scripts in warn_for.items():\n        sorted_scripts = sorted(dir_scripts)  # type: List[str]\n        if len(sorted_scripts) == 1:\n            start_text = \"script {} is\".format(sorted_scripts[0])\n        else:\n            start_text = \"scripts {} are\".format(\n                \", \".join(sorted_scripts[:-1]) + \" and \" + sorted_scripts[-1]\n            )\n\n        msg_lines.append(\n            \"The {} installed in '{}' which is not on PATH.\"\n            .format(start_text, parent_dir)\n        )\n\n    last_line_fmt = (\n        \"Consider adding {} to PATH or, if you prefer \"\n        \"to suppress this warning, use --no-warn-script-location.\"\n    )\n    if len(msg_lines) == 1:\n        msg_lines.append(last_line_fmt.format(\"this directory\"))\n    else:\n        msg_lines.append(last_line_fmt.format(\"these directories\"))\n\n    # Add a note if any directory starts with ~\n    warn_for_tilde = any(\n        i[0] == \"~\" for i in os.environ.get(\"PATH\", \"\").split(os.pathsep) if i\n    )\n    if warn_for_tilde:\n        tilde_warning_msg = (\n            \"NOTE: The current PATH contains path(s) starting with `~`, \"\n            \"which may not be expanded by all applications.\"\n        )\n        msg_lines.append(tilde_warning_msg)\n\n    # Returns the formatted multiline message\n    return \"\\n\".join(msg_lines)\n\n\ndef sorted_outrows(outrows):\n    # type: (Iterable[InstalledCSVRow]) -> List[InstalledCSVRow]\n    \"\"\"Return the given rows of a RECORD file in sorted order.\n\n    Each row is a 3-tuple (path, hash, size) and corresponds to a record of\n    a RECORD file (see PEP 376 and PEP 427 for details).  For the rows\n    passed to this function, the size can be an integer as an int or string,\n    or the empty string.\n    \"\"\"\n    # Normally, there should only be one row per path, in which case the\n    # second and third elements don't come into play when sorting.\n    # However, in cases in the wild where a path might happen to occur twice,\n    # we don't want the sort operation to trigger an error (but still want\n    # determinism).  Since the third element can be an int or string, we\n    # coerce each element to a string to avoid a TypeError in this case.\n    # For additional background, see--\n    # https://github.com/pypa/pip/issues/5868\n    return sorted(outrows, key=lambda row: tuple(str(x) for x in row))\n\n\ndef get_csv_rows_for_installed(\n    old_csv_rows,  # type: Iterable[List[str]]\n    installed,  # type: Dict[str, str]\n    changed,  # type: Set[str]\n    generated,  # type: List[str]\n    lib_dir,  # type: str\n):\n    # type: (...) -> List[InstalledCSVRow]\n    \"\"\"\n    :param installed: A map from archive RECORD path to installation RECORD\n        path.\n    \"\"\"\n    installed_rows = []  # type: List[InstalledCSVRow]\n    for row in old_csv_rows:\n        if len(row) > 3:\n            logger.warning(\n                'RECORD line has more than three elements: {}'.format(row)\n            )\n        # Make a copy because we are mutating the row.\n        row = list(row)\n        old_path = row[0]\n        new_path = installed.pop(old_path, old_path)\n        row[0] = new_path\n        if new_path in changed:\n            digest, length = rehash(new_path)\n            row[1] = digest\n            row[2] = length\n        installed_rows.append(tuple(row))\n    for f in generated:\n        digest, length = rehash(f)\n        installed_rows.append((normpath(f, lib_dir), digest, str(length)))\n    for f in installed:\n        installed_rows.append((installed[f], '', ''))\n    return installed_rows\n\n\nclass MissingCallableSuffix(Exception):\n    pass\n\n\ndef _raise_for_invalid_entrypoint(specification):\n    # type: (str) -> None\n    entry = get_export_entry(specification)\n    if entry is not None and entry.suffix is None:\n        raise MissingCallableSuffix(str(entry))\n\n\nclass PipScriptMaker(ScriptMaker):\n    def make(self, specification, options=None):\n        # type: (str, Dict[str, Any]) -> List[str]\n        _raise_for_invalid_entrypoint(specification)\n        return super(PipScriptMaker, self).make(specification, options)\n\n\ndef install_unpacked_wheel(\n    name,  # type: str\n    wheeldir,  # type: str\n    wheel_zip,  # type: ZipFile\n    scheme,  # type: Scheme\n    req_description,  # type: str\n    pycompile=True,  # type: bool\n    warn_script_location=True,  # type: bool\n    direct_url=None,  # type: Optional[DirectUrl]\n):\n    # type: (...) -> None\n    \"\"\"Install a wheel.\n\n    :param name: Name of the project to install\n    :param wheeldir: Base directory of the unpacked wheel\n    :param wheel_zip: open ZipFile for wheel being installed\n    :param scheme: Distutils scheme dictating the install directories\n    :param req_description: String used in place of the requirement, for\n        logging\n    :param pycompile: Whether to byte-compile installed Python files\n    :param warn_script_location: Whether to check that scripts are installed\n        into a directory on PATH\n    :raises UnsupportedWheel:\n        * when the directory holds an unpacked wheel with incompatible\n          Wheel-Version\n        * when the .dist-info dir does not match the wheel\n    \"\"\"\n    # TODO: Investigate and break this up.\n    # TODO: Look into moving this into a dedicated class for representing an\n    #       installation.\n\n    source = wheeldir.rstrip(os.path.sep) + os.path.sep\n\n    info_dir, metadata = parse_wheel(wheel_zip, name)\n\n    if wheel_root_is_purelib(metadata):\n        lib_dir = scheme.purelib\n    else:\n        lib_dir = scheme.platlib\n\n    subdirs = os.listdir(source)\n    data_dirs = [s for s in subdirs if s.endswith('.data')]\n\n    # Record details of the files moved\n    #   installed = files copied from the wheel to the destination\n    #   changed = files changed while installing (scripts #! line typically)\n    #   generated = files newly generated during the install (script wrappers)\n    installed = {}  # type: Dict[str, str]\n    changed = set()\n    generated = []  # type: List[str]\n\n    # Compile all of the pyc files that we're going to be installing\n    if pycompile:\n        with captured_stdout() as stdout:\n            with warnings.catch_warnings():\n                warnings.filterwarnings('ignore')\n                compileall.compile_dir(source, force=True, quiet=True)\n        logger.debug(stdout.getvalue())\n\n    def record_installed(srcfile, destfile, modified=False):\n        # type: (str, str, bool) -> None\n        \"\"\"Map archive RECORD paths to installation RECORD paths.\"\"\"\n        oldpath = normpath(srcfile, wheeldir)\n        newpath = normpath(destfile, lib_dir)\n        installed[oldpath] = newpath\n        if modified:\n            changed.add(destfile)\n\n    def clobber(\n            source,  # type: str\n            dest,  # type: str\n            is_base,  # type: bool\n            fixer=None,  # type: Optional[Callable[[str], Any]]\n            filter=None  # type: Optional[Callable[[str], bool]]\n    ):\n        # type: (...) -> None\n        ensure_dir(dest)  # common for the 'include' path\n\n        for dir, subdirs, files in os.walk(source):\n            basedir = dir[len(source):].lstrip(os.path.sep)\n            destdir = os.path.join(dest, basedir)\n            if is_base and basedir == '':\n                subdirs[:] = [s for s in subdirs if not s.endswith('.data')]\n            for f in files:\n                # Skip unwanted files\n                if filter and filter(f):\n                    continue\n                srcfile = os.path.join(dir, f)\n                destfile = os.path.join(dest, basedir, f)\n                # directory creation is lazy and after the file filtering above\n                # to ensure we don't install empty dirs; empty dirs can't be\n                # uninstalled.\n                ensure_dir(destdir)\n\n                # copyfile (called below) truncates the destination if it\n                # exists and then writes the new contents. This is fine in most\n                # cases, but can cause a segfault if pip has loaded a shared\n                # object (e.g. from pyopenssl through its vendored urllib3)\n                # Since the shared object is mmap'd an attempt to call a\n                # symbol in it will then cause a segfault. Unlinking the file\n                # allows writing of new contents while allowing the process to\n                # continue to use the old copy.\n                if os.path.exists(destfile):\n                    os.unlink(destfile)\n\n                # We use copyfile (not move, copy, or copy2) to be extra sure\n                # that we are not moving directories over (copyfile fails for\n                # directories) as well as to ensure that we are not copying\n                # over any metadata because we want more control over what\n                # metadata we actually copy over.\n                shutil.copyfile(srcfile, destfile)\n\n                # Copy over the metadata for the file, currently this only\n                # includes the atime and mtime.\n                st = os.stat(srcfile)\n                if hasattr(os, \"utime\"):\n                    os.utime(destfile, (st.st_atime, st.st_mtime))\n\n                # If our file is executable, then make our destination file\n                # executable.\n                if os.access(srcfile, os.X_OK):\n                    st = os.stat(srcfile)\n                    permissions = (\n                        st.st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH\n                    )\n                    os.chmod(destfile, permissions)\n\n                changed = False\n                if fixer:\n                    changed = fixer(destfile)\n                record_installed(srcfile, destfile, changed)\n\n    clobber(source, lib_dir, True)\n\n    dest_info_dir = os.path.join(lib_dir, info_dir)\n\n    # Get the defined entry points\n    ep_file = os.path.join(dest_info_dir, 'entry_points.txt')\n    console, gui = get_entrypoints(ep_file)\n\n    def is_entrypoint_wrapper(name):\n        # type: (str) -> bool\n        # EP, EP.exe and EP-script.py are scripts generated for\n        # entry point EP by setuptools\n        if name.lower().endswith('.exe'):\n            matchname = name[:-4]\n        elif name.lower().endswith('-script.py'):\n            matchname = name[:-10]\n        elif name.lower().endswith(\".pya\"):\n            matchname = name[:-4]\n        else:\n            matchname = name\n        # Ignore setuptools-generated scripts\n        return (matchname in console or matchname in gui)\n\n    for datadir in data_dirs:\n        fixer = None\n        filter = None\n        for subdir in os.listdir(os.path.join(wheeldir, datadir)):\n            fixer = None\n            if subdir == 'scripts':\n                fixer = fix_script\n                filter = is_entrypoint_wrapper\n            source = os.path.join(wheeldir, datadir, subdir)\n            dest = getattr(scheme, subdir)\n            clobber(source, dest, False, fixer=fixer, filter=filter)\n\n    maker = PipScriptMaker(None, scheme.scripts)\n\n    # Ensure old scripts are overwritten.\n    # See https://github.com/pypa/pip/issues/1800\n    maker.clobber = True\n\n    # Ensure we don't generate any variants for scripts because this is almost\n    # never what somebody wants.\n    # See https://bitbucket.org/pypa/distlib/issue/35/\n    maker.variants = {''}\n\n    # This is required because otherwise distlib creates scripts that are not\n    # executable.\n    # See https://bitbucket.org/pypa/distlib/issue/32/\n    maker.set_mode = True\n\n    scripts_to_generate = []\n\n    # Special case pip and setuptools to generate versioned wrappers\n    #\n    # The issue is that some projects (specifically, pip and setuptools) use\n    # code in setup.py to create \"versioned\" entry points - pip2.7 on Python\n    # 2.7, pip3.3 on Python 3.3, etc. But these entry points are baked into\n    # the wheel metadata at build time, and so if the wheel is installed with\n    # a *different* version of Python the entry points will be wrong. The\n    # correct fix for this is to enhance the metadata to be able to describe\n    # such versioned entry points, but that won't happen till Metadata 2.0 is\n    # available.\n    # In the meantime, projects using versioned entry points will either have\n    # incorrect versioned entry points, or they will not be able to distribute\n    # \"universal\" wheels (i.e., they will need a wheel per Python version).\n    #\n    # Because setuptools and pip are bundled with _ensurepip and virtualenv,\n    # we need to use universal wheels. So, as a stopgap until Metadata 2.0, we\n    # override the versioned entry points in the wheel and generate the\n    # correct ones. This code is purely a short-term measure until Metadata 2.0\n    # is available.\n    #\n    # To add the level of hack in this section of code, in order to support\n    # ensurepip this code will look for an ``ENSUREPIP_OPTIONS`` environment\n    # variable which will control which version scripts get installed.\n    #\n    # ENSUREPIP_OPTIONS=altinstall\n    #   - Only pipX.Y and easy_install-X.Y will be generated and installed\n    # ENSUREPIP_OPTIONS=install\n    #   - pipX.Y, pipX, easy_install-X.Y will be generated and installed. Note\n    #     that this option is technically if ENSUREPIP_OPTIONS is set and is\n    #     not altinstall\n    # DEFAULT\n    #   - The default behavior is to install pip, pipX, pipX.Y, easy_install\n    #     and easy_install-X.Y.\n    pip_script = console.pop('pip', None)\n    if pip_script:\n        if \"ENSUREPIP_OPTIONS\" not in os.environ:\n            scripts_to_generate.append('pip = ' + pip_script)\n\n        if os.environ.get(\"ENSUREPIP_OPTIONS\", \"\") != \"altinstall\":\n            scripts_to_generate.append(\n                'pip{} = {}'.format(sys.version_info[0], pip_script)\n            )\n\n        scripts_to_generate.append(\n            'pip{} = {}'.format(get_major_minor_version(), pip_script)\n        )\n        # Delete any other versioned pip entry points\n        pip_ep = [k for k in console if re.match(r'pip(\\d(\\.\\d)?)?$', k)]\n        for k in pip_ep:\n            del console[k]\n    easy_install_script = console.pop('easy_install', None)\n    if easy_install_script:\n        if \"ENSUREPIP_OPTIONS\" not in os.environ:\n            scripts_to_generate.append(\n                'easy_install = ' + easy_install_script\n            )\n\n        scripts_to_generate.append(\n            'easy_install-{} = {}'.format(\n                get_major_minor_version(), easy_install_script\n            )\n        )\n        # Delete any other versioned easy_install entry points\n        easy_install_ep = [\n            k for k in console if re.match(r'easy_install(-\\d\\.\\d)?$', k)\n        ]\n        for k in easy_install_ep:\n            del console[k]\n\n    # Generate the console and GUI entry points specified in the wheel\n    scripts_to_generate.extend(starmap('{} = {}'.format, console.items()))\n\n    gui_scripts_to_generate = list(starmap('{} = {}'.format, gui.items()))\n\n    generated_console_scripts = []  # type: List[str]\n\n    try:\n        generated_console_scripts = maker.make_multiple(scripts_to_generate)\n        generated.extend(generated_console_scripts)\n\n        generated.extend(\n            maker.make_multiple(gui_scripts_to_generate, {'gui': True})\n        )\n    except MissingCallableSuffix as e:\n        entry = e.args[0]\n        raise InstallationError(\n            \"Invalid script entry point: {} for req: {} - A callable \"\n            \"suffix is required. Cf https://packaging.python.org/\"\n            \"specifications/entry-points/#use-for-scripts for more \"\n            \"information.\".format(entry, req_description)\n        )\n\n    if warn_script_location:\n        msg = message_about_scripts_not_on_PATH(generated_console_scripts)\n        if msg is not None:\n            logger.warning(msg)\n\n    generated_file_mode = 0o666 - current_umask()\n\n    @contextlib.contextmanager\n    def _generate_file(path, **kwargs):\n        # type: (str, **Any) -> Iterator[NamedTemporaryFileResult]\n        with adjacent_tmp_file(path, **kwargs) as f:\n            yield f\n        os.chmod(f.name, generated_file_mode)\n        replace(f.name, path)\n\n    # Record pip as the installer\n    installer_path = os.path.join(dest_info_dir, 'INSTALLER')\n    with _generate_file(installer_path) as installer_file:\n        installer_file.write(b'pip\\n')\n    generated.append(installer_path)\n\n    # Record the PEP 610 direct URL reference\n    if direct_url is not None:\n        direct_url_path = os.path.join(dest_info_dir, DIRECT_URL_METADATA_NAME)\n        with _generate_file(direct_url_path) as direct_url_file:\n            direct_url_file.write(direct_url.to_json().encode(\"utf-8\"))\n        generated.append(direct_url_path)\n\n    # Record details of all files installed\n    record_path = os.path.join(dest_info_dir, 'RECORD')\n    with open(record_path, **csv_io_kwargs('r')) as record_file:\n        rows = get_csv_rows_for_installed(\n            csv.reader(record_file),\n            installed=installed,\n            changed=changed,\n            generated=generated,\n            lib_dir=lib_dir)\n    with _generate_file(record_path, **csv_io_kwargs('w')) as record_file:\n        writer = csv.writer(record_file)\n        writer.writerows(sorted_outrows(rows))  # sort to simplify testing\n\n\ndef install_wheel(\n    name,  # type: str\n    wheel_path,  # type: str\n    scheme,  # type: Scheme\n    req_description,  # type: str\n    pycompile=True,  # type: bool\n    warn_script_location=True,  # type: bool\n    _temp_dir_for_testing=None,  # type: Optional[str]\n    direct_url=None,  # type: Optional[DirectUrl]\n):\n    # type: (...) -> None\n    with TempDirectory(\n        path=_temp_dir_for_testing, kind=\"unpacked-wheel\"\n    ) as unpacked_dir, ZipFile(wheel_path, allowZip64=True) as z:\n        unpack_file(wheel_path, unpacked_dir.path)\n        install_unpacked_wheel(\n            name=name,\n            wheeldir=unpacked_dir.path,\n            wheel_zip=z,\n            scheme=scheme,\n            req_description=req_description,\n            pycompile=pycompile,\n            warn_script_location=warn_script_location,\n            direct_url=direct_url,\n        )\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- venv/Lib/site-packages/pip/_internal/operations/install/wheel.py	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/pip/_internal/operations/install/wheel.py	(date 1589990191115)
+@@ -567,7 +567,7 @@
+         if msg is not None:
+             logger.warning(msg)
+ 
+-    generated_file_mode = 0o666 - current_umask()
++    generated_file_mode = 0o666 & ~current_umask()
+ 
+     @contextlib.contextmanager
+     def _generate_file(path, **kwargs):
+Index: venv/pyvenv.cfg
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>home = C:\\Users\\USER\\AppData\\Local\\Programs\\Python\\Python37-32\r\ninclude-system-site-packages = false\r\nversion = 3.7.4\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- venv/pyvenv.cfg	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/pyvenv.cfg	(date 1589990130434)
+@@ -1,3 +1,3 @@
+-home = C:\Users\USER\AppData\Local\Programs\Python\Python37-32
++home = c:\Users\winy\AppData\Local\Programs\Python\Python37-32
+ include-system-site-packages = false
+ version = 3.7.4
+Index: venv/Lib/site-packages/setuptools/config.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from __future__ import absolute_import, unicode_literals\nimport io\nimport os\nimport sys\n\nimport warnings\nimport functools\nfrom collections import defaultdict\nfrom functools import partial\nfrom functools import wraps\nfrom importlib import import_module\n\nfrom distutils.errors import DistutilsOptionError, DistutilsFileError\nfrom setuptools.extern.packaging.version import LegacyVersion, parse\nfrom setuptools.extern.packaging.specifiers import SpecifierSet\nfrom setuptools.extern.six import string_types, PY3\n\n\n__metaclass__ = type\n\n\ndef read_configuration(\n        filepath, find_others=False, ignore_option_errors=False):\n    \"\"\"Read given configuration file and returns options from it as a dict.\n\n    :param str|unicode filepath: Path to configuration file\n        to get options from.\n\n    :param bool find_others: Whether to search for other configuration files\n        which could be on in various places.\n\n    :param bool ignore_option_errors: Whether to silently ignore\n        options, values of which could not be resolved (e.g. due to exceptions\n        in directives such as file:, attr:, etc.).\n        If False exceptions are propagated as expected.\n\n    :rtype: dict\n    \"\"\"\n    from setuptools.dist import Distribution, _Distribution\n\n    filepath = os.path.abspath(filepath)\n\n    if not os.path.isfile(filepath):\n        raise DistutilsFileError(\n            'Configuration file %s does not exist.' % filepath)\n\n    current_directory = os.getcwd()\n    os.chdir(os.path.dirname(filepath))\n\n    try:\n        dist = Distribution()\n\n        filenames = dist.find_config_files() if find_others else []\n        if filepath not in filenames:\n            filenames.append(filepath)\n\n        _Distribution.parse_config_files(dist, filenames=filenames)\n\n        handlers = parse_configuration(\n            dist, dist.command_options,\n            ignore_option_errors=ignore_option_errors)\n\n    finally:\n        os.chdir(current_directory)\n\n    return configuration_to_dict(handlers)\n\n\ndef _get_option(target_obj, key):\n    \"\"\"\n    Given a target object and option key, get that option from\n    the target object, either through a get_{key} method or\n    from an attribute directly.\n    \"\"\"\n    getter_name = 'get_{key}'.format(**locals())\n    by_attribute = functools.partial(getattr, target_obj, key)\n    getter = getattr(target_obj, getter_name, by_attribute)\n    return getter()\n\n\ndef configuration_to_dict(handlers):\n    \"\"\"Returns configuration data gathered by given handlers as a dict.\n\n    :param list[ConfigHandler] handlers: Handlers list,\n        usually from parse_configuration()\n\n    :rtype: dict\n    \"\"\"\n    config_dict = defaultdict(dict)\n\n    for handler in handlers:\n        for option in handler.set_options:\n            value = _get_option(handler.target_obj, option)\n            config_dict[handler.section_prefix][option] = value\n\n    return config_dict\n\n\ndef parse_configuration(\n        distribution, command_options, ignore_option_errors=False):\n    \"\"\"Performs additional parsing of configuration options\n    for a distribution.\n\n    Returns a list of used option handlers.\n\n    :param Distribution distribution:\n    :param dict command_options:\n    :param bool ignore_option_errors: Whether to silently ignore\n        options, values of which could not be resolved (e.g. due to exceptions\n        in directives such as file:, attr:, etc.).\n        If False exceptions are propagated as expected.\n    :rtype: list\n    \"\"\"\n    options = ConfigOptionsHandler(\n        distribution, command_options, ignore_option_errors)\n    options.parse()\n\n    meta = ConfigMetadataHandler(\n        distribution.metadata, command_options, ignore_option_errors,\n        distribution.package_dir)\n    meta.parse()\n\n    return meta, options\n\n\nclass ConfigHandler:\n    \"\"\"Handles metadata supplied in configuration files.\"\"\"\n\n    section_prefix = None\n    \"\"\"Prefix for config sections handled by this handler.\n    Must be provided by class heirs.\n\n    \"\"\"\n\n    aliases = {}\n    \"\"\"Options aliases.\n    For compatibility with various packages. E.g.: d2to1 and pbr.\n    Note: `-` in keys is replaced with `_` by config parser.\n\n    \"\"\"\n\n    def __init__(self, target_obj, options, ignore_option_errors=False):\n        sections = {}\n\n        section_prefix = self.section_prefix\n        for section_name, section_options in options.items():\n            if not section_name.startswith(section_prefix):\n                continue\n\n            section_name = section_name.replace(section_prefix, '').strip('.')\n            sections[section_name] = section_options\n\n        self.ignore_option_errors = ignore_option_errors\n        self.target_obj = target_obj\n        self.sections = sections\n        self.set_options = []\n\n    @property\n    def parsers(self):\n        \"\"\"Metadata item name to parser function mapping.\"\"\"\n        raise NotImplementedError(\n            '%s must provide .parsers property' % self.__class__.__name__)\n\n    def __setitem__(self, option_name, value):\n        unknown = tuple()\n        target_obj = self.target_obj\n\n        # Translate alias into real name.\n        option_name = self.aliases.get(option_name, option_name)\n\n        current_value = getattr(target_obj, option_name, unknown)\n\n        if current_value is unknown:\n            raise KeyError(option_name)\n\n        if current_value:\n            # Already inhabited. Skipping.\n            return\n\n        skip_option = False\n        parser = self.parsers.get(option_name)\n        if parser:\n            try:\n                value = parser(value)\n\n            except Exception:\n                skip_option = True\n                if not self.ignore_option_errors:\n                    raise\n\n        if skip_option:\n            return\n\n        setter = getattr(target_obj, 'set_%s' % option_name, None)\n        if setter is None:\n            setattr(target_obj, option_name, value)\n        else:\n            setter(value)\n\n        self.set_options.append(option_name)\n\n    @classmethod\n    def _parse_list(cls, value, separator=','):\n        \"\"\"Represents value as a list.\n\n        Value is split either by separator (defaults to comma) or by lines.\n\n        :param value:\n        :param separator: List items separator character.\n        :rtype: list\n        \"\"\"\n        if isinstance(value, list):  # _get_parser_compound case\n            return value\n\n        if '\\n' in value:\n            value = value.splitlines()\n        else:\n            value = value.split(separator)\n\n        return [chunk.strip() for chunk in value if chunk.strip()]\n\n    @classmethod\n    def _parse_dict(cls, value):\n        \"\"\"Represents value as a dict.\n\n        :param value:\n        :rtype: dict\n        \"\"\"\n        separator = '='\n        result = {}\n        for line in cls._parse_list(value):\n            key, sep, val = line.partition(separator)\n            if sep != separator:\n                raise DistutilsOptionError(\n                    'Unable to parse option value to dict: %s' % value)\n            result[key.strip()] = val.strip()\n\n        return result\n\n    @classmethod\n    def _parse_bool(cls, value):\n        \"\"\"Represents value as boolean.\n\n        :param value:\n        :rtype: bool\n        \"\"\"\n        value = value.lower()\n        return value in ('1', 'true', 'yes')\n\n    @classmethod\n    def _exclude_files_parser(cls, key):\n        \"\"\"Returns a parser function to make sure field inputs\n        are not files.\n\n        Parses a value after getting the key so error messages are\n        more informative.\n\n        :param key:\n        :rtype: callable\n        \"\"\"\n        def parser(value):\n            exclude_directive = 'file:'\n            if value.startswith(exclude_directive):\n                raise ValueError(\n                    'Only strings are accepted for the {0} field, '\n                    'files are not accepted'.format(key))\n            return value\n        return parser\n\n    @classmethod\n    def _parse_file(cls, value):\n        \"\"\"Represents value as a string, allowing including text\n        from nearest files using `file:` directive.\n\n        Directive is sandboxed and won't reach anything outside\n        directory with setup.py.\n\n        Examples:\n            file: README.rst, CHANGELOG.md, src/file.txt\n\n        :param str value:\n        :rtype: str\n        \"\"\"\n        include_directive = 'file:'\n\n        if not isinstance(value, string_types):\n            return value\n\n        if not value.startswith(include_directive):\n            return value\n\n        spec = value[len(include_directive):]\n        filepaths = (os.path.abspath(path.strip()) for path in spec.split(','))\n        return '\\n'.join(\n            cls._read_file(path)\n            for path in filepaths\n            if (cls._assert_local(path) or True)\n            and os.path.isfile(path)\n        )\n\n    @staticmethod\n    def _assert_local(filepath):\n        if not filepath.startswith(os.getcwd()):\n            raise DistutilsOptionError(\n                '`file:` directive can not access %s' % filepath)\n\n    @staticmethod\n    def _read_file(filepath):\n        with io.open(filepath, encoding='utf-8') as f:\n            return f.read()\n\n    @classmethod\n    def _parse_attr(cls, value, package_dir=None):\n        \"\"\"Represents value as a module attribute.\n\n        Examples:\n            attr: package.attr\n            attr: package.module.attr\n\n        :param str value:\n        :rtype: str\n        \"\"\"\n        attr_directive = 'attr:'\n        if not value.startswith(attr_directive):\n            return value\n\n        attrs_path = value.replace(attr_directive, '').strip().split('.')\n        attr_name = attrs_path.pop()\n\n        module_name = '.'.join(attrs_path)\n        module_name = module_name or '__init__'\n\n        parent_path = os.getcwd()\n        if package_dir:\n            if attrs_path[0] in package_dir:\n                # A custom path was specified for the module we want to import\n                custom_path = package_dir[attrs_path[0]]\n                parts = custom_path.rsplit('/', 1)\n                if len(parts) > 1:\n                    parent_path = os.path.join(os.getcwd(), parts[0])\n                    module_name = parts[1]\n                else:\n                    module_name = custom_path\n            elif '' in package_dir:\n                # A custom parent directory was specified for all root modules\n                parent_path = os.path.join(os.getcwd(), package_dir[''])\n        sys.path.insert(0, parent_path)\n        try:\n            module = import_module(module_name)\n            value = getattr(module, attr_name)\n\n        finally:\n            sys.path = sys.path[1:]\n\n        return value\n\n    @classmethod\n    def _get_parser_compound(cls, *parse_methods):\n        \"\"\"Returns parser function to represents value as a list.\n\n        Parses a value applying given methods one after another.\n\n        :param parse_methods:\n        :rtype: callable\n        \"\"\"\n        def parse(value):\n            parsed = value\n\n            for method in parse_methods:\n                parsed = method(parsed)\n\n            return parsed\n\n        return parse\n\n    @classmethod\n    def _parse_section_to_dict(cls, section_options, values_parser=None):\n        \"\"\"Parses section options into a dictionary.\n\n        Optionally applies a given parser to values.\n\n        :param dict section_options:\n        :param callable values_parser:\n        :rtype: dict\n        \"\"\"\n        value = {}\n        values_parser = values_parser or (lambda val: val)\n        for key, (_, val) in section_options.items():\n            value[key] = values_parser(val)\n        return value\n\n    def parse_section(self, section_options):\n        \"\"\"Parses configuration file section.\n\n        :param dict section_options:\n        \"\"\"\n        for (name, (_, value)) in section_options.items():\n            try:\n                self[name] = value\n\n            except KeyError:\n                pass  # Keep silent for a new option may appear anytime.\n\n    def parse(self):\n        \"\"\"Parses configuration file items from one\n        or more related sections.\n\n        \"\"\"\n        for section_name, section_options in self.sections.items():\n\n            method_postfix = ''\n            if section_name:  # [section.option] variant\n                method_postfix = '_%s' % section_name\n\n            section_parser_method = getattr(\n                self,\n                # Dots in section names are translated into dunderscores.\n                ('parse_section%s' % method_postfix).replace('.', '__'),\n                None)\n\n            if section_parser_method is None:\n                raise DistutilsOptionError(\n                    'Unsupported distribution option section: [%s.%s]' % (\n                        self.section_prefix, section_name))\n\n            section_parser_method(section_options)\n\n    def _deprecated_config_handler(self, func, msg, warning_class):\n        \"\"\" this function will wrap around parameters that are deprecated\n\n        :param msg: deprecation message\n        :param warning_class: class of warning exception to be raised\n        :param func: function to be wrapped around\n        \"\"\"\n        @wraps(func)\n        def config_handler(*args, **kwargs):\n            warnings.warn(msg, warning_class)\n            return func(*args, **kwargs)\n\n        return config_handler\n\n\nclass ConfigMetadataHandler(ConfigHandler):\n\n    section_prefix = 'metadata'\n\n    aliases = {\n        'home_page': 'url',\n        'summary': 'description',\n        'classifier': 'classifiers',\n        'platform': 'platforms',\n    }\n\n    strict_mode = False\n    \"\"\"We need to keep it loose, to be partially compatible with\n    `pbr` and `d2to1` packages which also uses `metadata` section.\n\n    \"\"\"\n\n    def __init__(self, target_obj, options, ignore_option_errors=False,\n                 package_dir=None):\n        super(ConfigMetadataHandler, self).__init__(target_obj, options,\n                                                    ignore_option_errors)\n        self.package_dir = package_dir\n\n    @property\n    def parsers(self):\n        \"\"\"Metadata item name to parser function mapping.\"\"\"\n        parse_list = self._parse_list\n        parse_file = self._parse_file\n        parse_dict = self._parse_dict\n        exclude_files_parser = self._exclude_files_parser\n\n        return {\n            'platforms': parse_list,\n            'keywords': parse_list,\n            'provides': parse_list,\n            'requires': self._deprecated_config_handler(\n                parse_list,\n                \"The requires parameter is deprecated, please use \"\n                \"install_requires for runtime dependencies.\",\n                DeprecationWarning),\n            'obsoletes': parse_list,\n            'classifiers': self._get_parser_compound(parse_file, parse_list),\n            'license': exclude_files_parser('license'),\n            'license_files': parse_list,\n            'description': parse_file,\n            'long_description': parse_file,\n            'version': self._parse_version,\n            'project_urls': parse_dict,\n        }\n\n    def _parse_version(self, value):\n        \"\"\"Parses `version` option value.\n\n        :param value:\n        :rtype: str\n\n        \"\"\"\n        version = self._parse_file(value)\n\n        if version != value:\n            version = version.strip()\n            # Be strict about versions loaded from file because it's easy to\n            # accidentally include newlines and other unintended content\n            if isinstance(parse(version), LegacyVersion):\n                tmpl = (\n                    'Version loaded from {value} does not '\n                    'comply with PEP 440: {version}'\n                )\n                raise DistutilsOptionError(tmpl.format(**locals()))\n\n            return version\n\n        version = self._parse_attr(value, self.package_dir)\n\n        if callable(version):\n            version = version()\n\n        if not isinstance(version, string_types):\n            if hasattr(version, '__iter__'):\n                version = '.'.join(map(str, version))\n            else:\n                version = '%s' % version\n\n        return version\n\n\nclass ConfigOptionsHandler(ConfigHandler):\n\n    section_prefix = 'options'\n\n    @property\n    def parsers(self):\n        \"\"\"Metadata item name to parser function mapping.\"\"\"\n        parse_list = self._parse_list\n        parse_list_semicolon = partial(self._parse_list, separator=';')\n        parse_bool = self._parse_bool\n        parse_dict = self._parse_dict\n\n        return {\n            'zip_safe': parse_bool,\n            'use_2to3': parse_bool,\n            'include_package_data': parse_bool,\n            'package_dir': parse_dict,\n            'use_2to3_fixers': parse_list,\n            'use_2to3_exclude_fixers': parse_list,\n            'convert_2to3_doctests': parse_list,\n            'scripts': parse_list,\n            'eager_resources': parse_list,\n            'dependency_links': parse_list,\n            'namespace_packages': parse_list,\n            'install_requires': parse_list_semicolon,\n            'setup_requires': parse_list_semicolon,\n            'tests_require': parse_list_semicolon,\n            'packages': self._parse_packages,\n            'entry_points': self._parse_file,\n            'py_modules': parse_list,\n            'python_requires': SpecifierSet,\n        }\n\n    def _parse_packages(self, value):\n        \"\"\"Parses `packages` option value.\n\n        :param value:\n        :rtype: list\n        \"\"\"\n        find_directives = ['find:', 'find_namespace:']\n        trimmed_value = value.strip()\n\n        if trimmed_value not in find_directives:\n            return self._parse_list(value)\n\n        findns = trimmed_value == find_directives[1]\n        if findns and not PY3:\n            raise DistutilsOptionError(\n                'find_namespace: directive is unsupported on Python < 3.3')\n\n        # Read function arguments from a dedicated section.\n        find_kwargs = self.parse_section_packages__find(\n            self.sections.get('packages.find', {}))\n\n        if findns:\n            from setuptools import find_namespace_packages as find_packages\n        else:\n            from setuptools import find_packages\n\n        return find_packages(**find_kwargs)\n\n    def parse_section_packages__find(self, section_options):\n        \"\"\"Parses `packages.find` configuration file section.\n\n        To be used in conjunction with _parse_packages().\n\n        :param dict section_options:\n        \"\"\"\n        section_data = self._parse_section_to_dict(\n            section_options, self._parse_list)\n\n        valid_keys = ['where', 'include', 'exclude']\n\n        find_kwargs = dict(\n            [(k, v) for k, v in section_data.items() if k in valid_keys and v])\n\n        where = find_kwargs.get('where')\n        if where is not None:\n            find_kwargs['where'] = where[0]  # cast list to single val\n\n        return find_kwargs\n\n    def parse_section_entry_points(self, section_options):\n        \"\"\"Parses `entry_points` configuration file section.\n\n        :param dict section_options:\n        \"\"\"\n        parsed = self._parse_section_to_dict(section_options, self._parse_list)\n        self['entry_points'] = parsed\n\n    def _parse_package_data(self, section_options):\n        parsed = self._parse_section_to_dict(section_options, self._parse_list)\n\n        root = parsed.get('*')\n        if root:\n            parsed[''] = root\n            del parsed['*']\n\n        return parsed\n\n    def parse_section_package_data(self, section_options):\n        \"\"\"Parses `package_data` configuration file section.\n\n        :param dict section_options:\n        \"\"\"\n        self['package_data'] = self._parse_package_data(section_options)\n\n    def parse_section_exclude_package_data(self, section_options):\n        \"\"\"Parses `exclude_package_data` configuration file section.\n\n        :param dict section_options:\n        \"\"\"\n        self['exclude_package_data'] = self._parse_package_data(\n            section_options)\n\n    def parse_section_extras_require(self, section_options):\n        \"\"\"Parses `extras_require` configuration file section.\n\n        :param dict section_options:\n        \"\"\"\n        parse_list = partial(self._parse_list, separator=';')\n        self['extras_require'] = self._parse_section_to_dict(\n            section_options, parse_list)\n\n    def parse_section_data_files(self, section_options):\n        \"\"\"Parses `data_files` configuration file section.\n\n        :param dict section_options:\n        \"\"\"\n        parsed = self._parse_section_to_dict(section_options, self._parse_list)\n        self['data_files'] = [(k, v) for k, v in parsed.items()]\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- venv/Lib/site-packages/setuptools/config.py	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/setuptools/config.py	(date 1589990187716)
+@@ -1,14 +1,16 @@
+ from __future__ import absolute_import, unicode_literals
++import ast
+ import io
+ import os
+ import sys
+ 
+ import warnings
+ import functools
++import importlib
+ from collections import defaultdict
+ from functools import partial
+ from functools import wraps
+-from importlib import import_module
++import contextlib
+ 
+ from distutils.errors import DistutilsOptionError, DistutilsFileError
+ from setuptools.extern.packaging.version import LegacyVersion, parse
+@@ -19,6 +21,44 @@
+ __metaclass__ = type
+ 
+ 
++class StaticModule:
++    """
++    Attempt to load the module by the name
++    """
++    def __init__(self, name):
++        spec = importlib.util.find_spec(name)
++        with open(spec.origin) as strm:
++            src = strm.read()
++        module = ast.parse(src)
++        vars(self).update(locals())
++        del self.self
++
++    def __getattr__(self, attr):
++        try:
++            return next(
++                ast.literal_eval(statement.value)
++                for statement in self.module.body
++                if isinstance(statement, ast.Assign)
++                for target in statement.targets
++                if isinstance(target, ast.Name) and target.id == attr
++            )
++        except Exception:
++            raise AttributeError(
++                "{self.name} has no attribute {attr}".format(**locals()))
++
++
++@contextlib.contextmanager
++def patch_path(path):
++    """
++    Add path to front of sys.path for the duration of the context.
++    """
++    try:
++        sys.path.insert(0, path)
++        yield
++    finally:
++        sys.path.remove(path)
++
++
+ def read_configuration(
+         filepath, find_others=False, ignore_option_errors=False):
+     """Read given configuration file and returns options from it as a dict.
+@@ -344,15 +384,16 @@
+             elif '' in package_dir:
+                 # A custom parent directory was specified for all root modules
+                 parent_path = os.path.join(os.getcwd(), package_dir[''])
+-        sys.path.insert(0, parent_path)
+-        try:
+-            module = import_module(module_name)
+-            value = getattr(module, attr_name)
++
++        with patch_path(parent_path):
++            try:
++                # attempt to load value statically
++                return getattr(StaticModule(module_name), attr_name)
++            except Exception:
++                # fallback to simple import
++                module = importlib.import_module(module_name)
+ 
+-        finally:
+-            sys.path = sys.path[1:]
+-
+-        return value
++        return getattr(module, attr_name)
+ 
+     @classmethod
+     def _get_parser_compound(cls, *parse_methods):
+Index: venv/Lib/site-packages/pip/_internal/commands/list.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># The following comment should be removed at some point in the future.\n# mypy: disallow-untyped-defs=False\n\nfrom __future__ import absolute_import\n\nimport json\nimport logging\nfrom multiprocessing.dummy import Pool\n\nfrom pip._vendor import six\nfrom pip._vendor.requests.adapters import DEFAULT_POOLSIZE\n\nfrom pip._internal.cli import cmdoptions\nfrom pip._internal.cli.req_command import IndexGroupCommand\nfrom pip._internal.exceptions import CommandError\nfrom pip._internal.index.package_finder import PackageFinder\nfrom pip._internal.models.selection_prefs import SelectionPreferences\nfrom pip._internal.self_outdated_check import make_link_collector\nfrom pip._internal.utils.misc import (\n    dist_is_editable,\n    get_installed_distributions,\n    tabulate,\n    write_output,\n)\nfrom pip._internal.utils.packaging import get_installer\n\nlogger = logging.getLogger(__name__)\n\n\nclass ListCommand(IndexGroupCommand):\n    \"\"\"\n    List installed packages, including editables.\n\n    Packages are listed in a case-insensitive sorted order.\n    \"\"\"\n\n    usage = \"\"\"\n      %prog [options]\"\"\"\n\n    def __init__(self, *args, **kw):\n        super(ListCommand, self).__init__(*args, **kw)\n\n        cmd_opts = self.cmd_opts\n\n        cmd_opts.add_option(\n            '-o', '--outdated',\n            action='store_true',\n            default=False,\n            help='List outdated packages')\n        cmd_opts.add_option(\n            '-u', '--uptodate',\n            action='store_true',\n            default=False,\n            help='List uptodate packages')\n        cmd_opts.add_option(\n            '-e', '--editable',\n            action='store_true',\n            default=False,\n            help='List editable projects.')\n        cmd_opts.add_option(\n            '-l', '--local',\n            action='store_true',\n            default=False,\n            help=('If in a virtualenv that has global access, do not list '\n                  'globally-installed packages.'),\n        )\n        self.cmd_opts.add_option(\n            '--user',\n            dest='user',\n            action='store_true',\n            default=False,\n            help='Only output packages installed in user-site.')\n        cmd_opts.add_option(cmdoptions.list_path())\n        cmd_opts.add_option(\n            '--pre',\n            action='store_true',\n            default=False,\n            help=(\"Include pre-release and development versions. By default, \"\n                  \"pip only finds stable versions.\"),\n        )\n\n        cmd_opts.add_option(\n            '--format',\n            action='store',\n            dest='list_format',\n            default=\"columns\",\n            choices=('columns', 'freeze', 'json'),\n            help=\"Select the output format among: columns (default), freeze, \"\n                 \"or json\",\n        )\n\n        cmd_opts.add_option(\n            '--not-required',\n            action='store_true',\n            dest='not_required',\n            help=\"List packages that are not dependencies of \"\n                 \"installed packages.\",\n        )\n\n        cmd_opts.add_option(\n            '--exclude-editable',\n            action='store_false',\n            dest='include_editable',\n            help='Exclude editable package from output.',\n        )\n        cmd_opts.add_option(\n            '--include-editable',\n            action='store_true',\n            dest='include_editable',\n            help='Include editable package from output.',\n            default=True,\n        )\n        index_opts = cmdoptions.make_option_group(\n            cmdoptions.index_group, self.parser\n        )\n\n        self.parser.insert_option_group(0, index_opts)\n        self.parser.insert_option_group(0, cmd_opts)\n\n    def _build_package_finder(self, options, session):\n        \"\"\"\n        Create a package finder appropriate to this list command.\n        \"\"\"\n        link_collector = make_link_collector(session, options=options)\n\n        # Pass allow_yanked=False to ignore yanked versions.\n        selection_prefs = SelectionPreferences(\n            allow_yanked=False,\n            allow_all_prereleases=options.pre,\n        )\n\n        return PackageFinder.create(\n            link_collector=link_collector,\n            selection_prefs=selection_prefs,\n        )\n\n    def run(self, options, args):\n        if options.outdated and options.uptodate:\n            raise CommandError(\n                \"Options --outdated and --uptodate cannot be combined.\")\n\n        cmdoptions.check_list_path_option(options)\n\n        packages = get_installed_distributions(\n            local_only=options.local,\n            user_only=options.user,\n            editables_only=options.editable,\n            include_editables=options.include_editable,\n            paths=options.path,\n        )\n\n        # get_not_required must be called firstly in order to find and\n        # filter out all dependencies correctly. Otherwise a package\n        # can't be identified as requirement because some parent packages\n        # could be filtered out before.\n        if options.not_required:\n            packages = self.get_not_required(packages, options)\n\n        if options.outdated:\n            packages = self.get_outdated(packages, options)\n        elif options.uptodate:\n            packages = self.get_uptodate(packages, options)\n\n        self.output_package_listing(packages, options)\n\n    def get_outdated(self, packages, options):\n        return [\n            dist for dist in self.iter_packages_latest_infos(packages, options)\n            if dist.latest_version > dist.parsed_version\n        ]\n\n    def get_uptodate(self, packages, options):\n        return [\n            dist for dist in self.iter_packages_latest_infos(packages, options)\n            if dist.latest_version == dist.parsed_version\n        ]\n\n    def get_not_required(self, packages, options):\n        dep_keys = set()\n        for dist in packages:\n            dep_keys.update(requirement.key for requirement in dist.requires())\n        return {pkg for pkg in packages if pkg.key not in dep_keys}\n\n    def iter_packages_latest_infos(self, packages, options):\n        with self._build_session(options) as session:\n            finder = self._build_package_finder(options, session)\n\n            def latest_info(dist):\n                typ = 'unknown'\n                all_candidates = finder.find_all_candidates(dist.key)\n                if not options.pre:\n                    # Remove prereleases\n                    all_candidates = [candidate for candidate in all_candidates\n                                      if not candidate.version.is_prerelease]\n\n                evaluator = finder.make_candidate_evaluator(\n                    project_name=dist.project_name,\n                )\n                best_candidate = evaluator.sort_best_candidate(all_candidates)\n                if best_candidate is None:\n                    return None\n\n                remote_version = best_candidate.version\n                if best_candidate.link.is_wheel:\n                    typ = 'wheel'\n                else:\n                    typ = 'sdist'\n                # This is dirty but makes the rest of the code much cleaner\n                dist.latest_version = remote_version\n                dist.latest_filetype = typ\n                return dist\n\n            # This is done for 2x speed up of requests to pypi.org\n            # so that \"real time\" of this function\n            # is almost equal to \"user time\"\n            pool = Pool(DEFAULT_POOLSIZE)\n\n            for dist in pool.imap_unordered(latest_info, packages):\n                if dist is not None:\n                    yield dist\n\n            pool.close()\n            pool.join()\n\n    def output_package_listing(self, packages, options):\n        packages = sorted(\n            packages,\n            key=lambda dist: dist.project_name.lower(),\n        )\n        if options.list_format == 'columns' and packages:\n            data, header = format_for_columns(packages, options)\n            self.output_package_listing_columns(data, header)\n        elif options.list_format == 'freeze':\n            for dist in packages:\n                if options.verbose >= 1:\n                    write_output(\"%s==%s (%s)\", dist.project_name,\n                                 dist.version, dist.location)\n                else:\n                    write_output(\"%s==%s\", dist.project_name, dist.version)\n        elif options.list_format == 'json':\n            write_output(format_for_json(packages, options))\n\n    def output_package_listing_columns(self, data, header):\n        # insert the header first: we need to know the size of column names\n        if len(data) > 0:\n            data.insert(0, header)\n\n        pkg_strings, sizes = tabulate(data)\n\n        # Create and add a separator.\n        if len(data) > 0:\n            pkg_strings.insert(1, \" \".join(map(lambda x: '-' * x, sizes)))\n\n        for val in pkg_strings:\n            write_output(val)\n\n\ndef format_for_columns(pkgs, options):\n    \"\"\"\n    Convert the package data into something usable\n    by output_package_listing_columns.\n    \"\"\"\n    running_outdated = options.outdated\n    # Adjust the header for the `pip list --outdated` case.\n    if running_outdated:\n        header = [\"Package\", \"Version\", \"Latest\", \"Type\"]\n    else:\n        header = [\"Package\", \"Version\"]\n\n    data = []\n    if options.verbose >= 1 or any(dist_is_editable(x) for x in pkgs):\n        header.append(\"Location\")\n    if options.verbose >= 1:\n        header.append(\"Installer\")\n\n    for proj in pkgs:\n        # if we're working on the 'outdated' list, separate out the\n        # latest_version and type\n        row = [proj.project_name, proj.version]\n\n        if running_outdated:\n            row.append(proj.latest_version)\n            row.append(proj.latest_filetype)\n\n        if options.verbose >= 1 or dist_is_editable(proj):\n            row.append(proj.location)\n        if options.verbose >= 1:\n            row.append(get_installer(proj))\n\n        data.append(row)\n\n    return data, header\n\n\ndef format_for_json(packages, options):\n    data = []\n    for dist in packages:\n        info = {\n            'name': dist.project_name,\n            'version': six.text_type(dist.version),\n        }\n        if options.verbose >= 1:\n            info['location'] = dist.location\n            info['installer'] = get_installer(dist)\n        if options.outdated:\n            info['latest_version'] = six.text_type(dist.latest_version)\n            info['latest_filetype'] = dist.latest_filetype\n        data.append(info)\n    return json.dumps(data)\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- venv/Lib/site-packages/pip/_internal/commands/list.py	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/pip/_internal/commands/list.py	(date 1589990191018)
+@@ -5,10 +5,8 @@
+ 
+ import json
+ import logging
+-from multiprocessing.dummy import Pool
+ 
+ from pip._vendor import six
+-from pip._vendor.requests.adapters import DEFAULT_POOLSIZE
+ 
+ from pip._internal.cli import cmdoptions
+ from pip._internal.cli.req_command import IndexGroupCommand
+@@ -210,18 +208,10 @@
+                 dist.latest_filetype = typ
+                 return dist
+ 
+-            # This is done for 2x speed up of requests to pypi.org
+-            # so that "real time" of this function
+-            # is almost equal to "user time"
+-            pool = Pool(DEFAULT_POOLSIZE)
+-
+-            for dist in pool.imap_unordered(latest_info, packages):
++            for dist in map(latest_info, packages):
+                 if dist is not None:
+                     yield dist
+ 
+-            pool.close()
+-            pool.join()
+-
+     def output_package_listing(self, packages, options):
+         packages = sorted(
+             packages,
+Index: venv/Lib/site-packages/pip/_internal/wheel_builder.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"\"\"Orchestrator for building wheels from InstallRequirements.\n\"\"\"\n\n# The following comment should be removed at some point in the future.\n# mypy: strict-optional=False\n\nimport logging\nimport os.path\nimport re\nimport shutil\n\nfrom pip._internal.models.link import Link\nfrom pip._internal.operations.build.wheel import build_wheel_pep517\nfrom pip._internal.operations.build.wheel_legacy import build_wheel_legacy\nfrom pip._internal.utils.logging import indent_log\nfrom pip._internal.utils.misc import ensure_dir, hash_file, is_wheel_installed\nfrom pip._internal.utils.setuptools_build import make_setuptools_clean_args\nfrom pip._internal.utils.subprocess import call_subprocess\nfrom pip._internal.utils.temp_dir import TempDirectory\nfrom pip._internal.utils.typing import MYPY_CHECK_RUNNING\nfrom pip._internal.utils.urls import path_to_url\nfrom pip._internal.vcs import vcs\n\nif MYPY_CHECK_RUNNING:\n    from typing import (\n        Any, Callable, Iterable, List, Optional, Pattern, Tuple,\n    )\n\n    from pip._internal.cache import WheelCache\n    from pip._internal.req.req_install import InstallRequirement\n\n    BinaryAllowedPredicate = Callable[[InstallRequirement], bool]\n    BuildResult = Tuple[List[InstallRequirement], List[InstallRequirement]]\n\nlogger = logging.getLogger(__name__)\n\n\ndef _contains_egg_info(\n        s, _egg_info_re=re.compile(r'([a-z0-9_.]+)-([a-z0-9_.!+-]+)', re.I)):\n    # type: (str, Pattern[str]) -> bool\n    \"\"\"Determine whether the string looks like an egg_info.\n\n    :param s: The string to parse. E.g. foo-2.1\n    \"\"\"\n    return bool(_egg_info_re.search(s))\n\n\ndef _should_build(\n    req,  # type: InstallRequirement\n    need_wheel,  # type: bool\n    check_binary_allowed,  # type: BinaryAllowedPredicate\n):\n    # type: (...) -> bool\n    \"\"\"Return whether an InstallRequirement should be built into a wheel.\"\"\"\n    if req.constraint:\n        # never build requirements that are merely constraints\n        return False\n    if req.is_wheel:\n        if need_wheel:\n            logger.info(\n                'Skipping %s, due to already being wheel.', req.name,\n            )\n        return False\n\n    if need_wheel:\n        # i.e. pip wheel, not pip install\n        return True\n\n    # From this point, this concerns the pip install command only\n    # (need_wheel=False).\n\n    if not req.use_pep517 and not is_wheel_installed():\n        # we don't build legacy requirements if wheel is not installed\n        logger.info(\n            \"Could not build wheels for %s, \"\n            \"since package 'wheel' is not installed.\", req.name,\n        )\n        return False\n\n    if req.editable or not req.source_dir:\n        return False\n\n    if not check_binary_allowed(req):\n        logger.info(\n            \"Skipping wheel build for %s, due to binaries \"\n            \"being disabled for it.\", req.name,\n        )\n        return False\n\n    return True\n\n\ndef should_build_for_wheel_command(\n    req,  # type: InstallRequirement\n):\n    # type: (...) -> bool\n    return _should_build(\n        req, need_wheel=True, check_binary_allowed=_always_true\n    )\n\n\ndef should_build_for_install_command(\n    req,  # type: InstallRequirement\n    check_binary_allowed,  # type: BinaryAllowedPredicate\n):\n    # type: (...) -> bool\n    return _should_build(\n        req, need_wheel=False, check_binary_allowed=check_binary_allowed\n    )\n\n\ndef _should_cache(\n    req,  # type: InstallRequirement\n):\n    # type: (...) -> Optional[bool]\n    \"\"\"\n    Return whether a built InstallRequirement can be stored in the persistent\n    wheel cache, assuming the wheel cache is available, and _should_build()\n    has determined a wheel needs to be built.\n    \"\"\"\n    if not should_build_for_install_command(\n        req, check_binary_allowed=_always_true\n    ):\n        # never cache if pip install would not have built\n        # (editable mode, etc)\n        return False\n\n    if req.link and req.link.is_vcs:\n        # VCS checkout. Do not cache\n        # unless it points to an immutable commit hash.\n        assert not req.editable\n        assert req.source_dir\n        vcs_backend = vcs.get_backend_for_scheme(req.link.scheme)\n        assert vcs_backend\n        if vcs_backend.is_immutable_rev_checkout(req.link.url, req.source_dir):\n            return True\n        return False\n\n    base, ext = req.link.splitext()\n    if _contains_egg_info(base):\n        return True\n\n    # Otherwise, do not cache.\n    return False\n\n\ndef _get_cache_dir(\n    req,  # type: InstallRequirement\n    wheel_cache,  # type: WheelCache\n):\n    # type: (...) -> str\n    \"\"\"Return the persistent or temporary cache directory where the built\n    wheel need to be stored.\n    \"\"\"\n    cache_available = bool(wheel_cache.cache_dir)\n    if cache_available and _should_cache(req):\n        cache_dir = wheel_cache.get_path_for_link(req.link)\n    else:\n        cache_dir = wheel_cache.get_ephem_path_for_link(req.link)\n    return cache_dir\n\n\ndef _always_true(_):\n    # type: (Any) -> bool\n    return True\n\n\ndef _build_one(\n    req,  # type: InstallRequirement\n    output_dir,  # type: str\n    build_options,  # type: List[str]\n    global_options,  # type: List[str]\n):\n    # type: (...) -> Optional[str]\n    \"\"\"Build one wheel.\n\n    :return: The filename of the built wheel, or None if the build failed.\n    \"\"\"\n    try:\n        ensure_dir(output_dir)\n    except OSError as e:\n        logger.warning(\n            \"Building wheel for %s failed: %s\",\n            req.name, e,\n        )\n        return None\n\n    # Install build deps into temporary directory (PEP 518)\n    with req.build_env:\n        return _build_one_inside_env(\n            req, output_dir, build_options, global_options\n        )\n\n\ndef _build_one_inside_env(\n    req,  # type: InstallRequirement\n    output_dir,  # type: str\n    build_options,  # type: List[str]\n    global_options,  # type: List[str]\n):\n    # type: (...) -> Optional[str]\n    with TempDirectory(kind=\"wheel\") as temp_dir:\n        if req.use_pep517:\n            wheel_path = build_wheel_pep517(\n                name=req.name,\n                backend=req.pep517_backend,\n                metadata_directory=req.metadata_directory,\n                build_options=build_options,\n                tempd=temp_dir.path,\n            )\n        else:\n            wheel_path = build_wheel_legacy(\n                name=req.name,\n                setup_py_path=req.setup_py_path,\n                source_dir=req.unpacked_source_directory,\n                global_options=global_options,\n                build_options=build_options,\n                tempd=temp_dir.path,\n            )\n\n        if wheel_path is not None:\n            wheel_name = os.path.basename(wheel_path)\n            dest_path = os.path.join(output_dir, wheel_name)\n            try:\n                wheel_hash, length = hash_file(wheel_path)\n                shutil.move(wheel_path, dest_path)\n                logger.info('Created wheel for %s: '\n                            'filename=%s size=%d sha256=%s',\n                            req.name, wheel_name, length,\n                            wheel_hash.hexdigest())\n                logger.info('Stored in directory: %s', output_dir)\n                return dest_path\n            except Exception as e:\n                logger.warning(\n                    \"Building wheel for %s failed: %s\",\n                    req.name, e,\n                )\n        # Ignore return, we can't do anything else useful.\n        if not req.use_pep517:\n            _clean_one_legacy(req, global_options)\n        return None\n\n\ndef _clean_one_legacy(req, global_options):\n    # type: (InstallRequirement, List[str]) -> bool\n    clean_args = make_setuptools_clean_args(\n        req.setup_py_path,\n        global_options=global_options,\n    )\n\n    logger.info('Running setup.py clean for %s', req.name)\n    try:\n        call_subprocess(clean_args, cwd=req.source_dir)\n        return True\n    except Exception:\n        logger.error('Failed cleaning build dir for %s', req.name)\n        return False\n\n\ndef build(\n    requirements,  # type: Iterable[InstallRequirement]\n    wheel_cache,  # type: WheelCache\n    build_options,  # type: List[str]\n    global_options,  # type: List[str]\n):\n    # type: (...) -> BuildResult\n    \"\"\"Build wheels.\n\n    :return: The list of InstallRequirement that succeeded to build and\n        the list of InstallRequirement that failed to build.\n    \"\"\"\n    if not requirements:\n        return [], []\n\n    # Build the wheels.\n    logger.info(\n        'Building wheels for collected packages: %s',\n        ', '.join(req.name for req in requirements),\n    )\n\n    with indent_log():\n        build_successes, build_failures = [], []\n        for req in requirements:\n            cache_dir = _get_cache_dir(req, wheel_cache)\n            wheel_file = _build_one(\n                req, cache_dir, build_options, global_options\n            )\n            if wheel_file:\n                # Update the link for this.\n                req.link = Link(path_to_url(wheel_file))\n                req.local_file_path = req.link.file_path\n                assert req.link.is_wheel\n                build_successes.append(req)\n            else:\n                build_failures.append(req)\n\n    # notify success/failure\n    if build_successes:\n        logger.info(\n            'Successfully built %s',\n            ' '.join([req.name for req in build_successes]),\n        )\n    if build_failures:\n        logger.info(\n            'Failed to build %s',\n            ' '.join([req.name for req in build_failures]),\n        )\n    # Return a list of requirements that failed to build\n    return build_successes, build_failures\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- venv/Lib/site-packages/pip/_internal/wheel_builder.py	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/pip/_internal/wheel_builder.py	(date 1589990190965)
+@@ -69,14 +69,6 @@
+     # From this point, this concerns the pip install command only
+     # (need_wheel=False).
+ 
+-    if not req.use_pep517 and not is_wheel_installed():
+-        # we don't build legacy requirements if wheel is not installed
+-        logger.info(
+-            "Could not build wheels for %s, "
+-            "since package 'wheel' is not installed.", req.name,
+-        )
+-        return False
+-
+     if req.editable or not req.source_dir:
+         return False
+ 
+@@ -86,6 +78,14 @@
+             "being disabled for it.", req.name,
+         )
+         return False
++
++    if not req.use_pep517 and not is_wheel_installed():
++        # we don't build legacy requirements if wheel is not installed
++        logger.info(
++            "Using legacy setup.py install for %s, "
++            "since package 'wheel' is not installed.", req.name,
++        )
++        return False
+ 
+     return True
+ 
+Index: venv/Lib/site-packages/pip/_internal/utils/filesystem.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import errno\nimport fnmatch\nimport os\nimport os.path\nimport random\nimport sys\nfrom contextlib import contextmanager\nfrom tempfile import NamedTemporaryFile\n\n# NOTE: retrying is not annotated in typeshed as on 2017-07-17, which is\n#       why we ignore the type on this import.\nfrom pip._vendor.retrying import retry  # type: ignore\nfrom pip._vendor.six import PY2\n\nfrom pip._internal.utils.compat import get_path_uid\nfrom pip._internal.utils.misc import format_size\nfrom pip._internal.utils.typing import MYPY_CHECK_RUNNING, cast\n\nif MYPY_CHECK_RUNNING:\n    from typing import Any, BinaryIO, Iterator, List, Union\n\n    class NamedTemporaryFileResult(BinaryIO):\n        @property\n        def file(self):\n            # type: () -> BinaryIO\n            pass\n\n\ndef check_path_owner(path):\n    # type: (str) -> bool\n    # If we don't have a way to check the effective uid of this process, then\n    # we'll just assume that we own the directory.\n    if sys.platform == \"win32\" or not hasattr(os, \"geteuid\"):\n        return True\n\n    assert os.path.isabs(path)\n\n    previous = None\n    while path != previous:\n        if os.path.lexists(path):\n            # Check if path is writable by current user.\n            if os.geteuid() == 0:\n                # Special handling for root user in order to handle properly\n                # cases where users use sudo without -H flag.\n                try:\n                    path_uid = get_path_uid(path)\n                except OSError:\n                    return False\n                return path_uid == 0\n            else:\n                return os.access(path, os.W_OK)\n        else:\n            previous, path = path, os.path.dirname(path)\n    return False  # assume we don't own the path\n\n\n@contextmanager\ndef adjacent_tmp_file(path, **kwargs):\n    # type: (str, **Any) -> Iterator[NamedTemporaryFileResult]\n    \"\"\"Return a file-like object pointing to a tmp file next to path.\n\n    The file is created securely and is ensured to be written to disk\n    after the context reaches its end.\n\n    kwargs will be passed to tempfile.NamedTemporaryFile to control\n    the way the temporary file will be opened.\n    \"\"\"\n    with NamedTemporaryFile(\n        delete=False,\n        dir=os.path.dirname(path),\n        prefix=os.path.basename(path),\n        suffix='.tmp',\n        **kwargs\n    ) as f:\n        result = cast('NamedTemporaryFileResult', f)\n        try:\n            yield result\n        finally:\n            result.file.flush()\n            os.fsync(result.file.fileno())\n\n\n_replace_retry = retry(stop_max_delay=1000, wait_fixed=250)\n\nif PY2:\n    @_replace_retry\n    def replace(src, dest):\n        # type: (str, str) -> None\n        try:\n            os.rename(src, dest)\n        except OSError:\n            os.remove(dest)\n            os.rename(src, dest)\n\nelse:\n    replace = _replace_retry(os.replace)\n\n\n# test_writable_dir and _test_writable_dir_win are copied from Flit,\n# with the author's agreement to also place them under pip's license.\ndef test_writable_dir(path):\n    # type: (str) -> bool\n    \"\"\"Check if a directory is writable.\n\n    Uses os.access() on POSIX, tries creating files on Windows.\n    \"\"\"\n    # If the directory doesn't exist, find the closest parent that does.\n    while not os.path.isdir(path):\n        parent = os.path.dirname(path)\n        if parent == path:\n            break  # Should never get here, but infinite loops are bad\n        path = parent\n\n    if os.name == 'posix':\n        return os.access(path, os.W_OK)\n\n    return _test_writable_dir_win(path)\n\n\ndef _test_writable_dir_win(path):\n    # type: (str) -> bool\n    # os.access doesn't work on Windows: http://bugs.python.org/issue2528\n    # and we can't use tempfile: http://bugs.python.org/issue22107\n    basename = 'accesstest_deleteme_fishfingers_custard_'\n    alphabet = 'abcdefghijklmnopqrstuvwxyz0123456789'\n    for i in range(10):\n        name = basename + ''.join(random.choice(alphabet) for _ in range(6))\n        file = os.path.join(path, name)\n        try:\n            fd = os.open(file, os.O_RDWR | os.O_CREAT | os.O_EXCL)\n        # Python 2 doesn't support FileExistsError and PermissionError.\n        except OSError as e:\n            # exception FileExistsError\n            if e.errno == errno.EEXIST:\n                continue\n            # exception PermissionError\n            if e.errno == errno.EPERM or e.errno == errno.EACCES:\n                # This could be because there's a directory with the same name.\n                # But it's highly unlikely there's a directory called that,\n                # so we'll assume it's because the parent dir is not writable.\n                return False\n            raise\n        else:\n            os.close(fd)\n            os.unlink(file)\n            return True\n\n    # This should never be reached\n    raise EnvironmentError(\n        'Unexpected condition testing for writable directory'\n    )\n\n\ndef find_files(path, pattern):\n    # type: (str, str) -> List[str]\n    \"\"\"Returns a list of absolute paths of files beneath path, recursively,\n    with filenames which match the UNIX-style shell glob pattern.\"\"\"\n    result = []  # type: List[str]\n    for root, dirs, files in os.walk(path):\n        matches = fnmatch.filter(files, pattern)\n        result.extend(os.path.join(root, f) for f in matches)\n    return result\n\n\ndef file_size(path):\n    # type: (str) -> Union[int, float]\n    # If it's a symlink, return 0.\n    if os.path.islink(path):\n        return 0\n    return os.path.getsize(path)\n\n\ndef format_file_size(path):\n    # type: (str) -> str\n    return format_size(file_size(path))\n\n\ndef directory_size(path):\n    # type: (str) -> Union[int, float]\n    size = 0.0\n    for root, _dirs, files in os.walk(path):\n        for filename in files:\n            file_path = os.path.join(root, filename)\n            size += file_size(file_path)\n    return size\n\n\ndef format_directory_size(path):\n    # type: (str) -> str\n    return format_size(directory_size(path))\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- venv/Lib/site-packages/pip/_internal/utils/filesystem.py	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/pip/_internal/utils/filesystem.py	(date 1589990191178)
+@@ -3,6 +3,8 @@
+ import os
+ import os.path
+ import random
++import shutil
++import stat
+ import sys
+ from contextlib import contextmanager
+ from tempfile import NamedTemporaryFile
+@@ -54,6 +56,36 @@
+     return False  # assume we don't own the path
+ 
+ 
++def copy2_fixed(src, dest):
++    # type: (str, str) -> None
++    """Wrap shutil.copy2() but map errors copying socket files to
++    SpecialFileError as expected.
++
++    See also https://bugs.python.org/issue37700.
++    """
++    try:
++        shutil.copy2(src, dest)
++    except (OSError, IOError):
++        for f in [src, dest]:
++            try:
++                is_socket_file = is_socket(f)
++            except OSError:
++                # An error has already occurred. Another error here is not
++                # a problem and we can ignore it.
++                pass
++            else:
++                if is_socket_file:
++                    raise shutil.SpecialFileError(
++                        "`{f}` is a socket".format(**locals()))
++
++        raise
++
++
++def is_socket(path):
++    # type: (str) -> bool
++    return stat.S_ISSOCK(os.lstat(path).st_mode)
++
++
+ @contextmanager
+ def adjacent_tmp_file(path, **kwargs):
+     # type: (str, **Any) -> Iterator[NamedTemporaryFileResult]
+Index: .idea/DnH.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/DnH.iml	(date 1589991504339)
++++ .idea/DnH.iml	(date 1589991504339)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/venv/Scripts" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/venv/Lib" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/venv/Lib/site-packages" isTestSource="false" />
++      <excludeFolder url="file://$MODULE_DIR$/venv" />
++    </content>
++    <orderEntry type="jdk" jdkName="Python 3.7 (DnH)" jdkType="Python SDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: Entity.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from Consts import*\r\nfrom PILgraphicObject import*\r\n\r\nclass Entity(PILgraphicObject):\r\n    Str = 5\r\n    Dex = 5\r\n    End = 5\r\n    Per = 5\r\n    actions = 3\r\n    model = None\r\n    orientation = Right\r\n    Type = ''\r\n    currentHealth = 10\r\n    Status = Live\r\n    DeadImage = None\r\n\r\n    def __init__(self, x, y, model):\r\n        PILgraphicObject.__init__(self, x, y)\r\n        self.ResetActions()\r\n        self.currentHealth = self.Health\r\n\r\n    def GetCurrentImage(self):\r\n        if self.Status == Live:\r\n            return self.BaseImage\r\n        if self.Status == Dead:\r\n            return self.DeadImage\r\n\r\n    def ResetActions(self):\r\n        self.actions = self.Actionsdef\r\n\r\n    def get_Health(self):\r\n        return self.End * 10\r\n\r\n    def get_Damage(self):\r\n        return [self.Str // 2, self.Str]\r\n\r\n    def get_EvadeChance(self):\r\n        return self.Dex * 2\r\n\r\n    def get_CriticalChance(self):\r\n        return self.Per * 2\r\n\r\n    def get_Actionsdef(self):\r\n        return self.Dex // 2\r\n\r\n    Health = property(fget=get_Health)\r\n    Damage = property(fget=get_Damage)\r\n    EvadeChance = property(fget=get_EvadeChance)\r\n    CriticalChance = property(fget=get_CriticalChance)\r\n    Actionsdef = property(fget=get_Actionsdef)\r\n\r\n    def Place(self, x, y):\r\n        self.x = x\r\n        self.y = y\r\n\r\n    def iCanMove(self, x, y):\r\n        return not self.model.isOut(x, y) and not self.model.isHero(x, y) and not self.model.isMonster(x, y)\r\n\r\n    def GetCoords(self, x, y, direction, distance = 1):\r\n        newx, newy = x, y\r\n        if direction == Up:\r\n            newy = self.y - distance\r\n        if direction == Left:\r\n            newx = self.x - distance\r\n            self.orientation = direction\r\n        if direction == Down:\r\n            newy = self.y + distance\r\n        if direction == Right:\r\n            newx = self.x + distance\r\n            self.orientation = direction\r\n        return newx, newy\r\n\r\n    def Move(self, params):\r\n        direction = params[0]\r\n        x, y = self.GetCoords(self.x, self.y, direction)\r\n        if self.iCanMove(x, y):\r\n            self.Place(x, y)\r\n\r\n    def GetEnemyFrom(self, direction, distance=1):\r\n        x, y = self.GetCoords(self.x, self.y, direction, distance)\r\n        return self.model.GetActiveObjectAt(x, y)\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Entity.py	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ Entity.py	(date 1589994860461)
+@@ -56,23 +56,23 @@
+     def iCanMove(self, x, y):
+         return not self.model.isOut(x, y) and not self.model.isHero(x, y) and not self.model.isMonster(x, y)
+ 
+-    def GetCoords(self, x, y, direction, distance = 1):
++    def GetCoords(self, x, y, direction, distance=1):
+         newx, newy = x, y
+         if direction == Up:
+             newy = self.y - distance
+         if direction == Left:
+             newx = self.x - distance
+-            self.orientation = direction
+         if direction == Down:
+             newy = self.y + distance
+         if direction == Right:
+             newx = self.x + distance
+-            self.orientation = direction
+         return newx, newy
+ 
+     def Move(self, params):
+         direction = params[0]
+         x, y = self.GetCoords(self.x, self.y, direction)
++        if direction == Right or direction == Left:
++            self.orientation = direction
+         if self.iCanMove(x, y):
+             self.Place(x, y)
+ 
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.gitignore	(date 1589991506114)
++++ .idea/.gitignore	(date 1589991506114)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(date 1589991504513)
++++ .idea/misc.xml	(date 1589991504513)
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (DnH)" project-jdk-type="Python SDK" />
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1589991504563)
++++ .idea/vcs.xml	(date 1589991504563)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/modules.xml	(date 1589991504596)
++++ .idea/modules.xml	(date 1589991504596)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/DnH.iml" filepath="$PROJECT_DIR$/.idea/DnH.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/inspectionProfiles/profiles_settings.xml	(date 1589991504641)
++++ .idea/inspectionProfiles/profiles_settings.xml	(date 1589991504641)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <settings>
++    <option name="USE_PROJECT_PROFILE" value="false" />
++    <version value="1.0" />
++  </settings>
++</component>
+\ No newline at end of file
+Index: venv/Scripts/activate
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># This file must be used with \"source bin/activate\" *from bash*\r\n# you cannot run it directly\r\n\r\ndeactivate () {\r\n    # reset old environment variables\r\n    if [ -n \"${_OLD_VIRTUAL_PATH:-}\" ] ; then\r\n        PATH=\"${_OLD_VIRTUAL_PATH:-}\"\r\n        export PATH\r\n        unset _OLD_VIRTUAL_PATH\r\n    fi\r\n    if [ -n \"${_OLD_VIRTUAL_PYTHONHOME:-}\" ] ; then\r\n        PYTHONHOME=\"${_OLD_VIRTUAL_PYTHONHOME:-}\"\r\n        export PYTHONHOME\r\n        unset _OLD_VIRTUAL_PYTHONHOME\r\n    fi\r\n\r\n    # This should detect bash and zsh, which have a hash command that must\r\n    # be called to get it to forget past commands.  Without forgetting\r\n    # past commands the $PATH changes we made may not be respected\r\n    if [ -n \"${BASH:-}\" -o -n \"${ZSH_VERSION:-}\" ] ; then\r\n        hash -r\r\n    fi\r\n\r\n    if [ -n \"${_OLD_VIRTUAL_PS1:-}\" ] ; then\r\n        PS1=\"${_OLD_VIRTUAL_PS1:-}\"\r\n        export PS1\r\n        unset _OLD_VIRTUAL_PS1\r\n    fi\r\n\r\n    unset VIRTUAL_ENV\r\n    if [ ! \"$1\" = \"nondestructive\" ] ; then\r\n    # Self destruct!\r\n        unset -f deactivate\r\n    fi\r\n}\r\n\r\n# unset irrelevant variables\r\ndeactivate nondestructive\r\n\r\nVIRTUAL_ENV=\"E:\\Python Projects\\D&H\\venv\"\r\nexport VIRTUAL_ENV\r\n\r\n_OLD_VIRTUAL_PATH=\"$PATH\"\r\nPATH=\"$VIRTUAL_ENV/Scripts:$PATH\"\r\nexport PATH\r\n\r\n# unset PYTHONHOME if set\r\n# this will fail if PYTHONHOME is set to the empty string (which is bad anyway)\r\n# could use `if (set -u; : $PYTHONHOME) ;` in bash\r\nif [ -n \"${PYTHONHOME:-}\" ] ; then\r\n    _OLD_VIRTUAL_PYTHONHOME=\"${PYTHONHOME:-}\"\r\n    unset PYTHONHOME\r\nfi\r\n\r\nif [ -z \"${VIRTUAL_ENV_DISABLE_PROMPT:-}\" ] ; then\r\n    _OLD_VIRTUAL_PS1=\"${PS1:-}\"\r\n    if [ \"x(venv) \" != x ] ; then\r\n\tPS1=\"(venv) ${PS1:-}\"\r\n    else\r\n    if [ \"`basename \\\"$VIRTUAL_ENV\\\"`\" = \"__\" ] ; then\r\n        # special case for Aspen magic directories\r\n        # see http://www.zetadev.com/software/aspen/\r\n        PS1=\"[`basename \\`dirname \\\"$VIRTUAL_ENV\\\"\\``] $PS1\"\r\n    else\r\n        PS1=\"(`basename \\\"$VIRTUAL_ENV\\\"`)$PS1\"\r\n    fi\r\n    fi\r\n    export PS1\r\nfi\r\n\r\n# This should detect bash and zsh, which have a hash command that must\r\n# be called to get it to forget past commands.  Without forgetting\r\n# past commands the $PATH changes we made may not be respected\r\nif [ -n \"${BASH:-}\" -o -n \"${ZSH_VERSION:-}\" ] ; then\r\n    hash -r\r\nfi\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- venv/Scripts/activate	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Scripts/activate	(date 1589990146379)
+@@ -37,7 +37,7 @@
+ # unset irrelevant variables
+ deactivate nondestructive
+ 
+-VIRTUAL_ENV="E:\Python Projects\D&H\venv"
++VIRTUAL_ENV="D:\Python Projects\DnH\venv"
+ export VIRTUAL_ENV
+ 
+ _OLD_VIRTUAL_PATH="$PATH"
+Index: venv/Lib/site-packages/pip/__init__.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from pip._internal.utils.typing import MYPY_CHECK_RUNNING\n\nif MYPY_CHECK_RUNNING:\n    from typing import List, Optional\n\n\n__version__ = \"20.1\"\n\n\ndef main(args=None):\n    # type: (Optional[List[str]]) -> int\n    \"\"\"This is an internal API only meant for use by pip's own console scripts.\n\n    For additional details, see https://github.com/pypa/pip/issues/7498.\n    \"\"\"\n    from pip._internal.utils.entrypoints import _wrapper\n\n    return _wrapper(args)\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- venv/Lib/site-packages/pip/__init__.py	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/pip/__init__.py	(date 1589990190943)
+@@ -4,7 +4,7 @@
+     from typing import List, Optional
+ 
+ 
+-__version__ = "20.1"
++__version__ = "20.1.1"
+ 
+ 
+ def main(args=None):
+Index: venv/Lib/site-packages/pip/_internal/operations/prepare.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"\"\"Prepares a distribution for installation\n\"\"\"\n\n# The following comment should be removed at some point in the future.\n# mypy: strict-optional=False\n\nimport logging\nimport mimetypes\nimport os\nimport shutil\n\nfrom pip._vendor import requests\nfrom pip._vendor.six import PY2\n\nfrom pip._internal.distributions import (\n    make_distribution_for_install_requirement,\n)\nfrom pip._internal.distributions.installed import InstalledDistribution\nfrom pip._internal.exceptions import (\n    DirectoryUrlHashUnsupported,\n    HashMismatch,\n    HashUnpinned,\n    InstallationError,\n    PreviousBuildDirError,\n    VcsHashUnsupported,\n)\nfrom pip._internal.utils.hashes import MissingHashes\nfrom pip._internal.utils.logging import indent_log\nfrom pip._internal.utils.misc import display_path, hide_url\nfrom pip._internal.utils.temp_dir import TempDirectory\nfrom pip._internal.utils.typing import MYPY_CHECK_RUNNING\nfrom pip._internal.utils.unpacking import unpack_file\nfrom pip._internal.vcs import vcs\n\nif MYPY_CHECK_RUNNING:\n    from typing import (\n        Callable, List, Optional, Tuple,\n    )\n\n    from mypy_extensions import TypedDict\n\n    from pip._internal.distributions import AbstractDistribution\n    from pip._internal.index.package_finder import PackageFinder\n    from pip._internal.models.link import Link\n    from pip._internal.network.download import Downloader\n    from pip._internal.req.req_install import InstallRequirement\n    from pip._internal.req.req_tracker import RequirementTracker\n    from pip._internal.utils.hashes import Hashes\n\n    if PY2:\n        CopytreeKwargs = TypedDict(\n            'CopytreeKwargs',\n            {\n                'ignore': Callable[[str, List[str]], List[str]],\n                'symlinks': bool,\n            },\n            total=False,\n        )\n    else:\n        CopytreeKwargs = TypedDict(\n            'CopytreeKwargs',\n            {\n                'copy_function': Callable[[str, str], None],\n                'ignore': Callable[[str, List[str]], List[str]],\n                'ignore_dangling_symlinks': bool,\n                'symlinks': bool,\n            },\n            total=False,\n        )\n\nlogger = logging.getLogger(__name__)\n\n\ndef _get_prepared_distribution(\n        req,  # type: InstallRequirement\n        req_tracker,  # type: RequirementTracker\n        finder,  # type: PackageFinder\n        build_isolation  # type: bool\n):\n    # type: (...) -> AbstractDistribution\n    \"\"\"Prepare a distribution for installation.\n    \"\"\"\n    abstract_dist = make_distribution_for_install_requirement(req)\n    with req_tracker.track(req):\n        abstract_dist.prepare_distribution_metadata(finder, build_isolation)\n    return abstract_dist\n\n\ndef unpack_vcs_link(link, location):\n    # type: (Link, str) -> None\n    vcs_backend = vcs.get_backend_for_scheme(link.scheme)\n    assert vcs_backend is not None\n    vcs_backend.unpack(location, url=hide_url(link.url))\n\n\nclass File(object):\n    def __init__(self, path, content_type):\n        # type: (str, str) -> None\n        self.path = path\n        self.content_type = content_type\n\n\ndef get_http_url(\n    link,  # type: Link\n    downloader,  # type: Downloader\n    download_dir=None,  # type: Optional[str]\n    hashes=None,  # type: Optional[Hashes]\n):\n    # type: (...) -> File\n    temp_dir = TempDirectory(kind=\"unpack\", globally_managed=True)\n    # If a download dir is specified, is the file already downloaded there?\n    already_downloaded_path = None\n    if download_dir:\n        already_downloaded_path = _check_download_dir(\n            link, download_dir, hashes\n        )\n\n    if already_downloaded_path:\n        from_path = already_downloaded_path\n        content_type = mimetypes.guess_type(from_path)[0]\n    else:\n        # let's download to a tmp dir\n        from_path, content_type = _download_http_url(\n            link, downloader, temp_dir.path, hashes\n        )\n\n    return File(from_path, content_type)\n\n\ndef get_file_url(\n    link,  # type: Link\n    download_dir=None,  # type: Optional[str]\n    hashes=None  # type: Optional[Hashes]\n):\n    # type: (...) -> File\n    \"\"\"Get file and optionally check its hash.\n    \"\"\"\n    # If a download dir is specified, is the file already there and valid?\n    already_downloaded_path = None\n    if download_dir:\n        already_downloaded_path = _check_download_dir(\n            link, download_dir, hashes\n        )\n\n    if already_downloaded_path:\n        from_path = already_downloaded_path\n    else:\n        from_path = link.file_path\n\n    # If --require-hashes is off, `hashes` is either empty, the\n    # link's embedded hash, or MissingHashes; it is required to\n    # match. If --require-hashes is on, we are satisfied by any\n    # hash in `hashes` matching: a URL-based or an option-based\n    # one; no internet-sourced hash will be in `hashes`.\n    if hashes:\n        hashes.check_against_path(from_path)\n\n    content_type = mimetypes.guess_type(from_path)[0]\n\n    return File(from_path, content_type)\n\n\ndef unpack_url(\n    link,  # type: Link\n    location,  # type: str\n    downloader,  # type: Downloader\n    download_dir=None,  # type: Optional[str]\n    hashes=None,  # type: Optional[Hashes]\n):\n    # type: (...) -> Optional[File]\n    \"\"\"Unpack link into location, downloading if required.\n\n    :param hashes: A Hashes object, one of whose embedded hashes must match,\n        or HashMismatch will be raised. If the Hashes is empty, no matches are\n        required, and unhashable types of requirements (like VCS ones, which\n        would ordinarily raise HashUnsupported) are allowed.\n    \"\"\"\n    # non-editable vcs urls\n    if link.is_vcs:\n        unpack_vcs_link(link, location)\n        return None\n\n    # If it's a url to a local directory, we build in-place.\n    # There is nothing to be done here.\n    if link.is_existing_dir():\n        return None\n\n    # file urls\n    if link.is_file:\n        file = get_file_url(link, download_dir, hashes=hashes)\n\n    # http urls\n    else:\n        file = get_http_url(\n            link,\n            downloader,\n            download_dir,\n            hashes=hashes,\n        )\n\n    # unpack the archive to the build dir location. even when only downloading\n    # archives, they have to be unpacked to parse dependencies\n    unpack_file(file.path, location, file.content_type)\n\n    return file\n\n\ndef _download_http_url(\n    link,  # type: Link\n    downloader,  # type: Downloader\n    temp_dir,  # type: str\n    hashes,  # type: Optional[Hashes]\n):\n    # type: (...) -> Tuple[str, str]\n    \"\"\"Download link url into temp_dir using provided session\"\"\"\n    download = downloader(link)\n\n    file_path = os.path.join(temp_dir, download.filename)\n    with open(file_path, 'wb') as content_file:\n        for chunk in download.chunks:\n            content_file.write(chunk)\n\n    if hashes:\n        hashes.check_against_path(file_path)\n\n    return file_path, download.response.headers.get('content-type', '')\n\n\ndef _check_download_dir(link, download_dir, hashes):\n    # type: (Link, str, Optional[Hashes]) -> Optional[str]\n    \"\"\" Check download_dir for previously downloaded file with correct hash\n        If a correct file is found return its path else None\n    \"\"\"\n    download_path = os.path.join(download_dir, link.filename)\n\n    if not os.path.exists(download_path):\n        return None\n\n    # If already downloaded, does its hash match?\n    logger.info('File was already downloaded %s', download_path)\n    if hashes:\n        try:\n            hashes.check_against_path(download_path)\n        except HashMismatch:\n            logger.warning(\n                'Previously-downloaded file %s has bad hash. '\n                'Re-downloading.',\n                download_path\n            )\n            os.unlink(download_path)\n            return None\n    return download_path\n\n\nclass RequirementPreparer(object):\n    \"\"\"Prepares a Requirement\n    \"\"\"\n\n    def __init__(\n        self,\n        build_dir,  # type: str\n        download_dir,  # type: Optional[str]\n        src_dir,  # type: str\n        wheel_download_dir,  # type: Optional[str]\n        build_isolation,  # type: bool\n        req_tracker,  # type: RequirementTracker\n        downloader,  # type: Downloader\n        finder,  # type: PackageFinder\n        require_hashes,  # type: bool\n        use_user_site,  # type: bool\n    ):\n        # type: (...) -> None\n        super(RequirementPreparer, self).__init__()\n\n        self.src_dir = src_dir\n        self.build_dir = build_dir\n        self.req_tracker = req_tracker\n        self.downloader = downloader\n        self.finder = finder\n\n        # Where still-packed archives should be written to. If None, they are\n        # not saved, and are deleted immediately after unpacking.\n        self.download_dir = download_dir\n\n        # Where still-packed .whl files should be written to. If None, they are\n        # written to the download_dir parameter. Separate to download_dir to\n        # permit only keeping wheel archives for pip wheel.\n        self.wheel_download_dir = wheel_download_dir\n\n        # NOTE\n        # download_dir and wheel_download_dir overlap semantically and may\n        # be combined if we're willing to have non-wheel archives present in\n        # the wheelhouse output by 'pip wheel'.\n\n        # Is build isolation allowed?\n        self.build_isolation = build_isolation\n\n        # Should hash-checking be required?\n        self.require_hashes = require_hashes\n\n        # Should install in user site-packages?\n        self.use_user_site = use_user_site\n\n    @property\n    def _download_should_save(self):\n        # type: () -> bool\n        if not self.download_dir:\n            return False\n\n        if os.path.exists(self.download_dir):\n            return True\n\n        logger.critical('Could not find download directory')\n        raise InstallationError(\n            \"Could not find or access download directory '{}'\"\n            .format(self.download_dir))\n\n    def prepare_linked_requirement(\n        self,\n        req,  # type: InstallRequirement\n    ):\n        # type: (...) -> AbstractDistribution\n        \"\"\"Prepare a requirement that would be obtained from req.link\n        \"\"\"\n        assert req.link\n        link = req.link\n\n        # TODO: Breakup into smaller functions\n        if link.scheme == 'file':\n            path = link.file_path\n            logger.info('Processing %s', display_path(path))\n        else:\n            logger.info('Collecting %s', req.req or req)\n\n        download_dir = self.download_dir\n        if link.is_wheel and self.wheel_download_dir:\n            # when doing 'pip wheel` we download wheels to a\n            # dedicated dir.\n            download_dir = self.wheel_download_dir\n\n        if link.is_wheel:\n            if download_dir:\n                # When downloading, we only unpack wheels to get\n                # metadata.\n                autodelete_unpacked = True\n            else:\n                # When installing a wheel, we use the unpacked\n                # wheel.\n                autodelete_unpacked = False\n        else:\n            # We always delete unpacked sdists after pip runs.\n            autodelete_unpacked = True\n\n        with indent_log():\n            # Since source_dir is only set for editable requirements.\n            assert req.source_dir is None\n            if link.is_existing_dir():\n                # Build local directories in place.\n                req.source_dir = link.file_path\n            else:\n                req.ensure_has_source_dir(self.build_dir, autodelete_unpacked)\n                # If a checkout exists, it's unwise to keep going.  version\n                # inconsistencies are logged later, but do not fail the\n                # installation.\n                # FIXME: this won't upgrade when there's an existing\n                # package unpacked in `req.source_dir`\n                if os.path.exists(os.path.join(req.source_dir, 'setup.py')):\n                    raise PreviousBuildDirError(\n                        \"pip can't proceed with requirements '{}' due to a\"\n                        \" pre-existing build directory ({}). This is \"\n                        \"likely due to a previous installation that failed\"\n                        \". pip is being responsible and not assuming it \"\n                        \"can delete this. Please delete it and try again.\"\n                        .format(req, req.source_dir)\n                    )\n\n            # Now that we have the real link, we can tell what kind of\n            # requirements we have and raise some more informative errors\n            # than otherwise. (For example, we can raise VcsHashUnsupported\n            # for a VCS URL rather than HashMissing.)\n            if self.require_hashes:\n                # We could check these first 2 conditions inside\n                # unpack_url and save repetition of conditions, but then\n                # we would report less-useful error messages for\n                # unhashable requirements, complaining that there's no\n                # hash provided.\n                if link.is_vcs:\n                    raise VcsHashUnsupported()\n                elif link.is_existing_dir():\n                    raise DirectoryUrlHashUnsupported()\n                if not req.original_link and not req.is_pinned:\n                    # Unpinned packages are asking for trouble when a new\n                    # version is uploaded. This isn't a security check, but\n                    # it saves users a surprising hash mismatch in the\n                    # future.\n                    #\n                    # file:/// URLs aren't pinnable, so don't complain\n                    # about them not being pinned.\n                    raise HashUnpinned()\n\n            hashes = req.hashes(trust_internet=not self.require_hashes)\n            if self.require_hashes and not hashes:\n                # Known-good hashes are missing for this requirement, so\n                # shim it with a facade object that will provoke hash\n                # computation and then raise a HashMissing exception\n                # showing the user what the hash should be.\n                hashes = MissingHashes()\n\n            try:\n                local_file = unpack_url(\n                    link, req.source_dir, self.downloader, download_dir,\n                    hashes=hashes,\n                )\n            except requests.HTTPError as exc:\n                logger.critical(\n                    'Could not install requirement %s because of error %s',\n                    req,\n                    exc,\n                )\n                raise InstallationError(\n                    'Could not install requirement {} because of HTTP '\n                    'error {} for URL {}'.format(req, exc, link)\n                )\n\n            # For use in later processing, preserve the file path on the\n            # requirement.\n            if local_file:\n                req.local_file_path = local_file.path\n\n            abstract_dist = _get_prepared_distribution(\n                req, self.req_tracker, self.finder, self.build_isolation,\n            )\n\n            if download_dir:\n                if link.is_existing_dir():\n                    logger.info('Link is a directory, ignoring download_dir')\n                elif local_file:\n                    download_location = os.path.join(\n                        download_dir, link.filename\n                    )\n                    if not os.path.exists(download_location):\n                        shutil.copy(local_file.path, download_location)\n                        logger.info(\n                            'Saved %s', display_path(download_location)\n                        )\n\n            if self._download_should_save:\n                # Make a .zip of the source_dir we already created.\n                if link.is_vcs:\n                    req.archive(self.download_dir)\n        return abstract_dist\n\n    def prepare_editable_requirement(\n        self,\n        req,  # type: InstallRequirement\n    ):\n        # type: (...) -> AbstractDistribution\n        \"\"\"Prepare an editable requirement\n        \"\"\"\n        assert req.editable, \"cannot prepare a non-editable req as editable\"\n\n        logger.info('Obtaining %s', req)\n\n        with indent_log():\n            if self.require_hashes:\n                raise InstallationError(\n                    'The editable requirement {} cannot be installed when '\n                    'requiring hashes, because there is no single file to '\n                    'hash.'.format(req)\n                )\n            req.ensure_has_source_dir(self.src_dir)\n            req.update_editable(not self._download_should_save)\n\n            abstract_dist = _get_prepared_distribution(\n                req, self.req_tracker, self.finder, self.build_isolation,\n            )\n\n            if self._download_should_save:\n                req.archive(self.download_dir)\n            req.check_if_exists(self.use_user_site)\n\n        return abstract_dist\n\n    def prepare_installed_requirement(\n        self,\n        req,  # type: InstallRequirement\n        skip_reason  # type: str\n    ):\n        # type: (...) -> AbstractDistribution\n        \"\"\"Prepare an already-installed requirement\n        \"\"\"\n        assert req.satisfied_by, \"req should have been satisfied but isn't\"\n        assert skip_reason is not None, (\n            \"did not get skip reason skipped but req.satisfied_by \"\n            \"is set to {}\".format(req.satisfied_by)\n        )\n        logger.info(\n            'Requirement %s: %s (%s)',\n            skip_reason, req, req.satisfied_by.version\n        )\n        with indent_log():\n            if self.require_hashes:\n                logger.debug(\n                    'Since it is already installed, we are trusting this '\n                    'package without checking its hash. To ensure a '\n                    'completely repeatable environment, install into an '\n                    'empty virtualenv.'\n                )\n            abstract_dist = InstalledDistribution(req)\n\n        return abstract_dist\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- venv/Lib/site-packages/pip/_internal/operations/prepare.py	(revision f17fd3eba271f47b05ceba7bd16c5ec8c1c3d19b)
++++ venv/Lib/site-packages/pip/_internal/operations/prepare.py	(date 1589990191093)
+@@ -24,9 +24,15 @@
+     PreviousBuildDirError,
+     VcsHashUnsupported,
+ )
++from pip._internal.utils.filesystem import copy2_fixed
+ from pip._internal.utils.hashes import MissingHashes
+ from pip._internal.utils.logging import indent_log
+-from pip._internal.utils.misc import display_path, hide_url
++from pip._internal.utils.misc import (
++    display_path,
++    hide_url,
++    path_to_display,
++    rmtree,
++)
+ from pip._internal.utils.temp_dir import TempDirectory
+ from pip._internal.utils.typing import MYPY_CHECK_RUNNING
+ from pip._internal.utils.unpacking import unpack_file
+@@ -127,6 +133,59 @@
+     return File(from_path, content_type)
+ 
+ 
++def _copy2_ignoring_special_files(src, dest):
++    # type: (str, str) -> None
++    """Copying special files is not supported, but as a convenience to users
++    we skip errors copying them. This supports tools that may create e.g.
++    socket files in the project source directory.
++    """
++    try:
++        copy2_fixed(src, dest)
++    except shutil.SpecialFileError as e:
++        # SpecialFileError may be raised due to either the source or
++        # destination. If the destination was the cause then we would actually
++        # care, but since the destination directory is deleted prior to
++        # copy we ignore all of them assuming it is caused by the source.
++        logger.warning(
++            "Ignoring special file error '%s' encountered copying %s to %s.",
++            str(e),
++            path_to_display(src),
++            path_to_display(dest),
++        )
++
++
++def _copy_source_tree(source, target):
++    # type: (str, str) -> None
++    target_abspath = os.path.abspath(target)
++    target_basename = os.path.basename(target_abspath)
++    target_dirname = os.path.dirname(target_abspath)
++
++    def ignore(d, names):
++        # type: (str, List[str]) -> List[str]
++        skipped = []  # type: List[str]
++        if d == source:
++            # Pulling in those directories can potentially be very slow,
++            # exclude the following directories if they appear in the top
++            # level dir (and only it).
++            # See discussion at https://github.com/pypa/pip/pull/6770
++            skipped += ['.tox', '.nox']
++        if os.path.abspath(d) == target_dirname:
++            # Prevent an infinite recursion if the target is in source.
++            # This can happen when TMPDIR is set to ${PWD}/...
++            # and we copy PWD to TMPDIR.
++            skipped += [target_basename]
++        return skipped
++
++    kwargs = dict(ignore=ignore, symlinks=True)  # type: CopytreeKwargs
++
++    if not PY2:
++        # Python 2 does not support copy_function, so we only ignore
++        # errors on special file copy in Python 3.
++        kwargs['copy_function'] = _copy2_ignoring_special_files
++
++    shutil.copytree(source, target, **kwargs)
++
++
+ def get_file_url(
+     link,  # type: Link
+     download_dir=None,  # type: Optional[str]
+@@ -180,9 +239,11 @@
+         unpack_vcs_link(link, location)
+         return None
+ 
+-    # If it's a url to a local directory, we build in-place.
+-    # There is nothing to be done here.
++    # If it's a url to a local directory
+     if link.is_existing_dir():
++        if os.path.isdir(location):
++            rmtree(location)
++        _copy_source_tree(link.file_path, location)
+         return None
+ 
+     # file urls
+@@ -354,25 +415,21 @@
+         with indent_log():
+             # Since source_dir is only set for editable requirements.
+             assert req.source_dir is None
+-            if link.is_existing_dir():
+-                # Build local directories in place.
+-                req.source_dir = link.file_path
+-            else:
+-                req.ensure_has_source_dir(self.build_dir, autodelete_unpacked)
+-                # If a checkout exists, it's unwise to keep going.  version
+-                # inconsistencies are logged later, but do not fail the
+-                # installation.
+-                # FIXME: this won't upgrade when there's an existing
+-                # package unpacked in `req.source_dir`
+-                if os.path.exists(os.path.join(req.source_dir, 'setup.py')):
+-                    raise PreviousBuildDirError(
+-                        "pip can't proceed with requirements '{}' due to a"
+-                        " pre-existing build directory ({}). This is "
+-                        "likely due to a previous installation that failed"
+-                        ". pip is being responsible and not assuming it "
+-                        "can delete this. Please delete it and try again."
+-                        .format(req, req.source_dir)
+-                    )
++            req.ensure_has_source_dir(self.build_dir, autodelete_unpacked)
++            # If a checkout exists, it's unwise to keep going.  version
++            # inconsistencies are logged later, but do not fail the
++            # installation.
++            # FIXME: this won't upgrade when there's an existing
++            # package unpacked in `req.source_dir`
++            if os.path.exists(os.path.join(req.source_dir, 'setup.py')):
++                raise PreviousBuildDirError(
++                    "pip can't proceed with requirements '{}' due to a"
++                    " pre-existing build directory ({}). This is "
++                    "likely due to a previous installation that failed"
++                    ". pip is being responsible and not assuming it "
++                    "can delete this. Please delete it and try again."
++                    .format(req, req.source_dir)
++                )
+ 
+             # Now that we have the real link, we can tell what kind of
+             # requirements we have and raise some more informative errors
