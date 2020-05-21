@@ -107,7 +107,7 @@ class DHViewer:
         image = self.BackgroundRaw[y][x].copy()
         for currentObject in objects:
             pasteImage = currentObject.GetCurrentImage()
-            #print(pasteImage, currentObject, currentObject.x, currentObject.y)
+            print(pasteImage, currentObject, currentObject.x, currentObject.y, x, y)
             image.paste(pasteImage, (0, 0, 50, 50), pasteImage)
         self.BackgroundPhoto[y][x] = ImageTk.PhotoImage(image)
         self.Map[y][x].config(image=self.BackgroundPhoto[y][x])

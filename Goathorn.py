@@ -1,8 +1,11 @@
 from Entity import*
 from Monster import*
 from random import*
+from time import*
 
 class Goathorn(Monster):
+    End = 3
+    Dex = 8
 
     def __init__(self, x, y, model):
         Monster.__init__(self, x, y, model)
@@ -11,11 +14,13 @@ class Goathorn(Monster):
         self.DeadImage = Image.open('Goathorn_Dead.png').convert('RGBA')
 
     def NormalAction(self):
-        if self.Status == Dead:
-            return
         for direction in [Up, Right]:
             hero = self.GetHeroFrom(direction)
             if not (hero is None):
-                pass
                 return
         self.Move([randint(Up, Right)])
+
+
+
+
+

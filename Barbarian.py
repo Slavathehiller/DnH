@@ -16,8 +16,8 @@ class Barbarian(Hero):
 
 
     def Slash(self, params):
-        self.Attack(params)
+        self.Attack(params[0])
 
     def JumpStrike(self, params):
         self.Move(params)
-        self.Attack(params)
+        self.Attack(params[0], 25)

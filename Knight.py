@@ -3,7 +3,7 @@ from random import*
 
 class Knight(Hero):
     Str = 6
-    Dex=8
+    Dex = 8
     End = 6
 
     def __init__(self, x, y, model):
@@ -17,7 +17,7 @@ class Knight(Hero):
 
 
     def Slash(self, params):
-        self.Attack(params)
+        self.Attack(params[0])
 
     def Stab(self, params):
         pass

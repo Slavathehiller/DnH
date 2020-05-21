@@ -102,8 +102,16 @@ def CheckGameState(state):
 
 def RunCommand(params):
     control.RunCommand(CurrentCommand(), params)
-    RecreateCommandPanel()
+    print("view.drawmap() 1", control.currentHero)
     view.drawmap()
+    if control.currentHero is None:
+        while model.tic() != ENDOFCYCLE:
+            sleep(1)
+            print("view.drawmap()")
+            view.drawmap()
+        control.currentHero = model.Heroes[0]
+    RecreateCommandPanel()
+
 
 def KeyPress(event):
     if gameEnded:

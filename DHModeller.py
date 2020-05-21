@@ -1,3 +1,4 @@
+from Entity import*
 from Monster import*
 class DHModeller:
     Monsters = []
@@ -22,16 +23,27 @@ class DHModeller:
                 return currentObject
 
     def GetActiveObjects(self):
-        activeObject = list()
-        #activeObject.extend(self.Heroes)
-        activeObject.extend(self.Monsters)
-        return activeObject
+        activeObjects = list()
+        for monster in self.Monsters:
+            if monster.Status != Dead:
+                activeObjects.append(monster)
+        return activeObjects
 
     ActiveObjects = property(fget=GetActiveObjects)
+
+    def GetStaticObjects(self):
+        staticObjects = list()
+        for monster in self.Monsters:
+            if monster.Status == Dead:
+                staticObjects.append(monster)
+        return staticObjects
+
+    StaticObjects = property(fget=GetStaticObjects)
 
     def GetAllObjects(self):
         allObjects = list()
         allObjects.extend(self.Heroes)
+        allObjects.extend(self.StaticObjects)
         allObjects.extend(self.ActiveObjects)
         return allObjects
 
@@ -47,10 +59,17 @@ class DHModeller:
                 return True
         return False
 
-
     def isOut(self, x, y):
         return x < 0 or y < 0 or x > self.Options.sizeX - 1 or y > self.Options.sizeY - 1
 
     def tic(self):
+        for i in range(len(self.ActiveObjects)):
+            activeobject = self.ActiveObjects[i]
+            print(activeobject.x, activeobject.y)
+            if activeobject.actions > 0:
+                activeobject.NormalAction()
+                activeobject.actions = activeobject.actions - 1
+                return CYCLING
         for activeobject in self.ActiveObjects:
-            activeobject.NormalAction()
+            activeobject.ResetActions()
+        return ENDOFCYCLE

@@ -84,13 +84,16 @@ class Entity(PILgraphicObject):
             self.orientation = direction
         if self.iCanMove(x, y):
             self.Place(x, y)
+            print(self.Type, "идет в точку", self.x, self.y)
+        else:
+            print(self.Type, "стоит в точке", self.x, self.y)
 
     def GetEnemyFrom(self, direction, distance=1):
         x, y = self.GetCoords(self.x, self.y, direction, distance)
         return self.model.GetActiveObjectAt(x, y)
 
-    def Attack(self, params):
-        enemy = self.GetEnemyFrom(params[0])
+    def Attack(self, direction, DmgModifier=0):
+        enemy = self.GetEnemyFrom(direction)
         if enemy == None or enemy.Status == Dead:
             print("Нет цели")
             return
@@ -98,7 +101,7 @@ class Entity(PILgraphicObject):
         if randint(0, 100) <= enemy.EvadeChance:
             print(enemy.Type + ' увернулся')
         else:
-            damage = randint(self.Damage[0], self.Damage[1])
+            damage = round(randint(self.Damage[0], self.Damage[1]) * (1 + (DmgModifier/100)))
             if randint(0, 100) < self.CriticalChance:
                 damage = damage * 2
                 print("Критический удар!")

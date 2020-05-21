@@ -11,3 +11,6 @@ Hard = 3
 
 Dead = 0
 Live = 1
+
+ENDOFCYCLE = 0
+CYCLING = 1
