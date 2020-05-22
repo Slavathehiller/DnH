@@ -65,11 +65,10 @@ class DHModeller:
     def tic(self):
         for i in range(len(self.ActiveObjects)):
             activeobject = self.ActiveObjects[i]
-            print(activeobject.x, activeobject.y)
             if activeobject.actions > 0:
                 activeobject.NormalAction()
                 activeobject.actions = activeobject.actions - 1
                 return CYCLING
-        for activeobject in self.ActiveObjects:
+        for activeobject in self.Monsters:
             activeobject.ResetActions()
         return ENDOFCYCLE

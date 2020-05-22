@@ -5,7 +5,6 @@ from time import*
 
 class Goathorn(Monster):
     End = 3
-    Dex = 8
 
     def __init__(self, x, y, model):
         Monster.__init__(self, x, y, model)

@@ -17,11 +17,6 @@ class DHController:
         if self.currentHero.actions < 1:
             self.currentHero.ResetActions()
             self.currentHero = self.GetNextHero()
-            # if self.currentHero == None:
-            #     self.model.tic()
-            #     self.currentHero = self.model.Heroes[0]
-
-
 
     def GetNextHero(self):
         i = self.model.Heroes.index(self.currentHero) + 1

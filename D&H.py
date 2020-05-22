@@ -74,7 +74,6 @@ RightButton = Button(ActionFrame, text="⇨", justify=CENTER, height=1, width=3)
 RightButton.bind("<Button-1>", lambda event: RunCommand([Right]))
 RightButton.grid(column=3, row=1)
 
-
 view = DHViewer(window, model, options)
 view.InitInterface()
 view.drawmap()
@@ -101,17 +100,15 @@ def CheckGameState(state):
     pass
 
 def RunCommand(params):
-    control.RunCommand(CurrentCommand(), params)
-    print("view.drawmap() 1", control.currentHero)
-    view.drawmap()
+    if control.currentHero is not None:
+        control.RunCommand(CurrentCommand(), params)
+        view.drawmap()
     if control.currentHero is None:
         while model.tic() != ENDOFCYCLE:
-            sleep(1)
-            print("view.drawmap()")
+            window.after(500)
             view.drawmap()
         control.currentHero = model.Heroes[0]
-    RecreateCommandPanel()
-
+        RecreateCommandPanel()
 
 def KeyPress(event):
     if gameEnded:
