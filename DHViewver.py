@@ -15,6 +15,8 @@ class DHViewer:
     TorsoTemplatePhoto = None
     RHtemplatePhoto = None
     LHtemplatePhoto = None
+    HeroPanelPhoto = None
+    MessagePanelPhoto = None
     Timer = None
 
     def __init__(self, outviget, model, options):
@@ -37,11 +39,29 @@ class DHViewer:
     def InitInterface(self):
         HeroesFrame = Frame(self.outviget)
         HeroesFrame.pack(fill=BOTH, side=LEFT)
+        HeroPalenBackground = Label(HeroesFrame)
+        image = Image.open("HeroPanelImage.png")
+        self.HeroPanelPhoto = ImageTk.PhotoImage(image)
+        HeroPalenBackground.config(image=self.HeroPanelPhoto, bd=0)
+        HeroPalenBackground.pack()
+
         FieldFrame = Frame(self.outviget)
         FieldFrame.pack(fill=BOTH, side=LEFT)
         self.BackgroundRaw = []
         self.BackgroundPhoto = []
-        mapImage = Image.open('map.png')
+        mapImage = Image.open('map_stone.png').convert('RGBA')
+        splitterImage = Image.open('VerticalSplitter.png').convert('RGBA')
+        mapImage.paste(splitterImage, (-20, 0,), splitterImage)
+        mapImage.paste(splitterImage, (740, 0,), splitterImage)
+
+        MessageFrame = Frame(self.outviget)
+        MessageFrame.pack(fill=BOTH, side=LEFT)
+        MessageBackground = Label(MessageFrame)
+        image = Image.open("MessagePanelImage.png").convert('RGBA')
+        self.MessagePanelPhoto = ImageTk.PhotoImage(image)
+        MessageBackground.config(image=self.MessagePanelPhoto)
+        MessageBackground.pack()
+
 
         for y in range(self.options.sizeY):  # Разрезаем карту на квадратики и сохраняем квадратики в списке
             ImageLine = list()  # Создаем игровое поле в виде набора меток, содержащих фрагменты карты
@@ -63,8 +83,9 @@ class DHViewer:
             self.Map.append(VisualLine)
 
         for Hero in self.model.Heroes:
-            HeroFrame = Frame(HeroesFrame, border=1, relief="groove")
-            HeroFrame.pack(side=TOP)
+            HeroFrame = Frame(HeroesFrame)
+            HeroFrame.place(x=0, y=self.model.Heroes.index(Hero) * 160)
+
 
             InventoryFrame = Frame(HeroFrame)
             InventoryFrame.grid(column=0, row=1)

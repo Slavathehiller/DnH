@@ -1,4 +1,5 @@
 from Hero import*
+from Command import*
 
 class Barbarian(Hero):
     Str = 8
@@ -9,15 +10,7 @@ class Barbarian(Hero):
         Hero.__init__(self, x, y, model)
         self.Type = 'Варвар'
         self.SetImage('Barbarian')
-        self.Commands.append(self.Slash)
-        self.CommandsNames.append('Аццки Рубить')
-        self.Commands.append(self.JumpStrike)
-        self.CommandsNames.append('Напрыгнуть и рубануть')
+        self.Commands.append(Slash())
+        #self.Commands.append(JumpStrike())
 
 
-    def Slash(self, params):
-        self.Attack(params[0])
-
-    def JumpStrike(self, params):
-        self.Move(params)
-        self.Attack(params[0], 25)

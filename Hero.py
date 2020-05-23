@@ -1,6 +1,7 @@
 from PILgraphicObject import*
 from Entity import*
 from Consts import*
+from Command import*
 
 class Hero(Entity):
     PresenterImage = None
@@ -10,7 +11,7 @@ class Hero(Entity):
     def __init__(self, x, y, model):
         Entity.__init__(self, x, y, model)
         self.model = model
-        self.Commands = [self.Move]
+        self.Commands = [Move()]
         self.CommandsNames = ["Идти"]
 
     def SetImage(self, imageFileName):
@@ -21,4 +22,4 @@ class Hero(Entity):
 
     def RunCommand(self, commandIndex, params):
         command = self.Commands[commandIndex]
-        command(params)
+        command.Run(params)

@@ -1,5 +1,5 @@
 from Hero import*
-from random import*
+from Command import*
 
 class Knight(Hero):
     Str = 6
@@ -10,14 +10,6 @@ class Knight(Hero):
         Hero.__init__(self, x, y, model)
         self.Type = 'Рыцарь'
         self.SetImage('Knight')
-        self.Commands.append(self.Slash)
-        self.CommandsNames.append('Рубить')
-        self.Commands.append(self.Stab)
-        self.CommandsNames.append('Колоть')
+        self.Commands.append(Slash())
+        #self.Commands.append(Stab())
 
-
-    def Slash(self, params):
-        self.Attack(params[0])
-
-    def Stab(self, params):
-        pass

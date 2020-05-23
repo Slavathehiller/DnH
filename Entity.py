@@ -14,11 +14,18 @@ class Entity(PILgraphicObject):
     currentHealth = 10
     _status = Live
     DeadImage = None
+    RightImage = None
+    LeftImage = None
 
     def __init__(self, x, y, model):
         PILgraphicObject.__init__(self, x, y)
         self.ResetActions()
         self.currentHealth = self.Health
+
+    def SetImage(self, imageFileName):
+        super().SetImage(imageFileName)
+        self.RightImage = self.BaseImage
+        self.LeftImage = self.BaseImage.transpose(Image.FLIP_LEFT_RIGHT)
 
     def set_Status(self, value):
         self._status = value
@@ -29,10 +36,12 @@ class Entity(PILgraphicObject):
     Status = property(fget=get_Status, fset=set_Status)
 
     def GetCurrentImage(self):
-        if self.Status == Live:
-            return self.BaseImage
         if self.Status == Dead:
             return self.DeadImage
+        if self.orientation == Right:
+            return self.BaseImage
+        else:
+            return self.BaseImage.transpose(Image.FLIP_LEFT_RIGHT)
 
     def ResetActions(self):
         self.actions = self.Actionsdef
@@ -77,36 +86,24 @@ class Entity(PILgraphicObject):
             newx = x + distance
         return newx, newy
 
-    def Move(self, params):
-        direction = params[0]
-        x, y = self.GetCoords(self.x, self.y, direction)
-        if direction in [Left, Right]:
-            self.orientation = direction
-        if self.iCanMove(x, y):
-            self.Place(x, y)
-            print(self.Type, "идет в точку", self.x, self.y)
-        else:
-            print(self.Type, "стоит в точке", self.x, self.y)
-
     def GetEnemyFrom(self, direction, distance=1):
         x, y = self.GetCoords(self.x, self.y, direction, distance)
         return self.model.GetActiveObjectAt(x, y)
 
-    def Attack(self, direction, DmgModifier=0):
-        enemy = self.GetEnemyFrom(direction)
+    def Attack(self, hero, enemy, DmgModifier=0):
         if enemy == None or enemy.Status == Dead:
             print("Нет цели")
             return
-        print(self.Type + ' бьет ' + enemy.Type)
+        print(hero.Type + ' бьет ' + enemy.Type)
         if randint(0, 100) <= enemy.EvadeChance:
             print(enemy.Type + ' увернулся')
         else:
-            damage = round(randint(self.Damage[0], self.Damage[1]) * (1 + (DmgModifier/100)))
-            if randint(0, 100) < self.CriticalChance:
+            damage = round(randint(hero.Damage[0], hero.Damage[1]) * (1 + (DmgModifier/100)))
+            if randint(0, 100) < hero.CriticalChance:
                 damage = damage * 2
                 print("Критический удар!")
             enemy.currentHealth -= damage
-            print(self.Type + ' наносит ' + enemy.Type + ' ' + str(damage) + ' урона')
+            print(hero.Type + ' наносит ' + enemy.Type + ' ' + str(damage) + ' урона')
             if enemy.currentHealth < 1:
                 enemy.Status = Dead
                 print(enemy.Type + ' погибает')

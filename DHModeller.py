@@ -69,6 +69,6 @@ class DHModeller:
                 activeobject.NormalAction()
                 activeobject.actions = activeobject.actions - 1
                 return CYCLING
-        for activeobject in self.Monsters:
+        for activeobject in self.ActiveObjects:
             activeobject.ResetActions()
         return ENDOFCYCLE

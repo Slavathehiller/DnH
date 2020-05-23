@@ -53,26 +53,43 @@ hero2.model = model
 goathorn.model = model
 
 ActionFrame = Frame(window)
+image = Image.open("ActionPanelImage.png").convert('RGBA')
+APImage = ImageTk.PhotoImage(image)
+
+ActionPanelBackground = Label(ActionFrame)
+ActionPanelBackground.config(image=APImage, bd=0)
+ActionPanelBackground.pack()
 ActionFrame.pack(side=BOTTOM, fill=BOTH)
 
 ViewFrame = Frame(window)
 ViewFrame.pack(side=TOP, fill=BOTH)
 
-TopButton = Button(ActionFrame, text="⇧", justify=CENTER, height=1, width=3)
-TopButton.bind("<Button-1>", lambda event: RunCommand([Up]))
-TopButton.grid(column=1, row=0)
 
-BottomButton = Button(ActionFrame, text="⇩", justify=CENTER, height=1, width=3)
-BottomButton.bind("<Button-1>", lambda event: RunCommand([Down]))
-BottomButton.grid(column=1, row=2)
+image = Image.open("ArrowButton.png").convert('RGBA')
+imageButtonLeft = ImageTk.PhotoImage(image)
+image = image.transpose(Image.FLIP_LEFT_RIGHT)
+imageButtonRight = ImageTk.PhotoImage(image)
+image = image.transpose(Image.ROTATE_90)
+imageButtonUp = ImageTk.PhotoImage(image)
+image = image.transpose(Image.ROTATE_180)
+imageButtonDown = ImageTk.PhotoImage(image)
 
-LeftButton = Button(ActionFrame, text="⇦", justify=CENTER, height=1, width=3)
-LeftButton.bind("<Button-1>", lambda event: RunCommand([Left]))
-LeftButton.grid(column=0, row=1)
 
-RightButton = Button(ActionFrame, text="⇨", justify=CENTER, height=1, width=3)
-RightButton.bind("<Button-1>", lambda event: RunCommand([Right]))
-RightButton.grid(column=3, row=1)
+TopButton = Button(ActionFrame, text="⇧", justify=CENTER, height=29, width=32, image=imageButtonUp, border=0)
+TopButton.bind("<Button-1>", lambda event: RunCommand([control.currentHero, Up]))
+TopButton.place(x=100, y=30)
+
+BottomButton = Button(ActionFrame, text="⇩", justify=CENTER, height=29, width=32, image=imageButtonDown, border=0)
+BottomButton.bind("<Button-1>", lambda event: RunCommand([control.currentHero, Down]))
+BottomButton.place(x=100, y=100)
+
+LeftButton = Button(ActionFrame, text="⇦", justify=CENTER, height=29, width=32, image=imageButtonLeft, border=0)
+LeftButton.bind("<Button-1>", lambda event: RunCommand([control.currentHero, Left]))
+LeftButton.place(x=50, y=65)
+
+RightButton = Button(ActionFrame, text="⇨", justify=CENTER, height=29, width=32, image=imageButtonRight, border=0)
+RightButton.bind("<Button-1>", lambda event: RunCommand([control.currentHero, Right]))
+RightButton.place(x=150, y=65)
 
 view = DHViewer(window, model, options)
 view.InitInterface()
@@ -87,11 +104,13 @@ def RecreateCommandPanel():
     global CommandFrame, CommandVar
     CommandFrame.destroy()
     CommandFrame = Frame(ActionFrame)
-    CommandFrame.grid(column=4, row=1)
+    CommandFrame.place(x=200, y=65)
     for i in range(len(control.currentHero.Commands)):
-        rbCommand = Radiobutton(CommandFrame, text=control.currentHero.CommandsNames[i], variable=CommandVar, value=i)
+        imageUp = control.currentHero.Commands[i].ButtonImage
+        imageDown = control.currentHero.Commands[i].ButtonPressedImage
+        rbCommand = Radiobutton(CommandFrame, selectcolor='#ca935a', bg='#ca935a', justify=CENTER, variable=CommandVar, value=i, image=imageUp, selectimage=imageDown, indicatoron=False, anchor=CENTER, bd=0)
         rbCommand.pack(side=LEFT)
-
+    pass
 
 def CurrentCommand():
     return CommandVar.get()
@@ -100,10 +119,12 @@ def CheckGameState(state):
     pass
 
 def RunCommand(params):
+    print(control.currentHero)
     if control.currentHero is not None:
         control.RunCommand(CurrentCommand(), params)
         view.drawmap()
     if control.currentHero is None:
+
         while model.tic() != ENDOFCYCLE:
             window.after(500)
             view.drawmap()
@@ -123,7 +144,7 @@ def KeyPress(event):
     elif event.keycode == 39:
         direction = Right
     if not gameEnded:
-        RunCommand([direction])
+        RunCommand([control.currentHero, direction])
 
 window.bind("<Key>", KeyPress)
 
