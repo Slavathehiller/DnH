@@ -4,6 +4,7 @@ class DHModeller:
     Monsters = []
     Heroes = []
     Options = None
+    CurrentHeroIndex = None
 
     def __init__(self, heroes, monsters, options):
         self.Heroes = heroes

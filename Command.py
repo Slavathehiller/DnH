@@ -1,11 +1,16 @@
 from PIL import Image, ImageTk
 from Consts import*
+from random import*
 
 
 class Command:
     ButtonImage = None
     ButtonPressedImage = None
     Name = ''
+    entity = None
+
+    def __init__(self, entity):
+        self.entity = entity
 
     def SetImage(self, imageFileName):
         imagefull = Image.open(imageFileName).convert('RGBA')
@@ -17,51 +22,80 @@ class Command:
     def Run(self, params):
         pass
 
+    @staticmethod
+    def Attack(attacker, target, DmgModifier=0):
+        if target == None or target.Status == Dead:
+            print("Нет цели")
+            return
+        Message = attacker.Type + ' бьет ' + target.TypeRod
+        if attacker.Weapon is not None:
+            Message = Message + " " + attacker.Weapon.NameTvor
+        print(Message)
+        if randint(0, 100) <= target.EvadeChance:
+            print(target.Type + ' увернулся')
+        else:
+            damage = round(randint(attacker.Damage[0], attacker.Damage[1]) * (1 + (DmgModifier/100)))
+            if randint(0, 100) < attacker.CriticalChance:
+                damage = damage * 2
+                print("Критический удар!")
+            target.currentHealth -= damage
+            print(attacker.Type + ' наносит ' + target.TypeDat + ' ' + str(damage) + ' урона')
+            if target.currentHealth < 1:
+                target.Status = Dead
+                print(target.Type + ' погибает')
+
+
 class Move(Command):
     Name = 'Идти'
 
-    def __init__(self):
+    def __init__(self, entity):
+        super().__init__(entity)
         self.SetImage("skillimage_Move.png")
 
     def Run(self, params):
-        entity = params[0]
-        direction = params[1]
-        x, y = entity.GetCoords(entity.x, entity.y, direction)
+        direction = params[0]
+        x, y = self.entity.GetCoords(self.entity.x, self.entity.y, direction)
         if direction in [Left, Right]:
-            entity.orientation = direction
-        if entity.iCanMove(x, y):
-            entity.Place(x, y)
-            print(entity.Type, "идет в точку", entity.x, entity.y)
+            self.entity.orientation = direction
+        if self.entity.iCanMove(x, y):
+            self.entity.Place(x, y)
+            print(self.entity.Type, "идет в точку", self.entity.x, self.entity.y)
         else:
-            print(entity.Type, "стоит в точке", entity.x, entity.y)
+            print(self.entity.Type, "стоит в точке", self.entity.x, self.entity.y)
 
 class Slash(Command):
     Name = 'Рубить'
 
-    def __init__(self):
+    def __init__(self, hero):
+        super().__init__(hero)
         self.SetImage("skillimageSlash.png")
 
     def Run(self, params):
-        entity = params[0]
-        direction = params[1]
-        enemy = entity.GetEnemyFrom(direction)
-        entity.Attack(entity, enemy)
+        direction = params[0]
+        enemy = self.entity.GetEnemyFrom(direction)
+        Command.Attack(self.entity, enemy)
 
 class Stab(Command):
     Name = 'Колоть'
 
+    def __init__(self, hero):
+        super().__init__(hero)
+        self.SetImage("skillimageStab.png")
+
     def Run(self, params):
-        entity = params[0]
-        direction = params[1]
-        enemy = entity.GetEnemyFrom(direction)
-        entity.Attack(entity, enemy)
+        direction = params[0]
+        enemy = self.entity.GetEnemyFrom(direction)
+        Command.Attack(self.entity, enemy)
 
 class JumpStrike(Command):
     Name = 'Рубануть в прыжке'
 
+    def __init__(self, hero):
+        super().__init__(hero)
+        self.SetImage("skillimageJumpStrike.png")
+
     def Run(self, params):
-        entity = params[0]
-        direction = params[1]
-        entity.Move(params)
-        enemy = entity.GetEnemyFrom(direction)
-        entity.Attack(entity, enemy, DmgModifier=25)
+        direction = params[0]
+        Move(self.entity).Run(params)
+        enemy = self.entity.GetEnemyFrom(direction)
+        Command.Attack(self.entity, enemy, DmgModifier=25)

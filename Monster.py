@@ -1,5 +1,5 @@
 from Entity import*
-from PILgraphicObject import*
+
 
 class Monster(Entity):
 

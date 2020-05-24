@@ -45,12 +45,15 @@ mainmenu.add_cascade(label="Помощь", menu=menuHelp)
 
 options = SimpleOptions()
 hero1 = Knight(1, 0, None)
+hero1.Weapon = Sword(-1, -1)
 hero2 = Barbarian(0, 0, None)
+#hero3 = Barbarian(0, 0, None)
 goathorn = Goathorn(5, 0, None)
 model = DHModeller([hero1, hero2], [goathorn], options)
 hero1.model = model
 hero2.model = model
 goathorn.model = model
+model.CurrentHeroIndex = 0
 
 ActionFrame = Frame(window)
 image = Image.open("ActionPanelImage.png").convert('RGBA')
@@ -76,19 +79,19 @@ imageButtonDown = ImageTk.PhotoImage(image)
 
 
 TopButton = Button(ActionFrame, text="⇧", justify=CENTER, height=29, width=32, image=imageButtonUp, border=0)
-TopButton.bind("<Button-1>", lambda event: RunCommand([control.currentHero, Up]))
+TopButton.bind("<Button-1>", lambda event: RunCommand([Up]))
 TopButton.place(x=100, y=30)
 
 BottomButton = Button(ActionFrame, text="⇩", justify=CENTER, height=29, width=32, image=imageButtonDown, border=0)
-BottomButton.bind("<Button-1>", lambda event: RunCommand([control.currentHero, Down]))
+BottomButton.bind("<Button-1>", lambda event: RunCommand([Down]))
 BottomButton.place(x=100, y=100)
 
 LeftButton = Button(ActionFrame, text="⇦", justify=CENTER, height=29, width=32, image=imageButtonLeft, border=0)
-LeftButton.bind("<Button-1>", lambda event: RunCommand([control.currentHero, Left]))
+LeftButton.bind("<Button-1>", lambda event: RunCommand([Left]))
 LeftButton.place(x=50, y=65)
 
 RightButton = Button(ActionFrame, text="⇨", justify=CENTER, height=29, width=32, image=imageButtonRight, border=0)
-RightButton.bind("<Button-1>", lambda event: RunCommand([control.currentHero, Right]))
+RightButton.bind("<Button-1>", lambda event: RunCommand([Right]))
 RightButton.place(x=150, y=65)
 
 view = DHViewer(window, model, options)
@@ -105,9 +108,11 @@ def RecreateCommandPanel():
     CommandFrame.destroy()
     CommandFrame = Frame(ActionFrame)
     CommandFrame.place(x=200, y=65)
-    for i in range(len(control.currentHero.Commands)):
-        imageUp = control.currentHero.Commands[i].ButtonImage
-        imageDown = control.currentHero.Commands[i].ButtonPressedImage
+    if control.CurrentHero is None:
+        return
+    for i in range(len(control.CurrentHero.Commands)):
+        imageUp = control.CurrentHero.Commands[i].ButtonImage
+        imageDown = control.CurrentHero.Commands[i].ButtonPressedImage
         rbCommand = Radiobutton(CommandFrame, selectcolor='#ca935a', bg='#ca935a', justify=CENTER, variable=CommandVar, value=i, image=imageUp, selectimage=imageDown, indicatoron=False, anchor=CENTER, bd=0)
         rbCommand.pack(side=LEFT)
     pass
@@ -119,17 +124,15 @@ def CheckGameState(state):
     pass
 
 def RunCommand(params):
-    print(control.currentHero)
-    if control.currentHero is not None:
+    if control.CurrentHero is not None:
         control.RunCommand(CurrentCommand(), params)
         view.drawmap()
-    if control.currentHero is None:
-
+    if control.CurrentHero is None:
         while model.tic() != ENDOFCYCLE:
             window.after(500)
             view.drawmap()
-        control.currentHero = model.Heroes[0]
-        RecreateCommandPanel()
+        control.CurrentHero = model.Heroes[0]
+    RecreateCommandPanel()
 
 def KeyPress(event):
     if gameEnded:
@@ -144,7 +147,7 @@ def KeyPress(event):
     elif event.keycode == 39:
         direction = Right
     if not gameEnded:
-        RunCommand([control.currentHero, direction])
+        RunCommand([direction])
 
 window.bind("<Key>", KeyPress)
 

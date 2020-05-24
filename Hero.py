@@ -5,14 +5,13 @@ from Command import*
 
 class Hero(Entity):
     PresenterImage = None
-    Commands = []
-    CommandsNames = []
 
     def __init__(self, x, y, model):
         Entity.__init__(self, x, y, model)
         self.model = model
-        self.Commands = [Move()]
-        self.CommandsNames = ["Идти"]
+        self.Commands = []
+        self.SelfCommands = [Move(self)]
+        self.Commands.extend(self.SelfCommands)
 
     def SetImage(self, imageFileName):
         PILgraphicObject.SetImage(self, imageFileName + '.png')

@@ -4,23 +4,37 @@ from DHViewver import*
 class DHController:
     model = None
     options = None
-    currentHero = None
+    _currentHero = None
 
     def __init__(self, model, options):
         self.model = model
         self.options = options
-        self.currentHero = self.model.Heroes[0]
+        self.CurrentHero = self.model.Heroes[0]
 
     def RunCommand(self, commandIndex, params):
-        self.currentHero.RunCommand(commandIndex, params)
-        self.currentHero.actions = self.currentHero.actions - 1
-        if self.currentHero.actions < 1:
-            self.currentHero.ResetActions()
-            self.currentHero = self.GetNextHero()
+        self.CurrentHero.RunCommand(commandIndex, params)
+        self.CurrentHero.actions = self.CurrentHero.actions - 1
+        if self.CurrentHero.actions < 1:
+            self.CurrentHero.ResetActions()
+            self.CurrentHero = self.GetNextHero()
+
+    def set_CurrentHero(self, value):
+        self._currentHero = value
+        if value is not None:
+            self.model.CurrentHeroIndex = self.model.Heroes.index(value)
+        else:
+            self.model.CurrentHeroIndex = None
+
+    def get_CurrentHero(self):
+        return self._currentHero
+
+    CurrentHero = property(fget=get_CurrentHero, fset=set_CurrentHero)
+
 
     def GetNextHero(self):
-        i = self.model.Heroes.index(self.currentHero) + 1
+        i = self.model.Heroes.index(self.CurrentHero) + 1
         if i < len(self.model.Heroes):
             return(self.model.Heroes[i])
         else:
             return None
+

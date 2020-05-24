@@ -18,6 +18,8 @@ class DHViewer:
     HeroPanelPhoto = None
     MessagePanelPhoto = None
     Timer = None
+    HeroesInterfaces = []
+    currentHero = None
 
     def __init__(self, outviget, model, options):
         self.outviget = outviget
@@ -35,6 +37,20 @@ class DHViewer:
         self.RHtemplatePhoto = ImageTk.PhotoImage(RHtemplate)
         LHtemplate = Image.open('LHandTemplate.png')
         self.LHtemplatePhoto = ImageTk.PhotoImage(LHtemplate)
+
+    def RefreshHeroInterface(self):
+        #print("CurrentHeroIndex", self.model.CurrentHeroIndex)
+        if self.model.CurrentHeroIndex is None:
+            return
+        HeroIndex = self.model.CurrentHeroIndex
+        #print("HeroIndex", HeroIndex)
+        if self.model.Heroes[HeroIndex].Weapon is not None:
+            print("Weapon.BaseImage", self.model.Heroes[HeroIndex].Weapon.BaseImage)
+            self.HeroesInterfaces[HeroIndex][RHAND].config(image=self.model.Heroes[HeroIndex].Weapon.PhotoImage)
+        else:
+            self.HeroesInterfaces[HeroIndex][RHAND].config(image=self.RHtemplatePhoto)
+
+
 
     def InitInterface(self):
         HeroesFrame = Frame(self.outviget)
@@ -83,46 +99,57 @@ class DHViewer:
             self.Map.append(VisualLine)
 
         for Hero in self.model.Heroes:
-            HeroFrame = Frame(HeroesFrame)
-            HeroFrame.place(x=0, y=self.model.Heroes.index(Hero) * 160)
 
+            HeroInterface = []
 
-            InventoryFrame = Frame(HeroFrame)
-            InventoryFrame.grid(column=0, row=1)
+            HeroIndex = self.model.Heroes.index(Hero)
+            CoordMultiplier = 170
+
+            InventoryFrame = Frame(HeroesFrame)
+            InventoryFrame.place(x=5, y=HeroIndex * CoordMultiplier + 50)
             BigSlotLabel = Label(InventoryFrame)
-            BigSlotLabel.config(image=self.BigSlotPhoto)
+            BigSlotLabel.config(image=self.BigSlotPhoto, bd=0)
             BigSlotLabel.pack(side=TOP)
+            HeroInterface.append(BigSlotLabel)
 
             SmallSlotLabel = Label(InventoryFrame)
-            SmallSlotLabel.config(image=self.SmallSlotPhoto)
+            SmallSlotLabel.config(image=self.SmallSlotPhoto, bd=0)
             SmallSlotLabel.pack(side=TOP)
+            HeroInterface.append(SmallSlotLabel)
 
             SmallSlotLabel = Label(InventoryFrame)
-            SmallSlotLabel.config(image=self.SmallSlotPhoto)
+            SmallSlotLabel.config(image=self.SmallSlotPhoto, bd=0)
             SmallSlotLabel.pack(side=TOP)
+            HeroInterface.append(SmallSlotLabel)
 
-            HeroLabel = Label(HeroFrame)
-            HeroLabel.grid(column=2, row=1)
+            HeroLabel = Label(HeroesFrame)
+            HeroLabel.place(x=87, y=HeroIndex * CoordMultiplier + 50)
             HeroLabel.config(image=Hero.PresenterImage)
 
-            HeadLabel = Label(HeroFrame)
-            HeadLabel.config(image=self.HeadTemplatePhoto)
-            HeadLabel.grid(column=2, row=0)
+            HeadLabel = Label(HeroesFrame)
+            HeadLabel.config(image=self.HeadTemplatePhoto, bd=0)
+            HeadLabel.place(x=105, y=HeroIndex * CoordMultiplier)
+            HeroInterface.append(HeadLabel)
 
-            TorsoLabel = Label(HeroFrame)
-            TorsoLabel.config(image=self.TorsoTemplatePhoto)
-            TorsoLabel.grid(column=1, row=1)
+            TorsoLabel = Label(HeroesFrame)
+            TorsoLabel.config(image=self.TorsoTemplatePhoto, bd=0)
+            TorsoLabel.place(x=36, y=HeroIndex * CoordMultiplier + 50)
+            HeroInterface.append(TorsoLabel)
 
-            HandsFrame = Frame(HeroFrame)
-            HandsFrame.grid(column=4, row=1)
+            HandsFrame = Frame(HeroesFrame)
+            HandsFrame.place(x=170, y=HeroIndex * CoordMultiplier + 50)
 
             RightHandLabel = Label(HandsFrame)
-            RightHandLabel.config(image=self.RHtemplatePhoto)
+            RightHandLabel.config(image=self.RHtemplatePhoto, bd=0)
             RightHandLabel.pack(side=TOP)
+            HeroInterface.append(RightHandLabel)
 
             LeftHandLabel = Label(HandsFrame)
-            LeftHandLabel.config(image=self.LHtemplatePhoto)
+            LeftHandLabel.config(image=self.LHtemplatePhoto, bd=0)
             LeftHandLabel.pack(side=TOP)
+            HeroInterface.append(LeftHandLabel)
+
+            self.HeroesInterfaces.append(HeroInterface)
 
     def PlaceObjects(self, x, y, objects):
         image = self.BackgroundRaw[y][x].copy()
@@ -138,3 +165,4 @@ class DHViewer:
             for x in range(self.options.sizeX):
                 objects = self.model.GetObjectsAt(x, y)
                 self.PlaceObjects(x, y, objects)
+        self.RefreshHeroInterface()

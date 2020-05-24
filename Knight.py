@@ -5,11 +5,12 @@ class Knight(Hero):
     Str = 6
     Dex = 8
     End = 6
+    Type = 'Рыцарь'
+    TypeRod = 'рыцаря'
+    TypeDat = 'рыцарю'
 
     def __init__(self, x, y, model):
-        Hero.__init__(self, x, y, model)
-        self.Type = 'Рыцарь'
+        super().__init__(x, y, model)
         self.SetImage('Knight')
-        self.Commands.append(Slash())
-        #self.Commands.append(Stab())
+
 
