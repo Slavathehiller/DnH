@@ -35,12 +35,13 @@ class Entity(PILgraphicObject):
 
     def set_Weapon(self, value):
         self._weapon = value
-        self.Commands = []
+        self.Commands = list()
         self.Commands.extend(self.SelfCommands)
         if value is None:
             return
         for commandClass in value.Commands:
             self.Commands.append(commandClass(self))
+
 
     def get_Weapon(self):
         return self._weapon

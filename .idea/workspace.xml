@@ -19,37 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be6d9ff3-5a24-48f3-9710-af2812be54ce" name="Default Changelist" comment="Добавлен графический интерфейс">
-      <change afterPath="$PROJECT_DIR$/Weapon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/skillimageJumpStrike.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/skillimageStab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sword.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Default_Changelist.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Default_Changelist/easy_install-3.7.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Default_Changelist/easy_install.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Default_Changelist/pip.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Default_Changelist/pip3.7.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Default_Changelist/pip3.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Default_Changelist/shelved.patch" beforeDir="false" />
+    <list default="true" id="be6d9ff3-5a24-48f3-9710-af2812be54ce" name="Default Changelist" comment="Допилен графический интерфейс. Добавлено оружие">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Barbarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/Barbarian.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BigSlot.png" beforeDir="false" afterPath="$PROJECT_DIR$/BigSlot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Command.py" beforeDir="false" afterPath="$PROJECT_DIR$/Command.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/Consts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/D&amp;H.py" beforeDir="false" afterPath="$PROJECT_DIR$/D&amp;H.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DHController.py" beforeDir="false" afterPath="$PROJECT_DIR$/DHController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DHModeller.py" beforeDir="false" afterPath="$PROJECT_DIR$/DHModeller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DHViewver.py" beforeDir="false" afterPath="$PROJECT_DIR$/DHViewver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/Entity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Goathorn.py" beforeDir="false" afterPath="$PROJECT_DIR$/Goathorn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HeadTemplate.png" beforeDir="false" afterPath="$PROJECT_DIR$/HeadTemplate.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hero.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Knight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Knight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LHandTemplate.png" beforeDir="false" afterPath="$PROJECT_DIR$/LHandTemplate.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Monster.py" beforeDir="false" afterPath="$PROJECT_DIR$/Monster.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RHandTemplate.png" beforeDir="false" afterPath="$PROJECT_DIR$/RHandTemplate.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmallSLot.png" beforeDir="false" afterPath="$PROJECT_DIR$/SmallSLot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TorsoTemplate.png" beforeDir="false" afterPath="$PROJECT_DIR$/TorsoTemplate.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Weapon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Weapon.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590268948465</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Допилен графический интерфейс. Добавлено оружие">
+      <created>1590334885069</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1590334885069</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,7 +180,8 @@
     <MESSAGE value="Обновление виртуального окружения" />
     <MESSAGE value="Текучка" />
     <MESSAGE value="Добавлен графический интерфейс" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен графический интерфейс" />
+    <MESSAGE value="Допилен графический интерфейс. Добавлено оружие" />
+    <option name="LAST_COMMIT_MESSAGE" value="Допилен графический интерфейс. Добавлено оружие" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589994948813">
@@ -213,22 +196,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1589996744097" />
-    <state width="1899" height="295" key="GridCell.Tab.0.bottom" timestamp="1590334585662">
+    <state width="1899" height="295" key="GridCell.Tab.0.bottom" timestamp="1590522967373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1590334585662" />
-    <state width="1899" height="295" key="GridCell.Tab.0.center" timestamp="1590334585661">
+    <state width="1899" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1590522967373" />
+    <state width="1899" height="295" key="GridCell.Tab.0.center" timestamp="1590522967373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="295" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1590334585661" />
-    <state width="1899" height="295" key="GridCell.Tab.0.left" timestamp="1590334585661">
+    <state width="1899" height="295" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1590522967373" />
+    <state width="1899" height="295" key="GridCell.Tab.0.left" timestamp="1590522967372">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="295" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1590334585661" />
-    <state width="1899" height="295" key="GridCell.Tab.0.right" timestamp="1590334585662">
+    <state width="1899" height="295" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1590522967372" />
+    <state width="1899" height="295" key="GridCell.Tab.0.right" timestamp="1590522967373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="295" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1590334585662" />
+    <state width="1899" height="295" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1590522967373" />
     <state x="184" y="86" key="MergeDialog" timestamp="1590245544808">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -249,10 +232,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="434" key="VCS.ChangelistChooser/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1589992074392" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1590268966398">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1590334921054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1590268966398" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1590334921054" />
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590245463824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

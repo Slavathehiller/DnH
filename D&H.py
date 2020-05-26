@@ -29,6 +29,33 @@ def menuAbout():
 def menuInstruction():
     pass
 
+def NewGameMenu():
+    NewGameMenuwindow = Toplevel()
+    NewGameMenuwindow.geometry('540x700')
+    NewGameMenuwindow.title('Подземелья и герои')
+
+    NewGame = Button(NewGameMenuwindow, text="Новая игра", justify=CENTER, height=3, width=35) #image=imageButtonUp, border=0)
+    NewGame.bind("<Button-1>")
+    NewGame.grid(padx=140, pady=60)
+    NewGame.configure(state=DISABLED)
+
+    ContinueGame = Button(NewGameMenuwindow, text="Продолжить игру", justify=CENTER, height=3, width=35)# image=imageButtonDown, border=0)
+    ContinueGame.bind("<Button-1>")
+    ContinueGame.grid(padx=140, pady=20)
+    ContinueGame.configure(state=DISABLED)
+
+    Settings = Button(NewGameMenuwindow, text="Настройки", justify=CENTER, height=3, width=35)# image=imageButtonLeft, border=0)
+    Settings.bind("<Button-1>")
+    Settings.grid(padx=140, pady=20)
+
+    TechnoDemo = Button(NewGameMenuwindow, text="Технодемо", justify=CENTER, height=3, width=35)# image=imageButtonRight, border=0)
+    TechnoDemo.bind("<Button-1>", lambda event: NewGameMenuwindow.destroy())
+    TechnoDemo.grid(padx=140, pady=20)
+
+    Exit = Button(NewGameMenuwindow, text="Выход", justify=CENTER, height=3, width=35)  # image=imageButtonRight, border=0)
+    Exit.bind("<Button-1>", lambda event: exit(0))
+    Exit.grid(padx=140, pady=20)
+
 menuFile = Menu(mainmenu, tearoff=0)
 menuFile.add_command(label="Выход", command=lambda: exit(0))
 mainmenu.add_cascade(label="Файл", menu=menuFile)
@@ -37,6 +64,7 @@ menuGame = Menu(mainmenu, tearoff=0)
 menuGame.add_command(label="Начать игру", command=Newgame)
 menuGame.add_command(label="Настройки", command=SetOptions)
 mainmenu.add_cascade(label="Игра", menu=menuGame)
+mainmenu.add_cascade(label="Новая игра", command=NewGameMenu)
 
 menuHelp = Menu(mainmenu, tearoff=0)
 menuHelp.add_command(label="О программе", command=menuAbout)
@@ -46,7 +74,8 @@ mainmenu.add_cascade(label="Помощь", menu=menuHelp)
 options = SimpleOptions()
 hero1 = Knight(1, 0, None)
 hero1.Weapon = Sword(-1, -1)
-hero2 = Barbarian(0, 0, None)
+hero2 =  Barbarian(0, 0, None)
+hero2.Weapon = Axe(-2, -2)
 #hero3 = Barbarian(0, 0, None)
 goathorn = Goathorn(5, 0, None)
 model = DHModeller([hero1, hero2], [goathorn], options)
@@ -102,6 +131,7 @@ control = DHController(model, options)
 CommandFrame = Frame(ActionFrame)
 
 CommandVar = IntVar()
+Cycling = False
 
 def RecreateCommandPanel():
     global CommandFrame, CommandVar
@@ -124,18 +154,23 @@ def CheckGameState(state):
     pass
 
 def RunCommand(params):
+    global Cycling
+    if Cycling:
+        return
     if control.CurrentHero is not None:
         control.RunCommand(CurrentCommand(), params)
         view.drawmap()
     if control.CurrentHero is None:
+        Cycling = True
         while model.tic() != ENDOFCYCLE:
             window.after(500)
             view.drawmap()
+        Cycling = False
         control.CurrentHero = model.Heroes[0]
     RecreateCommandPanel()
 
 def KeyPress(event):
-    if gameEnded:
+    if gameEnded or Cycling:
         return
     direction = None
     if event.keycode == 38:
