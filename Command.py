@@ -1,5 +1,6 @@
 from PIL import Image, ImageTk
 from Consts import*
+from Weapon import*
 from random import*
 
 
@@ -38,6 +39,9 @@ class Command:
             if randint(0, 100) < attacker.CriticalChance:
                 damage = damage * 2
                 print("Критический удар!")
+            if randint(0, 100) < attacker.ChanceToStun:
+                target.Status = Stun
+                print(target.Type + " оглушен!")
             target.currentHealth -= damage
             print(attacker.Type + ' наносит ' + target.TypeDat + ' ' + str(damage) + ' урона')
             if target.currentHealth < 1:
@@ -63,8 +67,21 @@ class Move(Command):
         else:
             print(self.entity.Type, "стоит в точке", self.entity.x, self.entity.y)
 
+
 class Slash(Command):
     Name = 'Рубить'
+
+    def __init__(self, hero):
+        super().__init__(hero)
+        self.SetImage("skillimageSlash.png")
+
+    def Run(self, params):
+        direction = params[0]
+        enemy = self.entity.GetEnemyFrom(direction)
+        Command.Attack(self.entity, enemy)
+
+class Smash(Command):
+    Name = 'Бить'
 
     def __init__(self, hero):
         super().__init__(hero)
@@ -85,6 +102,18 @@ class Stab(Command):
     def Run(self, params):
         direction = params[0]
         enemy = self.entity.GetEnemyFrom(direction)
+        Command.Attack(self.entity, enemy)
+
+class LongStab(Command):
+    Name = 'КолотьДалеко'
+
+    def __init__(self, hero):
+        super().__init__(hero)
+        self.SetImage("skillimageStab.png")
+
+    def Run(self, params):
+        direction = params[0]
+        enemy = self.entity.GetEnemyFrom(direction, distance=2)
         Command.Attack(self.entity, enemy)
 
 class JumpStrike(Command):

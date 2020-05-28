@@ -8,6 +8,8 @@ class Barbarian(Hero):
     Type = 'Варвар'
     TypeRod = 'варвара'
     TypeDat = 'варвару'
+    WeaponPoint = (30, 0, 45, 30)
+    WeaponAngle = 20
 
     def __init__(self, x, y, model):
         super().__init__(x, y, model)

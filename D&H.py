@@ -1,5 +1,4 @@
 from tkinter import*
-from tkinter import Frame
 from PIL import Image, ImageTk
 from Options import*
 from Goathorn import*
@@ -8,6 +7,7 @@ from Barbarian import*
 from DHViewver import*
 from DHModeller import*
 from DHController import*
+from Command import*
 
 window = Tk()
 window.geometry('1200x660')
@@ -34,25 +34,25 @@ def NewGameMenu():
     NewGameMenuwindow.geometry('540x700')
     NewGameMenuwindow.title('Подземелья и герои')
 
-    NewGame = Button(NewGameMenuwindow, text="Новая игра", justify=CENTER, height=3, width=35) #image=imageButtonUp, border=0)
+    NewGame = Button(NewGameMenuwindow, text="Новая игра", justify=CENTER, height=3, width=35)
     NewGame.bind("<Button-1>")
     NewGame.grid(padx=140, pady=60)
     NewGame.configure(state=DISABLED)
 
-    ContinueGame = Button(NewGameMenuwindow, text="Продолжить игру", justify=CENTER, height=3, width=35)# image=imageButtonDown, border=0)
+    ContinueGame = Button(NewGameMenuwindow, text="Продолжить игру", justify=CENTER, height=3, width=35)
     ContinueGame.bind("<Button-1>")
     ContinueGame.grid(padx=140, pady=20)
     ContinueGame.configure(state=DISABLED)
 
-    Settings = Button(NewGameMenuwindow, text="Настройки", justify=CENTER, height=3, width=35)# image=imageButtonLeft, border=0)
+    Settings = Button(NewGameMenuwindow, text="Настройки", justify=CENTER, height=3, width=35)
     Settings.bind("<Button-1>")
     Settings.grid(padx=140, pady=20)
 
-    TechnoDemo = Button(NewGameMenuwindow, text="Технодемо", justify=CENTER, height=3, width=35)# image=imageButtonRight, border=0)
+    TechnoDemo = Button(NewGameMenuwindow, text="Технодемо", justify=CENTER, height=3, width=35)
     TechnoDemo.bind("<Button-1>", lambda event: NewGameMenuwindow.destroy())
     TechnoDemo.grid(padx=140, pady=20)
 
-    Exit = Button(NewGameMenuwindow, text="Выход", justify=CENTER, height=3, width=35)  # image=imageButtonRight, border=0)
+    Exit = Button(NewGameMenuwindow, text="Выход", justify=CENTER, height=3, width=35)
     Exit.bind("<Button-1>", lambda event: exit(0))
     Exit.grid(padx=140, pady=20)
 
@@ -74,14 +74,11 @@ mainmenu.add_cascade(label="Помощь", menu=menuHelp)
 options = SimpleOptions()
 hero1 = Knight(1, 0, None)
 hero1.Weapon = Sword(-1, -1)
-hero2 =  Barbarian(0, 0, None)
+hero2 = Barbarian(0, 0, None)
 hero2.Weapon = Axe(-2, -2)
 #hero3 = Barbarian(0, 0, None)
 goathorn = Goathorn(5, 0, None)
 model = DHModeller([hero1, hero2], [goathorn], options)
-hero1.model = model
-hero2.model = model
-goathorn.model = model
 model.CurrentHeroIndex = 0
 
 ActionFrame = Frame(window)

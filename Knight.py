@@ -8,6 +8,8 @@ class Knight(Hero):
     Type = 'Рыцарь'
     TypeRod = 'рыцаря'
     TypeDat = 'рыцарю'
+    WeaponPoint = (25, 0, 40, 30)
+    WeaponAngle = -35
 
     def __init__(self, x, y, model):
         super().__init__(x, y, model)

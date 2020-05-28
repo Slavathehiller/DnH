@@ -1,5 +1,7 @@
 from Entity import*
 from Monster import*
+
+
 class DHModeller:
     Monsters = []
     Heroes = []
@@ -7,6 +9,10 @@ class DHModeller:
     CurrentHeroIndex = None
 
     def __init__(self, heroes, monsters, options):
+        for hero in heroes:
+            hero.model = self
+        for monster in monsters:
+            monster.model = self
         self.Heroes = heroes
         self.Monsters = monsters
         self.Options = options

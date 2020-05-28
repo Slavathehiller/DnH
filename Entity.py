@@ -1,6 +1,7 @@
 from Consts import*
 from PILgraphicObject import*
 from random import*
+from Command import*
 from Weapon import*
 
 class Entity(PILgraphicObject):
@@ -21,6 +22,9 @@ class Entity(PILgraphicObject):
     _weapon = None
     SelfCommands = []
     Commands = []
+    chanceToStun = 0
+    WeaponPoint = (25, 0, 40, 30)
+    WeaponAngle = 0
 
     def __init__(self, x, y, model):
         PILgraphicObject.__init__(self, x, y)
@@ -33,6 +37,13 @@ class Entity(PILgraphicObject):
         self.RightImage = self.BaseImage
         self.LeftImage = self.BaseImage.transpose(Image.FLIP_LEFT_RIGHT)
 
+    def get_ActionsCount(self):
+        if self.Status == Dead or self.Status == Stun:
+            self.actions = 0
+            return self.actions
+
+    ActionsCount = property(fget=get_ActionsCount)
+
     def set_Weapon(self, value):
         self._weapon = value
         self.Commands = list()
@@ -41,7 +52,6 @@ class Entity(PILgraphicObject):
             return
         for commandClass in value.Commands:
             self.Commands.append(commandClass(self))
-
 
     def get_Weapon(self):
         return self._weapon
@@ -55,14 +65,6 @@ class Entity(PILgraphicObject):
         return self._status
 
     Status = property(fget=get_Status, fset=set_Status)
-
-    def GetCurrentImage(self):
-        if self.Status == Dead:
-            return self.DeadImage
-        if self.orientation == Right:
-            return self.BaseImage
-        else:
-            return self.BaseImage.transpose(Image.FLIP_LEFT_RIGHT)
 
     def ResetActions(self):
         self.actions = self.Actionsdef
@@ -82,10 +84,17 @@ class Entity(PILgraphicObject):
     def get_Actionsdef(self):
         return self.Dex // 2
 
+    def get_ChanceToStun(self):
+        cts = self.chanceToStun
+        if self.Weapon is not None:
+            cts = cts + self.Weapon.StunModifier
+        return cts
+
     Health = property(fget=get_Health)
     Damage = property(fget=get_Damage)
     EvadeChance = property(fget=get_EvadeChance)
     CriticalChance = property(fget=get_CriticalChance)
+    ChanceToStun = property(fget=get_ChanceToStun)
     Actionsdef = property(fget=get_Actionsdef)
 
     def Place(self, x, y):
@@ -112,3 +121,15 @@ class Entity(PILgraphicObject):
         return self.model.GetActiveObjectAt(x, y)
 
 
+    def GetCurrentImage(self):
+        if self.Status == Dead:
+            return self.DeadImage
+        baseImage = self.BaseImage.copy()
+        if self.Weapon is not None:
+            weaponImg = self.Weapon.BaseImage.copy()
+            weaponImg = weaponImg.rotate(self.WeaponAngle)
+            baseImage.paste(weaponImg, self.WeaponPoint, weaponImg)
+        if self.orientation == Right:
+            return baseImage
+        else:
+            return baseImage.transpose(Image.FLIP_LEFT_RIGHT)
