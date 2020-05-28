@@ -113,7 +113,9 @@ class LongStab(Command):
 
     def Run(self, params):
         direction = params[0]
-        enemy = self.entity.GetEnemyFrom(direction, distance=2)
+        enemy = self.entity.GetEnemyFrom(direction)
+        if enemy is None:
+            enemy = self.entity.GetEnemyFrom(direction, distance=2)
         Command.Attack(self.entity, enemy)
 
 class JumpStrike(Command):
