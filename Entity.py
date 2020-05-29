@@ -1,15 +1,16 @@
-from Consts import*
-from PILgraphicObject import*
-from random import*
-from Command import*
-from Weapon import*
+from Consts import *
+from PILgraphicObject import *
+from random import *
+from Command import *
+from Weapon import *
+
 
 class Entity(PILgraphicObject):
     Str = 5
     Dex = 5
     End = 5
     Per = 5
-    actions = 3
+    _actions = 3
     model = None
     orientation = Right
     Type = ''
@@ -20,6 +21,7 @@ class Entity(PILgraphicObject):
     RightImage = None
     LeftImage = None
     _weapon = None
+    ActionsStunCounter = 1
     SelfCommands = []
     Commands = []
     chanceToStun = 0
@@ -37,12 +39,15 @@ class Entity(PILgraphicObject):
         self.RightImage = self.BaseImage
         self.LeftImage = self.BaseImage.transpose(Image.FLIP_LEFT_RIGHT)
 
+    def set_ActionsCount(self, value):
+        self._actions = value
+
     def get_ActionsCount(self):
         if self.Status == Dead or self.Status == Stun:
-            self.actions = 0
-            return self.actions
+            self._actions = 0
+        return self._actions
 
-    ActionsCount = property(fget=get_ActionsCount)
+    ActionsCount = property(fget=get_ActionsCount, fset=set_ActionsCount)
 
     def set_Weapon(self, value):
         self._weapon = value
@@ -67,7 +72,11 @@ class Entity(PILgraphicObject):
     Status = property(fget=get_Status, fset=set_Status)
 
     def ResetActions(self):
-        self.actions = self.Actionsdef
+        if self.Status == Stun:
+            self.ActionsStunCounter = self.ActionsStunCounter - 1
+        if self.ActionsStunCounter <= 0 or self.Status == Live:
+            self.Status = Live
+            self.ActionsCount = self.Actionsdef
 
     def get_Health(self):
         return self.End * 10
@@ -119,7 +128,6 @@ class Entity(PILgraphicObject):
     def GetEnemyFrom(self, direction, distance=1):
         x, y = self.GetCoords(self.x, self.y, direction, distance)
         return self.model.GetActiveObjectAt(x, y)
-
 
     def GetCurrentImage(self):
         if self.Status == Dead:

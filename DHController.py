@@ -13,8 +13,8 @@ class DHController:
 
     def RunCommand(self, commandIndex, params):
         self.CurrentHero.RunCommand(commandIndex, params)
-        self.CurrentHero.actions = self.CurrentHero.actions - 1
-        if self.CurrentHero.actions < 1:
+        self.CurrentHero.ActionsCount = self.CurrentHero.ActionsCount - 1
+        if self.CurrentHero.ActionsCount < 1:
             self.CurrentHero.ResetActions()
             self.CurrentHero = self.GetNextHero()
 

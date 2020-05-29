@@ -72,9 +72,9 @@ class DHModeller:
     def tic(self):
         for i in range(len(self.ActiveObjects)):
             activeobject = self.ActiveObjects[i]
-            if activeobject.actions > 0:
+            if activeobject.ActionsCount > 0:
                 activeobject.NormalAction()
-                activeobject.actions = activeobject.actions - 1
+                activeobject.ActionsCount = activeobject.ActionsCount - 1
                 return CYCLING
         for activeobject in self.ActiveObjects:
             activeobject.ResetActions()
