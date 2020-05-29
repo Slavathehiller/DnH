@@ -13,6 +13,13 @@ class Weapon(PILgraphicObject):
     CanParry = False
     Commands = []
 
+    def SetImage(self, imageFileName):
+        image = Image.open(imageFileName).convert('RGBA')
+        self.BaseImage = image.crop((0, 0, 25, 50))
+        image2 = image.crop((25, 0, 50, 50))
+        self.PhotoImage = ImageTk.PhotoImage(image2)
+
+
 class Sword(Weapon):
     Name = "Меч"
     NameTvor = "мечом"
@@ -21,7 +28,6 @@ class Sword(Weapon):
     def __init__(self, x, y):
         PILgraphicObject.__init__(self, x, y)
         self.SetImage('sword.png')
-        self.PhotoImage = ImageTk.PhotoImage(self.BaseImage)
         self.Commands = []
         self.Commands.append(Command.Stab)
         self.Commands.append(Command.Slash)
@@ -33,7 +39,6 @@ class Axe(Weapon):
     def __init__(self, x, y):
         PILgraphicObject.__init__(self, x, y)
         self.SetImage('axe.png')
-        self.PhotoImage = ImageTk.PhotoImage(self.BaseImage)
         self.Commands = []
         self.Commands.append(Command.Slash)
 
@@ -44,7 +49,6 @@ class Spear(Weapon):
     def __init__(self, x, y):
         PILgraphicObject.__init__(self, x, y)
         self.SetImage('spear.png')
-        self.PhotoImage = ImageTk.PhotoImage(self.BaseImage)
         self.Commands = []
         self.Commands.append(Command.LongStab)
 
@@ -54,8 +58,7 @@ class Mace(Weapon):
 
     def __init__(self, x, y):
         PILgraphicObject.__init__(self, x, y)
-        self.SetImage('axe.png')
-        self.PhotoImage = ImageTk.PhotoImage(self.BaseImage)
+        self.SetImage('mace.png')
         self.Commands = []
         self.Commands.append(Command.Smash)
         self.StunModifier = 25

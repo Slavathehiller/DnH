@@ -25,8 +25,9 @@ class Entity(PILgraphicObject):
     SelfCommands = []
     Commands = []
     chanceToStun = 0
-    WeaponPoint = (25, 0, 40, 30)
+    WeaponPoint = (0, 0, 0, 0)
     WeaponAngle = 0
+
 
     def __init__(self, x, y, model):
         PILgraphicObject.__init__(self, x, y)

@@ -8,7 +8,7 @@ class Knight(Hero):
     Type = 'Рыцарь'
     TypeRod = 'рыцаря'
     TypeDat = 'рыцарю'
-    WeaponPoint = (25, 0, 40, 30)
+    WeaponPoint = (17, 0, 42, 50)
     WeaponAngle = -35
 
     def __init__(self, x, y, model):

@@ -73,12 +73,10 @@ mainmenu.add_cascade(label="Помощь", menu=menuHelp)
 
 options = SimpleOptions()
 hero1 = Knight(1, 0, None)
-#hero1.Weapon = Sword(-1, -1)
+hero1.Weapon = Spear(-1, -1)
 hero2 = Barbarian(0, 0, None)
 hero2.Weapon = Axe(-2, -2)
 #hero3 = Barbarian(0, 0, None)
-#hero2.Weapon = Spear(-3, -3)
-hero1.Weapon = Mace(-4, -4)
 goathorn = Goathorn(5, 0, None)
 model = DHModeller([hero1, hero2], [goathorn], options)
 model.CurrentHeroIndex = 0
