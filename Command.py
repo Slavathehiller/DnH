@@ -9,6 +9,7 @@ class Command:
     ButtonPressedImage = None
     Name = ''
     entity = None
+    NameTvor = ''
 
     def __init__(self, entity):
         self.entity = entity
@@ -24,13 +25,15 @@ class Command:
         pass
 
     @staticmethod
-    def Attack(attacker, target, DmgModifier=0):
+    def Attack(attacker, target, DmgModifier=0, StunModifier=0, CommandTvor=''):
         if target == None or target.Status == Dead:
             print("Нет цели")
             return
         Message = attacker.Type + ' бьет ' + target.TypeRod
         if attacker.Weapon is not None:
             Message = Message + " " + attacker.Weapon.NameTvor
+        else:
+            Message = Message + " " + CommandTvor
         print(Message)
         if randint(0, 100) <= target.EvadeChance:
             print(target.Type + ' увернулся')
@@ -39,7 +42,7 @@ class Command:
             if randint(0, 100) < attacker.CriticalChance:
                 damage = damage * 2
                 print("Критический удар!")
-            if randint(0, 100) < attacker.ChanceToStun:
+            if randint(0, 100) < attacker.ChanceToStun + StunModifier:
                 target.Status = Stun
                 print(target.Type + " оглушен!")
             target.currentHealth -= damage
@@ -105,7 +108,7 @@ class Stab(Command):
         Command.Attack(self.entity, enemy)
 
 class LongStab(Command):
-    Name = 'КолотьДалеко'
+    Name = 'Выпад и укол'
 
     def __init__(self, hero):
         super().__init__(hero)
@@ -130,3 +133,21 @@ class JumpStrike(Command):
         Move(self.entity).Run(params)
         enemy = self.entity.GetEnemyFrom(direction)
         Command.Attack(self.entity, enemy, DmgModifier=25)
+
+class SmashHorn(Command):
+    Name = 'Удар рогами'
+    NameTvor = 'рогами'
+
+    def Run(self, params):
+        direction = params[0]
+        enemy = self.entity.GetHeroFrom(direction)
+        Command.Attack(self.entity, enemy, StunModifier=25, CommandTvor=self.NameTvor)
+
+class SmashClaws(Command):
+    Name = 'Удар когтями'
+    NameTvor = 'когтями'
+
+    def Run(self, params):
+        direction = params[0]
+        enemy = self.entity.GetHeroFrom(direction)
+        Command.Attack(self.entity, enemy, CommandTvor=self.NameTvor)

@@ -18,7 +18,3 @@ class Hero(Entity):
         image = Image.open(imageFileName + '_Presenter.png')
         self.PresenterImage = ImageTk.PhotoImage(image)
 
-
-    def RunCommand(self, commandIndex, params):
-        command = self.Commands[commandIndex]
-        command.Run(params)

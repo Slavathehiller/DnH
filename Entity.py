@@ -111,6 +111,10 @@ class Entity(PILgraphicObject):
         self.x = x
         self.y = y
 
+    def RunCommand(self, commandIndex, params):
+        command = self.Commands[commandIndex]
+        command.Run(params)
+
     def iCanMove(self, x, y):
         return not self.model.isOut(x, y) and not self.model.isHero(x, y) and not self.model.isMonster(x, y)
 

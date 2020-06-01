@@ -29,32 +29,37 @@ def menuAbout():
 def menuInstruction():
     pass
 
+image = Image.open("Opening.jpg")
+opening = ImageTk.PhotoImage(image)
 def NewGameMenu():
     NewGameMenuwindow = Toplevel()
-    NewGameMenuwindow.geometry('540x700')
+    NewGameMenuwindow.geometry('640x400')
     NewGameMenuwindow.title('Подземелья и герои')
+    BackgroundLabel = Label(NewGameMenuwindow)
+    BackgroundLabel.config(image=opening)
+    BackgroundLabel.pack()
 
-    NewGame = Button(NewGameMenuwindow, text="Новая игра", justify=CENTER, height=3, width=35)
+    NewGame = Button(NewGameMenuwindow, text="Новая игра", justify=CENTER, height=1, width=35)
     NewGame.bind("<Button-1>")
-    NewGame.grid(padx=140, pady=60)
+    NewGame.place(x=190, y=60)
     NewGame.configure(state=DISABLED)
 
-    ContinueGame = Button(NewGameMenuwindow, text="Продолжить игру", justify=CENTER, height=3, width=35)
+    ContinueGame = Button(NewGameMenuwindow, text="Продолжить игру", justify=CENTER, height=1, width=35)
     ContinueGame.bind("<Button-1>")
-    ContinueGame.grid(padx=140, pady=20)
+    ContinueGame.place(x=190, y=90)
     ContinueGame.configure(state=DISABLED)
 
-    Settings = Button(NewGameMenuwindow, text="Настройки", justify=CENTER, height=3, width=35)
+    Settings = Button(NewGameMenuwindow, text="Настройки", justify=CENTER, height=1, width=35)
     Settings.bind("<Button-1>")
-    Settings.grid(padx=140, pady=20)
+    Settings.place(x=190, y=120)
 
-    TechnoDemo = Button(NewGameMenuwindow, text="Технодемо", justify=CENTER, height=3, width=35)
+    TechnoDemo = Button(NewGameMenuwindow, text="Технодемо", justify=CENTER, height=1, width=35)
     TechnoDemo.bind("<Button-1>", lambda event: NewGameMenuwindow.destroy())
-    TechnoDemo.grid(padx=140, pady=20)
+    TechnoDemo.place(x=190, y=150)
 
-    Exit = Button(NewGameMenuwindow, text="Выход", justify=CENTER, height=3, width=35)
+    Exit = Button(NewGameMenuwindow, text="Выход", justify=CENTER, height=1, width=35)
     Exit.bind("<Button-1>", lambda event: exit(0))
-    Exit.grid(padx=140, pady=20)
+    Exit.place(x=190, y=180)
 
 menuFile = Menu(mainmenu, tearoff=0)
 menuFile.add_command(label="Выход", command=lambda: exit(0))
@@ -73,9 +78,9 @@ mainmenu.add_cascade(label="Помощь", menu=menuHelp)
 
 options = SimpleOptions()
 hero1 = Knight(1, 0, None)
-hero1.Weapon = Spear(-1, -1)
+hero1.Weapon = Sword(-1, -1)
 hero2 = Barbarian(0, 0, None)
-hero2.Weapon = Axe(-2, -2)
+hero2.Weapon = Mace(-2, -2)
 #hero3 = Barbarian(0, 0, None)
 goathorn = Goathorn(5, 0, None)
 model = DHModeller([hero1, hero2], [goathorn], options)
