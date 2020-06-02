@@ -27,6 +27,9 @@ class Entity(PILgraphicObject):
     chanceToStun = 0
     WeaponPoint = (0, 0, 0, 0)
     WeaponAngle = 0
+    Helm = None
+    Torso = None
+    HeavyTorso = None
 
 
     def __init__(self, x, y, model):

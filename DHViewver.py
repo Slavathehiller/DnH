@@ -47,7 +47,12 @@ class DHViewer:
                 self.HeroesInterfaces[HeroIndex][RHAND].config(image=self.model.Heroes[HeroIndex].Weapon.PhotoImage)
             else:
                 self.HeroesInterfaces[HeroIndex][RHAND].config(image=self.RHtemplatePhoto)
-
+            if Hero.Helm is not None:
+                self.HeroesInterfaces[HeroIndex][HEAD].config(image=self.model.Heroes[HeroIndex].Helm.PhotoImage)
+            if Hero.Torso is not None:
+                self.HeroesInterfaces[HeroIndex][TORSO].config(image=self.model.Heroes[HeroIndex].Torso.PhotoImage)
+            if Hero.HeavyTorso is not None:
+                self.HeroesInterfaces[HeroIndex][TORSO].config(image=self.model.Heroes[HeroIndex].HeavyTorso.PhotoImage)
 
 
     def InitInterface(self):

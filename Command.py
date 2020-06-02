@@ -42,15 +42,23 @@ class Command:
             if randint(0, 100) < attacker.CriticalChance:
                 damage = damage * 2
                 print("Критический удар!")
+            armorModifier = 0
+            if target.Helm is not None:
+                armorModifier = armorModifier + target.Helm.ArmorModifier
+            if target.Torso is not None:
+                armorModifier = armorModifier + target.Torso.ArmorModifier
+            if target.HeavyTorso is not None:
+                armorModifier = armorModifier + target.HeavyTorso.ArmorModifier
+            damage = round(damage * (1 - armorModifier/100))
             if randint(0, 100) < attacker.ChanceToStun + StunModifier:
-                target.Status = Stun
-                print(target.Type + " оглушен!")
+                if target.Helm is None or randint(0, 100) > target.Helm.StunChanceReduce:
+                    target.Status = Stun
+                    print(target.Type + " оглушен!")
             target.currentHealth -= damage
             print(attacker.Type + ' наносит ' + target.TypeDat + ' ' + str(damage) + ' урона')
             if target.currentHealth < 1:
                 target.Status = Dead
                 print(target.Type + ' погибает')
-
 
 class Move(Command):
     Name = 'Идти'
