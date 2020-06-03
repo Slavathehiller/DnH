@@ -2,6 +2,7 @@ from tkinter import*
 from PIL import Image, ImageTk
 from Options import*
 from Goathorn import*
+from Swinemar import*
 from Knight import*
 from Barbarian import*
 from DHViewver import*
@@ -112,7 +113,8 @@ def RoomBattle():
     hero2.Weapon = Mace(-2, -2)
     #hero3 = Barbarian(0, 0, None)
     goathorn = Goathorn(5, 0, None)
-    model = DHModeller([hero1, hero2], [goathorn], options)
+    swinemar = Swinemar(3, 0, None)
+    model = DHModeller([hero1, hero2], [goathorn, swinemar], options)
     model.CurrentHeroIndex = 0
     view = DHViewer(window, model, options)
     view.InitInterface()

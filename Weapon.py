@@ -13,6 +13,10 @@ class Weapon(PILgraphicObject):
     CanParry = False
     Commands = []
 
+    def __init__(self, x, y):
+        PILgraphicObject.__init__(self, x, y)
+        self.Commands = []
+
     def SetImage(self, imageFileName):
         image = Image.open(imageFileName).convert('RGBA')
         self.BaseImage = image.crop((0, 0, 25, 50))
@@ -26,9 +30,8 @@ class Sword(Weapon):
     CanParry = True
 
     def __init__(self, x, y):
-        PILgraphicObject.__init__(self, x, y)
+        super().__init__(x, y)
         self.SetImage('sword.png')
-        self.Commands = []
         self.Commands.append(Command.Stab)
         self.Commands.append(Command.Slash)
 
@@ -37,9 +40,8 @@ class Axe(Weapon):
     NameTvor = "топором"
 
     def __init__(self, x, y):
-        PILgraphicObject.__init__(self, x, y)
+        super().__init__(x, y)
         self.SetImage('axe.png')
-        self.Commands = []
         self.Commands.append(Command.Slash)
 
 class Spear(Weapon):
@@ -47,9 +49,8 @@ class Spear(Weapon):
     NameTvor = "копьём"
 
     def __init__(self, x, y):
-        PILgraphicObject.__init__(self, x, y)
+        super().__init__(x, y)
         self.SetImage('spear.png')
-        self.Commands = []
         self.Commands.append(Command.LongStab)
 
 class Mace(Weapon):
@@ -57,8 +58,7 @@ class Mace(Weapon):
     NameTvor = "булавой"
 
     def __init__(self, x, y):
-        PILgraphicObject.__init__(self, x, y)
+        super().__init__(x, y)
         self.SetImage('mace.png')
-        self.Commands = []
         self.Commands.append(Command.Smash)
         self.StunModifier = 25

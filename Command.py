@@ -27,6 +27,7 @@ class Command:
     @staticmethod
     def Attack(attacker, target, DmgModifier=0, StunModifier=0, CommandTvor=''):
         if target == None or target.Status == Dead:
+            print(attacker, target)
             print("Нет цели")
             return
         Message = attacker.Type + ' бьет ' + target.TypeRod
@@ -35,7 +36,7 @@ class Command:
         else:
             Message = Message + " " + CommandTvor
         print(Message)
-        if randint(0, 100) <= target.EvadeChance:
+        if target.Status == Live and randint(0, 100) <= target.EvadeChance:
             print(target.Type + ' увернулся')
         else:
             damage = round(randint(attacker.Damage[0], attacker.Damage[1]) * (1 + (DmgModifier/100)))
@@ -154,6 +155,15 @@ class SmashHorn(Command):
 class SmashClaws(Command):
     Name = 'Удар когтями'
     NameTvor = 'когтями'
+
+    def Run(self, params):
+        direction = params[0]
+        enemy = self.entity.GetHeroFrom(direction)
+        Command.Attack(self.entity, enemy, CommandTvor=self.NameTvor)
+
+class FangStrike(Command):
+    Name = 'Удар клыками'
+    NameTvor = 'клыками'
 
     def Run(self, params):
         direction = params[0]

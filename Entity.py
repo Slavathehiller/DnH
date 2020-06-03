@@ -6,11 +6,11 @@ from Weapon import *
 
 
 class Entity(PILgraphicObject):
-    Str = 5
-    Dex = 5
-    End = 5
-    Per = 5
-    _actions = 3
+    Str = 5  #Сила
+    Dex = 5  #Ловкость
+    End = 5  #Выносливость
+    Per = 5  #Восприятие
+    _actions = 0
     model = None
     orientation = Right
     Type = ''
@@ -21,10 +21,10 @@ class Entity(PILgraphicObject):
     RightImage = None
     LeftImage = None
     _weapon = None
-    ActionsStunCounter = 1
+    StunCounter = 0
+    chanceToStun = 0
     SelfCommands = []
     Commands = []
-    chanceToStun = 0
     WeaponPoint = (0, 0, 0, 0)
     WeaponAngle = 0
     Helm = None
@@ -34,6 +34,8 @@ class Entity(PILgraphicObject):
 
     def __init__(self, x, y, model):
         PILgraphicObject.__init__(self, x, y)
+        self.SelfCommands = []
+        self.Commands = []
         self.ResetActions()
         self.currentHealth = self.Health
         self.model = model
@@ -69,6 +71,8 @@ class Entity(PILgraphicObject):
 
     def set_Status(self, value):
         self._status = value
+        if self._status == Stun:
+            self.StunCounter = 2
 
     def get_Status(self):
         return self._status
@@ -77,9 +81,10 @@ class Entity(PILgraphicObject):
 
     def ResetActions(self):
         if self.Status == Stun:
-            self.ActionsStunCounter = self.ActionsStunCounter - 1
-        if self.ActionsStunCounter <= 0 or self.Status == Live:
-            self.Status = Live
+            self.StunCounter = self.StunCounter - 1
+            if self.StunCounter <= 0:
+                self.Status = Live
+        if self.Status == Live:
             self.ActionsCount = self.Actionsdef
 
     def get_Health(self):
