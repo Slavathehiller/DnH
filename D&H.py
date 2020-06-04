@@ -10,6 +10,7 @@ from DHModeller import*
 from DHController import*
 from Command import*
 from Armor import*
+from Shield import*
 
 window = Tk()
 window.geometry('1200x640')
@@ -106,12 +107,13 @@ def RoomBattle():
     options = SimpleOptions()
     hero1 = Knight(1, 0, None)
     hero1.Weapon = Sword(-1, -1)
-    hero1.Helm = LightHelm(0, 0)
-    hero1.Torso = LightArmor(-1, 0)
+    hero1.Helm = HeavyHelm(0, 0)
+    hero1.Torso = HeavyArmor(-1, 0)
+    hero1.Shield = Shield(-2, 0)
     hero2 = Barbarian(0, 0, None)
     hero2.Helm = LightHelm(-2, 0)
     hero2.Weapon = Mace(-2, -2)
-    #hero3 = Barbarian(0, 0, None)
+    #hero3 = Knight(2, 0, None)
     goathorn = Goathorn(5, 0, None)
     swinemar = Swinemar(3, 0, None)
     model = DHModeller([hero1, hero2], [goathorn, swinemar], options)
@@ -147,12 +149,13 @@ def RoomBattle():
             control.RunCommand(CurrentCommand(), params)
             view.drawmap()
         if control.CurrentHero is None:
-           Cycling = True
-           while model.tic() != ENDOFCYCLE:
-               window.after(500)
-               view.drawmap()
-           Cycling = False
-           control.CurrentHero = model.Heroes[0]
+            Cycling = True
+            while model.tic() != ENDOFCYCLE:
+                window.after(500)
+                view.drawmap()
+            Cycling = False
+            control.CurrentHero = model.Heroes[0]
+            view.drawmap()
         RecreateCommandPanel(CommandVar)
 
     def KeyPress(event):

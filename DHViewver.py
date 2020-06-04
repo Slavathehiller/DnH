@@ -39,8 +39,6 @@ class DHViewer:
         self.LHtemplatePhoto = ImageTk.PhotoImage(LHtemplate)
 
     def RefreshHeroesInterface(self):
-        #print("CurrentHeroIndex", self.model.CurrentHeroIndex)
-        #print("HeroIndex", HeroIndex)
         for Hero in self.model.Heroes:
             HeroIndex = self.model.Heroes.index(Hero)
             if Hero.Weapon is not None:
@@ -51,8 +49,8 @@ class DHViewer:
                 self.HeroesInterfaces[HeroIndex][HEAD].config(image=self.model.Heroes[HeroIndex].Helm.PhotoImage)
             if Hero.Torso is not None:
                 self.HeroesInterfaces[HeroIndex][TORSO].config(image=self.model.Heroes[HeroIndex].Torso.PhotoImage)
-            if Hero.HeavyTorso is not None:
-                self.HeroesInterfaces[HeroIndex][TORSO].config(image=self.model.Heroes[HeroIndex].HeavyTorso.PhotoImage)
+            if Hero.Shield is not None:
+                self.HeroesInterfaces[HeroIndex][LHAND].config(image=self.model.Heroes[HeroIndex].Shield.PhotoImage)
 
 
     def InitInterface(self):

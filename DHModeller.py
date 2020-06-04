@@ -73,7 +73,6 @@ class DHModeller:
         for i in range(len(self.ActiveObjects)):
             activeobject = self.ActiveObjects[i]
             if activeobject.ActionsCount > 0:
-                print("tic", activeobject)
                 activeobject.NormalAction()
                 activeobject.ActionsCount = activeobject.ActionsCount - 1
                 return CYCLING

@@ -14,7 +14,7 @@ class Armor(PILgraphicObject):
 
 
 class LightHelm(Armor):
-    ArmorModifier = 20
+    ArmorModifier = 10
     StunChanceReduce = 10
     BodyPart = BPHEAD
 
@@ -22,8 +22,18 @@ class LightHelm(Armor):
         super().__init__(x, y)
         self.SetImage("LightHelm.png")
 
-class LightArmor(Armor):
+class HeavyHelm(Armor):
     ArmorModifier = 20
+    StunChanceReduce = 30
+    BodyPart = BPHEAD
+
+    def __init__(self, x, y):
+        super().__init__(x, y)
+        self.SetImage("HeavyHelmet.png")
+
+
+class LightArmor(Armor):
+    ArmorModifier = 25
     BodyPart = BPCHEST
 
     def __init__(self, x, y):
@@ -37,3 +47,5 @@ class HeavyArmor(Armor):
     def __init__(self, x, y):
         super().__init__(x, y)
         self.SetImage("HeavyArmor.png")
+
+

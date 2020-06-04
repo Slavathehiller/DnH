@@ -27,9 +27,11 @@ class Entity(PILgraphicObject):
     Commands = []
     WeaponPoint = (0, 0, 0, 0)
     WeaponAngle = 0
+    ShieldPoint = (0, 0, 0, 0)
     Helm = None
     Torso = None
-    HeavyTorso = None
+    Shield = None
+    ellipse = None
 
 
     def __init__(self, x, y, model):
@@ -43,7 +45,9 @@ class Entity(PILgraphicObject):
     def SetImage(self, imageFileName):
         super().SetImage(imageFileName)
         self.RightImage = self.BaseImage
-        self.LeftImage = self.BaseImage.transpose(Image.FLIP_LEFT_RIGHT)
+        self.ellipse = Image.open("Choose.png").convert('RGBA')
+        print(self, self.ellipse)
+        #self.LeftImage = self.BaseImage.transpose(Image.FLIP_LEFT_RIGHT)
 
     def set_ActionsCount(self, value):
         self._actions = value
@@ -99,6 +103,9 @@ class Entity(PILgraphicObject):
     def get_CriticalChance(self):
         return self.Per * 2
 
+    def get_ChanceToBlock(self):
+        return self.Dex * 5
+
     def get_Actionsdef(self):
         return self.Dex // 2
 
@@ -112,6 +119,7 @@ class Entity(PILgraphicObject):
     Damage = property(fget=get_Damage)
     EvadeChance = property(fget=get_EvadeChance)
     CriticalChance = property(fget=get_CriticalChance)
+    ChanceToBlock = property(fget=get_ChanceToBlock)
     ChanceToStun = property(fget=get_ChanceToStun)
     Actionsdef = property(fget=get_Actionsdef)
 
@@ -150,6 +158,13 @@ class Entity(PILgraphicObject):
             weaponImg = self.Weapon.BaseImage.copy()
             weaponImg = weaponImg.rotate(self.WeaponAngle)
             baseImage.paste(weaponImg, self.WeaponPoint, weaponImg)
+        if self.Shield is not None:
+            shieldImg = self.Shield.BaseImage.copy()
+            baseImage.paste(shieldImg, self.ShieldPoint, shieldImg)
+        if self in self.model.Heroes and self.model.CurrentHeroIndex == self.model.Heroes.index(self):
+            chooseImage = self.ellipse.copy()
+            chooseImage.paste(baseImage, (0, 0, 50, 50), baseImage)
+            baseImage = chooseImage
         if self.orientation == Right:
             return baseImage
         else:
