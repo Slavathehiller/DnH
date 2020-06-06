@@ -103,6 +103,9 @@ class Entity(PILgraphicObject):
     def get_CriticalChance(self):
         return self.Per * 2
 
+    def get_ChanceToParry(self):
+        return self.Dex * 5
+
     def get_ChanceToBlock(self):
         return self.Dex * 5
 
@@ -119,6 +122,7 @@ class Entity(PILgraphicObject):
     Damage = property(fget=get_Damage)
     EvadeChance = property(fget=get_EvadeChance)
     CriticalChance = property(fget=get_CriticalChance)
+    ChanceToParry = property(fget=get_ChanceToParry)
     ChanceToBlock = property(fget=get_ChanceToBlock)
     ChanceToStun = property(fget=get_ChanceToStun)
     Actionsdef = property(fget=get_Actionsdef)

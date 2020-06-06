@@ -40,10 +40,15 @@ class Command:
             print(target.Type + ' увернулся')
         else:
             damage = round(randint(attacker.Damage[0], attacker.Damage[1]) * (1 + (DmgModifier / 100)))
-            if target.Shield is not None:
-                if randint(0, 100) < target.ChanceToBlock + target.Shield.ChanceToBlockModifier:
-                    damage = 0
-                    print("Блок!")
+            if isinstance(target.Weapon, Sword):
+                if randint(0, 100) < target.ChanceToParry and target.Status != Stun:
+                    print(target.Type + ' парировал удар!')
+                    return
+            else:
+                if target.Shield is not None:
+                    if randint(0, 100) < target.ChanceToBlock + target.Shield.ChanceToBlockModifier and target.Status != Stun:
+                        print(target.Type + ' блокировал удар щитом!')
+                        return
             if randint(0, 100) < attacker.CriticalChance:
                 damage = damage * 2
                 print("Критический удар!")

@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['D&H.py'],
-             pathex=['E:\\Python Projects\\D&H'],
+             pathex=['e:\\Python Projects\\D&H\\venv\\Lib\\site-packages', 'E:\\Python Projects\\D&H'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -30,4 +30,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True )
+          console=True , icon='DnH.ico')
